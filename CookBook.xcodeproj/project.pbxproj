@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */; };
+		2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */; };
 		64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A61D6F00590061D601 /* AppDelegate.swift */; };
 		64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A81D6F00590061D601 /* ViewController.swift */; };
 		64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AA1D6F00590061D601 /* Main.storyboard */; };
 		64B9C8AE1D6F00590061D601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AD1D6F00590061D601 /* Assets.xcassets */; };
 		64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AF1D6F00590061D601 /* LaunchScreen.storyboard */; };
+		64B9C8B91D6F05050061D601 /* AdobeGothicStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */; };
+		64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */; };
+		64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */; };
+		64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */; };
+		64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecipeVC.swift; sourceTree = "<group>"; };
+		2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecipeNavBarVC.swift; sourceTree = "<group>"; };
 		64B9C8A31D6F00590061D601 /* CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B9C8A61D6F00590061D601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B9C8A81D6F00590061D601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,11 @@
 		64B9C8AD1D6F00590061D601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64B9C8B01D6F00590061D601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64B9C8B21D6F00590061D601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AdobeGothicStd-Bold.otf"; sourceTree = "<group>"; };
+		64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleGothic.ttf; sourceTree = "<group>"; };
+		64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHomeVC.swift; sourceTree = "<group>"; };
+		64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarVC.swift; sourceTree = "<group>"; };
+		64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +71,16 @@
 				64B9C8A61D6F00590061D601 /* AppDelegate.swift */,
 				64B9C8A81D6F00590061D601 /* ViewController.swift */,
 				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
+				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
+				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
+				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
+				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
+				64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */,
 				64B9C8AD1D6F00590061D601 /* Assets.xcassets */,
 				64B9C8AF1D6F00590061D601 /* LaunchScreen.storyboard */,
 				64B9C8B21D6F00590061D601 /* Info.plist */,
+				64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */,
+				64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */,
 			);
 			path = CookBook;
 			sourceTree = "<group>";
@@ -96,6 +117,8 @@
 				TargetAttributes = {
 					64B9C8A21D6F00590061D601 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ELD85TA58A;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,6 +146,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */,
+				64B9C8B91D6F05050061D601 /* AdobeGothicStd-Bold.otf in Resources */,
 				64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */,
 				64B9C8AE1D6F00590061D601 /* Assets.xcassets in Resources */,
 				64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */,
@@ -136,8 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */,
 				64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */,
+				64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */,
+				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,
+				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
+				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +211,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +262,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -259,11 +291,15 @@
 		64B9C8B61D6F00590061D601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ELD85TA58A;
 				INFOPLIST_FILE = CookBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edwardday.CookBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -271,7 +307,10 @@
 		64B9C8B71D6F00590061D601 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ELD85TA58A;
 				INFOPLIST_FILE = CookBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edwardday.CookBook;
@@ -299,6 +338,7 @@
 				64B9C8B71D6F00590061D601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

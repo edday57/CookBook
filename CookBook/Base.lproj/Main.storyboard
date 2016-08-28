@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlurredBackground" translatesAutoresizingMaskIntoConstraints="NO" id="UBW-8Q-nKy"/>
@@ -142,7 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l6G-jJ-T80"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qoV-bE-DIV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="OEW-aR-8Jo">
@@ -153,11 +153,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TV1-xz-gv7" id="Fdn-oN-SvS">
-                                            <frame key="frameInset" width="375" height="139"/>
+                                            <frame key="frameInset" width="414" height="139.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-FF-TtB">
@@ -256,7 +256,7 @@
                                     <constraint firstAttribute="height" constant="1" id="KLn-dk-5Pf"/>
                                 </constraints>
                             </view>
-                            <searchBar alpha="0.29999999999999999" contentMode="redraw" placeholder="Search                                                                       " translatesAutoresizingMaskIntoConstraints="NO" id="Ysg-bJ-QnO">
+                            <searchBar alpha="0.29999999999999999" contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Ysg-bJ-QnO">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="LiL-2e-yCG"/>
                                 </constraints>
@@ -310,7 +310,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CNc-fP-bIC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xHm-zB-QEg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-E2-RsS">
@@ -337,9 +337,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-Hw-0PK">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a meal name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-qA-uXm">
-                                        <frame key="frameInset" minX="22" minY="11" width="331" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a meal name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-qA-uXm">
                                         <color key="backgroundColor" white="1" alpha="0.29821275684931509" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -348,17 +346,26 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.87995100021362305" green="0.64137548208236694" blue="0.39236825704574585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Bz1-qA-uXm" firstAttribute="leading" secondItem="ATe-Hw-0PK" secondAttribute="leading" constant="22" id="9Qo-Su-YG1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bz1-qA-uXm" secondAttribute="bottom" constant="12" id="ae4-vi-Vn1"/>
+                                    <constraint firstItem="Bz1-qA-uXm" firstAttribute="top" secondItem="ATe-Hw-0PK" secondAttribute="top" constant="11" id="hWk-k2-7Je"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bz1-qA-uXm" secondAttribute="trailing" constant="22" id="vXD-wD-8GW"/>
                                     <constraint firstAttribute="height" constant="53" id="wHh-6n-UqR"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-B4-Cth"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7Wc-B4-Cth" secondAttribute="trailing" id="91Q-SP-kt0"/>
                             <constraint firstAttribute="trailing" secondItem="ATe-Hw-0PK" secondAttribute="trailing" id="AWk-9E-Hts"/>
                             <constraint firstItem="ATe-Hw-0PK" firstAttribute="leading" secondItem="xHm-zB-QEg" secondAttribute="leading" id="Cs6-Cp-d4K"/>
+                            <constraint firstAttribute="bottom" secondItem="7Wc-B4-Cth" secondAttribute="bottom" id="Fb7-Lg-VZD"/>
                             <constraint firstItem="MH0-Ty-hch" firstAttribute="leading" secondItem="xHm-zB-QEg" secondAttribute="leading" id="HDp-tV-MOF"/>
                             <constraint firstItem="MH0-Ty-hch" firstAttribute="top" secondItem="xHm-zB-QEg" secondAttribute="top" id="Ibj-02-sFG"/>
+                            <constraint firstItem="7Wc-B4-Cth" firstAttribute="top" secondItem="ATe-Hw-0PK" secondAttribute="bottom" id="JI2-DT-nmt"/>
                             <constraint firstItem="i6D-E2-RsS" firstAttribute="top" secondItem="xo4-Dg-V3N" secondAttribute="bottom" id="MdZ-VV-vok"/>
+                            <constraint firstItem="7Wc-B4-Cth" firstAttribute="leading" secondItem="xHm-zB-QEg" secondAttribute="leading" id="NRp-Td-hJB"/>
                             <constraint firstAttribute="trailing" secondItem="MH0-Ty-hch" secondAttribute="trailing" id="Qld-4Z-4SC"/>
                             <constraint firstAttribute="trailing" secondItem="i6D-E2-RsS" secondAttribute="trailing" id="S69-8V-Bsp"/>
                             <constraint firstItem="ATe-Hw-0PK" firstAttribute="top" secondItem="i6D-E2-RsS" secondAttribute="bottom" id="bSl-SY-gTy"/>

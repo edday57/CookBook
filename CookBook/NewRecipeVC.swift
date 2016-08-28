@@ -23,6 +23,9 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+    }
+    override func viewDidLayoutSubviews() {
         //Defines the 2 colors for the gradient named "gradient"
         let gradientColor1 = UIColor(red: 208/255, green: 164/255, blue:85/255, alpha: 1)
         let gradientColor2 = UIColor(red: 219/255, green: 116/255, blue:85/255, alpha: 1)
@@ -32,7 +35,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradient.frame = gradientView.bounds
-        
+        gradient.masksToBounds = true
         gradient.colors = [gradientColor2.cgColor, gradientColor1.cgColor]
         gradientView.layer.addSublayer(gradient)
         
@@ -49,7 +52,6 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         gradientView.bringSubview(toFront: nameTextField)
         
     }
-
     
     
     override func didReceiveMemoryWarning() {

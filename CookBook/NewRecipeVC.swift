@@ -185,31 +185,34 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
 
     
-    // When the user pressed add instruction button.
+
+    //When the user adds an instruction
+    var instructionsArray = [String]()
+    var instructionCount = 0
+    
     @IBAction func addInstruction(_ sender: AnyObject) {
         if let instruction = instructionField.text {
             if instruction != "" {
-            
-        //If instruction text field has a value then...
-            
-        //If this is the first instruction then clear the text field
-        if instructionsTextView.text == "Add an instruction!" {
-            instructionsTextView.text = "\(instruction)."
-            
+                
+                //If instruction text field has a value then...
+                instructionsArray.append(instruction)
+                
+                //If this is the first instruction then clear the text field
+                if instructionsArray.count == 1 {
+                    instructionsTextView.text = "1. \(instruction)."}
+                
+                else {
+                    instructionCount += 1
+                    instructionsTextView.text.append("\n\(instructionCount + 1). \(instructionsArray[instructionCount]).")
+                        
+                    }
+                }
+                //Clear the instruction text field
+                instructionField.text = nil
+            }
         }
-        else {
-        let currentInstructions = instructionsTextView.text
-        instructionsTextView.text = "\(currentInstructions!)  \(instruction)."
-    }
-        //Clear the instruction text field
-        instructionField.text = nil
-    }
-    }
-    }
     
-
     
-
     
     /*
     // MARK: - Navigation

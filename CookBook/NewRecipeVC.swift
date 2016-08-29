@@ -8,37 +8,25 @@
 
 import UIKit
 
-class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    
-    @IBOutlet weak var imageLabel: UILabel!
-    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var imageLabel: UILabel!
+    
+    @IBOutlet weak var instructionsTextView: UITextView!
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var instructionField: UITextField!
+    @IBOutlet weak var ingredientsField: UITextField!
+    @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var privacyPicker: UIPickerView!
     
-    
+    var postPrivacy: [String] = ["Public", "Private"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-    }
-    override func viewDidLayoutSubviews() {
-        //Defines the 2 colors for the gradient named "gradient"
-        let gradientColor1 = UIColor(red: 208/255, green: 164/255, blue:85/255, alpha: 1)
-        let gradientColor2 = UIColor(red: 219/255, green: 116/255, blue:85/255, alpha: 1)
-        
-        //Creates the gradient and defines its properties
-        let gradient = CAGradientLayer()
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.frame = gradientView.bounds
-        gradient.masksToBounds = true
-        gradient.colors = [gradientColor2.cgColor, gradientColor1.cgColor]
-        gradientView.layer.addSublayer(gradient)
-        
         //Adds a white border to the gradient view
         gradientView.layer.borderWidth = 2.0
         gradientView.layer.borderColor = UIColor.white.cgColor
@@ -48,10 +36,28 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         gradientView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         gradientView.layer.shadowRadius = 5.0
         
-        //Brings text field above gradient
-        gradientView.bringSubview(toFront: nameTextField)
         
+        //Setup privacy picker
+        privacyPicker.dataSource = self
+        privacyPicker.delegate = self
+        
+
     }
+    
+    //Configure privacy picker
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return postPrivacy.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return postPrivacy[row]
+    }
+    
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -59,6 +65,9 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         // Dispose of any resources that can be recreated.
     }
  
+    
+    
+    
     
     //Allows user to choose an image and import it
     let picker = UIImagePickerController()
@@ -119,6 +128,11 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         imageLabel.isHidden = true
     }
 
+    
+    
+    
+    
+    
     //User cancels creating a new recipe
     @IBAction func cancelButtonClicked(_ sender: AnyObject) {
        let alert:UIAlertController=UIAlertController(title: "Are you sure you want to discard changes?", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
@@ -143,13 +157,55 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         dismiss(animated: true, completion: nil)
     }
     
+    
 
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nameTextField.resignFirstResponder()
+
+    
+    // When the user pressed add ingredient button.
+    @IBAction func addIngredient(_ sender: AnyObject) {
+        if let ingredient = ingredientsField.text {
+            if ingredient != "" {
+                
+                //If instruction text field has a value then...
+                
+                //If this is the first instruction then clear the text field
+                if ingredientsTextView.text == "Add an ingredient!" {
+                    ingredientsTextView.text = "\(ingredient)"
+                    
+                }
+                else {
+                    let currentIngredients = ingredientsTextView.text
+                    ingredientsTextView.text = "\(currentIngredients!),  \(ingredient)"
+                }
+                //Clear the instruction text field
+                ingredientsField.text = nil
+            }
+        }
     }
+
     
-    
+    // When the user pressed add instruction button.
+    @IBAction func addInstruction(_ sender: AnyObject) {
+        if let instruction = instructionField.text {
+            if instruction != "" {
+            
+        //If instruction text field has a value then...
+            
+        //If this is the first instruction then clear the text field
+        if instructionsTextView.text == "Add an instruction!" {
+            instructionsTextView.text = "\(instruction)."
+            
+        }
+        else {
+        let currentInstructions = instructionsTextView.text
+        instructionsTextView.text = "\(currentInstructions!)  \(instruction)."
+    }
+        //Clear the instruction text field
+        instructionField.text = nil
+    }
+    }
+    }
     
 
     

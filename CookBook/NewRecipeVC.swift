@@ -8,15 +8,12 @@
 
 import UIKit
 
-class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate{
-    
-    //OUTLETS
+class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageLabel: UILabel!
     
-    //USER INPUT OUTLETS
     @IBOutlet weak var instructionsTextView: UITextView!
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var instructionField: UITextField!
@@ -25,16 +22,9 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var privacyPicker: UIPickerView!
-    @IBOutlet weak var additionalInfo: UITextView!
     
-    
-    //VARIABLES AND CONSTANTS
     var postPrivacy: [String] = ["Public", "Private"]
-    let PLACEHOLDER_TEXT = "Add any additional information or instructions here!"
     
-    
-    
-    //VIEW DID LOAD 
     override func viewDidLoad() {
         super.viewDidLoad()
         //Adds a white border to the gradient view
@@ -51,41 +41,8 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         privacyPicker.dataSource = self
         privacyPicker.delegate = self
         
-        additionalInfo.text = "Add any additional info here!"
-        additionalInfo.textColor = UIColor.lightGray
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func viewTapped(_ sender: AnyObject) {
-        if additionalInfo.text.isEmpty {
-            additionalInfo.text = "Add any additional info here!"
-            additionalInfo.textColor = UIColor.lightGray
-
-        }
-        additionalInfo.resignFirstResponder()
-    }
-    @IBAction func additionalInfoTapped(_ sender: AnyObject) {
-        if additionalInfo.textColor == UIColor.lightGray {
-            additionalInfo.text = nil
-            additionalInfo.textColor = UIColor.black
-            additionalInfo.becomeFirstResponder()
 
     }
-    }
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if additionalInfo.textColor == UIColor.lightGray {
-            additionalInfo.text = nil
-            additionalInfo.textColor = UIColor.black
-            additionalInfo.becomeFirstResponder()
-    }
-    }
-    
-    
-    
     
     //Configure privacy picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -103,7 +60,11 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     
     
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+ 
     
     
     

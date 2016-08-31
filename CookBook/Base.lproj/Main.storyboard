@@ -541,9 +541,19 @@
                                                 <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Gn-FE-ArU" userLabel="Additional Info Text View">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="DLt-sF-Y11"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="7Gn-FE-ArU" firstAttribute="top" secondItem="7PT-bJ-vS6" secondAttribute="bottom" constant="8" id="0Nf-Zw-xrU"/>
                                             <constraint firstItem="8B4-N4-yUV" firstAttribute="leading" secondItem="YSj-eF-3vy" secondAttribute="leading" constant="8" id="1Nu-iT-tSV"/>
                                             <constraint firstItem="dSb-Q0-ZLV" firstAttribute="top" secondItem="caM-7b-DjC" secondAttribute="bottom" constant="8" id="8X9-A1-nfw"/>
                                             <constraint firstAttribute="trailing" secondItem="xI3-Xc-U0Q" secondAttribute="trailing" id="9vc-ii-R0m"/>
@@ -559,6 +569,7 @@
                                             <constraint firstItem="xI3-Xc-U0Q" firstAttribute="top" secondItem="ATe-Hw-0PK" secondAttribute="bottom" id="R85-3R-to9"/>
                                             <constraint firstItem="ATe-Hw-0PK" firstAttribute="top" secondItem="i6D-E2-RsS" secondAttribute="bottom" id="Rak-2m-Y5D"/>
                                             <constraint firstAttribute="trailing" secondItem="ATe-Hw-0PK" secondAttribute="trailing" id="U61-6Z-S1e"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Gn-FE-ArU" secondAttribute="trailing" constant="8" id="ZBd-6e-nvq"/>
                                             <constraint firstItem="vTf-46-WO4" firstAttribute="centerY" secondItem="i6D-E2-RsS" secondAttribute="centerY" id="aGl-3P-3qd"/>
                                             <constraint firstItem="i6D-E2-RsS" firstAttribute="top" secondItem="YSj-eF-3vy" secondAttribute="top" id="bA0-mG-4Iy"/>
                                             <constraint firstItem="Lyx-En-Yan" firstAttribute="top" secondItem="xI3-Xc-U0Q" secondAttribute="bottom" id="bbD-j3-byA"/>
@@ -571,6 +582,7 @@
                                             <constraint firstItem="GTu-ey-jKQ" firstAttribute="leading" secondItem="YSj-eF-3vy" secondAttribute="leading" constant="8" id="iDu-Ie-22j"/>
                                             <constraint firstItem="caM-7b-DjC" firstAttribute="top" secondItem="8B4-N4-yUV" secondAttribute="bottom" constant="8" id="iSV-4L-DTO"/>
                                             <constraint firstItem="ATe-Hw-0PK" firstAttribute="leading" secondItem="YSj-eF-3vy" secondAttribute="leading" id="q8r-ps-Xu5"/>
+                                            <constraint firstItem="7Gn-FE-ArU" firstAttribute="leading" secondItem="YSj-eF-3vy" secondAttribute="leading" constant="8" id="tSY-Hh-oUr"/>
                                             <constraint firstAttribute="trailing" secondItem="caM-7b-DjC" secondAttribute="trailing" constant="8" id="v0w-Wo-CHh"/>
                                             <constraint firstAttribute="trailing" secondItem="dSb-Q0-ZLV" secondAttribute="trailing" id="wkm-6M-Bce"/>
                                             <constraint firstItem="7PT-bJ-vS6" firstAttribute="leading" secondItem="YSj-eF-3vy" secondAttribute="leading" constant="8" id="x18-d6-Z1S"/>

@@ -11,6 +11,7 @@ import UIKit
 
 class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var noRecipes: UILabel!
     //Sets rows in table view
     @IBOutlet weak var recipeTableView: UITableView!
 
@@ -81,6 +82,9 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         //Load sample recipes
         loadSampleRecipes()
+        if recipes.count == 0 {
+            noRecipes.isHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +104,16 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             let newIndexPath = IndexPath(row: recipes.count, section: 0)
             recipes.append(recipe)
             recipeTableView.insertRows(at: [newIndexPath], with: .bottom)
+            noRecipes.isHidden = true
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            recipes.remove(at: indexPath.row)
+            recipeTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            noRecipes.isHidden = false
         }
     }
     

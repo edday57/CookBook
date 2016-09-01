@@ -150,10 +150,10 @@
                                     <constraint firstAttribute="height" constant="117" id="iou-o1-Tdq"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TV1-xz-gv7" id="Fdn-oN-SvS">
@@ -276,6 +276,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a recipe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-CA-v5A">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="7lS-Xh-s82"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -285,9 +293,12 @@
                             <constraint firstAttribute="trailing" secondItem="Ysg-bJ-QnO" secondAttribute="trailing" id="9VZ-vM-O7T"/>
                             <constraint firstItem="OEW-aR-8Jo" firstAttribute="top" secondItem="qoV-bE-DIV" secondAttribute="top" id="DuS-za-POd"/>
                             <constraint firstItem="Kfs-7s-6k4" firstAttribute="top" secondItem="fE2-YU-6mL" secondAttribute="bottom" id="H02-ai-LUY"/>
+                            <constraint firstAttribute="trailing" secondItem="ysf-CA-v5A" secondAttribute="trailing" id="Ksu-CR-QGd"/>
                             <constraint firstItem="Ysg-bJ-QnO" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="LHS-3v-PO3"/>
                             <constraint firstAttribute="trailing" secondItem="K1i-w4-ebL" secondAttribute="trailing" id="MCe-P3-BAT"/>
                             <constraint firstItem="l6G-jJ-T80" firstAttribute="top" secondItem="K1i-w4-ebL" secondAttribute="bottom" id="MZT-Vu-fS8"/>
+                            <constraint firstItem="ysf-CA-v5A" firstAttribute="top" secondItem="OEW-aR-8Jo" secondAttribute="bottom" constant="30" id="RRw-yP-XEf"/>
+                            <constraint firstItem="ysf-CA-v5A" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="adf-aS-Zr0"/>
                             <constraint firstItem="Ysg-bJ-QnO" firstAttribute="top" secondItem="Kfs-7s-6k4" secondAttribute="bottom" id="eOk-8l-OkO"/>
                             <constraint firstAttribute="trailing" secondItem="OEW-aR-8Jo" secondAttribute="trailing" id="ge2-bl-Xa2"/>
                             <constraint firstItem="K1i-w4-ebL" firstAttribute="top" secondItem="OEW-aR-8Jo" secondAttribute="bottom" constant="1" id="k53-ah-Lwj"/>
@@ -303,6 +314,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noRecipes" destination="ysf-CA-v5A" id="gLk-J9-3HM"/>
                         <outlet property="recipeTableView" destination="K1i-w4-ebL" id="hOv-9k-PUA"/>
                         <outlet property="searchBar" destination="Ysg-bJ-QnO" id="w8U-Bu-jac"/>
                     </connections>
@@ -320,7 +332,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CNc-fP-bIC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xHm-zB-QEg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-AW-Kzf">
@@ -690,8 +702,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="additionalInfo" destination="7Gn-FE-ArU" id="egN-Yu-Te2"/>
                         <outlet property="additionalInfoSwitch" destination="oJA-jI-kyp" id="CrN-uj-ncw"/>

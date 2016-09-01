@@ -12,6 +12,7 @@ import UIKit
 class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //Sets rows in table view
+    @IBOutlet weak var recipeTableView: UITableView!
 
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
@@ -94,6 +95,13 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
 
+    @IBAction func unwindToRecipeList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? NewRecipeVC, let recipe = sourceViewController.recipe {
+            let newIndexPath = IndexPath(row: recipes.count, section: 0)
+            recipes.append(recipe)
+            recipeTableView.insertRows(at: [newIndexPath], with: .bottom)
+        }
+    }
     
     /*
     // MARK: - Navigation

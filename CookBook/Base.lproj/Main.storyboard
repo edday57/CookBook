@@ -303,6 +303,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="recipeTableView" destination="K1i-w4-ebL" id="hOv-9k-PUA"/>
                         <outlet property="searchBar" destination="Ysg-bJ-QnO" id="w8U-Bu-jac"/>
                     </connections>
                 </viewController>
@@ -683,12 +684,17 @@
                                 <action selector="cancelButtonClicked:" destination="FSV-ua-PSw" id="Cty-KQ-T9H"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="dlC-Jb-GCB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dlC-Jb-GCB">
+                            <connections>
+                                <segue destination="YoB-Pb-Dho" kind="unwind" unwindAction="unwindToRecipeListWithSender:" id="UWa-CM-PvF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <outlet property="additionalInfo" destination="7Gn-FE-ArU" id="egN-Yu-Te2"/>
+                        <outlet property="additionalInfoSwitch" destination="oJA-jI-kyp" id="CrN-uj-ncw"/>
                         <outlet property="cancelButton" destination="dvm-ba-1VX" id="yOG-vV-5Os"/>
                         <outlet property="gradientView" destination="ATe-Hw-0PK" id="rZO-Mb-irL"/>
                         <outlet property="imageLabel" destination="vTf-46-WO4" id="Fiy-DI-Mg7"/>
@@ -703,6 +709,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LY6-hS-boC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YoB-Pb-Dho" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="4uU-Hh-S0H" userLabel="Image Tap Gesture Recognizer">
                     <connections>
                         <action selector="addImageTapped:" destination="FSV-ua-PSw" id="mFU-V3-f90"/>

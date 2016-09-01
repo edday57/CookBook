@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate{
+class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var gradientView: UIView!
@@ -45,6 +45,11 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         additionalInfo.text = "Add any additional info here!"
         additionalInfo.textColor = UIColor.lightGray
 
+        //Initialize text fields
+        self.nameTextField.delegate = self
+        self.ingredientsField.delegate = self
+        self.instructionField.delegate = self
+        self.additionalInfo.delegate = self
     }
     
     //Configure privacy picker
@@ -93,6 +98,23 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             additionalInfo.becomeFirstResponder()
         }
     }
+    
+    
+    
+    //Enable return keys
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+        nameTextField.resignFirstResponder()
+        }
+        if textField.tag == 2 {
+            ingredientsField.resignFirstResponder()
+        }
+        if textField.tag == 3 {
+            instructionField.resignFirstResponder()
+        }
+        return true
+    }
+    
     
     
     

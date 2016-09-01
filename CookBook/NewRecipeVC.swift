@@ -26,6 +26,8 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     
     var postPrivacy: [String] = ["Public", "Private"]
     
+    var recipe: Recipe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Adds a white border to the gradient view

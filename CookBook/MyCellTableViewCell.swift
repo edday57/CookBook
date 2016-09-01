@@ -18,6 +18,8 @@ class MyCellTableViewCell: UITableViewCell {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageHolder: UIView!
     @IBOutlet weak var likeIcon: UIImageView!
+    @IBOutlet weak var recipeName: UILabel!
+    @IBOutlet weak var recipeTime: UILabel!
 
     
     

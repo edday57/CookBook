@@ -14,7 +14,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     //Sets rows in table view
 
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return recipes.count
     }
 
     
@@ -22,6 +22,11 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.separatorStyle = .none
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyCellTableViewCell
+        let recipe = recipes[indexPath.row]
+        
+        cell.recipeName.text = recipe.name
+        cell.cellImage.image = recipe.photo
+        cell.recipeTime.text = "\(recipe.time) mins"
         
   
         //Add a shadow to the cell view
@@ -58,7 +63,8 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     @IBOutlet weak var searchBar: UISearchBar!
 
-    
+    //VARIABLES
+    var recipes = [Recipe]()
 
     
     override func viewDidLoad() {
@@ -67,12 +73,13 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         // Do any additional setup after loading the view.
         
+        //Make search bar transparent
         let image = UIImage()
-        
         searchBar.setBackgroundImage(image, for: .any, barMetrics: .default)
         searchBar.scopeBarBackgroundImage = image
         
-
+        //Load sample recipes
+        loadSampleRecipes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,7 +87,12 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
-
+    func loadSampleRecipes() {
+        let photo1 = UIImage(named: "recipe1")!
+        let recipe1 = Recipe(name: "Chicken Shawarma", photo: photo1, time: 40, ingredients: "Chicken, Wrap, Mixed Salad, Mustard", instructions: "1. Add all ingredients.", isPrivate: true, additionalInfo: "This is just a test")!
+        recipes += [recipe1]
+        
+    }
 
     
     /*

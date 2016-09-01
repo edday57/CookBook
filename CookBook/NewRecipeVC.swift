@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
+class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextViewDelegate{
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var gradientView: UIView!
@@ -22,6 +22,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var privacyPicker: UIPickerView!
+    @IBOutlet weak var additionalInfo: UITextView!
     
     var postPrivacy: [String] = ["Public", "Private"]
     
@@ -41,6 +42,8 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         privacyPicker.dataSource = self
         privacyPicker.delegate = self
         
+        additionalInfo.text = "Add any additional info here!"
+        additionalInfo.textColor = UIColor.lightGray
 
     }
     
@@ -65,7 +68,31 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         // Dispose of any resources that can be recreated.
     }
  
+    @IBAction func viewTapped(_ sender: AnyObject) {
+        if additionalInfo.text.isEmpty {
+            additionalInfo.text = "Add any additional info here!"
+            additionalInfo.textColor = UIColor.lightGray
+        
+        }
+        additionalInfo.resignFirstResponder()
+    }
+    @IBAction func additionalInfoTapped(_ sender: AnyObject) {
+        if additionalInfo.textColor == UIColor.lightGray {
+            additionalInfo.text = nil
+            additionalInfo.textColor = UIColor.black
+            additionalInfo.becomeFirstResponder()
+            
+        }
+    }
+
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if additionalInfo.textColor == UIColor.lightGray {
+            additionalInfo.text = nil
+            additionalInfo.textColor = UIColor.black
+            additionalInfo.becomeFirstResponder()
+        }
+    }
     
     
     

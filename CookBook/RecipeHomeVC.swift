@@ -132,8 +132,10 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "detailView") {
-            var vc = segue.destination as! DetailViewController
-            vc.recipe = selectedRecipe
+            var destinationViewController = segue.destination as! ViewRecipeNavBarVC
+            let targetController = destinationViewController.topViewController as! ViewRecipeVC
+            targetController.recipe = selectedRecipe
+
         }
     }
     

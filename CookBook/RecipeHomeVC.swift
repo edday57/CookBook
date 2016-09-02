@@ -55,7 +55,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         //Makes cell view white
         cell.cellView.layer.backgroundColor = UIColor.white.cgColor
         
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         //Returns the cell
         return cell
     }
@@ -67,6 +67,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
     //VARIABLES
     var recipes = [Recipe]()
+    var selectedRecipe: Recipe?
 
     
     override func viewDidLoad() {
@@ -85,6 +86,9 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if recipes.count == 0 {
             noRecipes.isHidden = false
         }
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,6 +103,8 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
 
+    
+    //Updates the table view after returning from CreateRecipe page
     @IBAction func unwindToRecipeList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewRecipeVC, let recipe = sourceViewController.recipe {
             let newIndexPath = IndexPath(row: recipes.count, section: 0)
@@ -109,11 +115,25 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+    
+    //Allows recipes to be deleted by sliding left
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             recipes.remove(at: indexPath.row)
             recipeTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             noRecipes.isHidden = false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRecipe = recipes[indexPath.row]
+        performSegue(withIdentifier: "detailView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "detailView") {
+            var vc = segue.destination as! DetailViewController
+            vc.recipe = selectedRecipe
         }
     }
     
@@ -126,5 +146,6 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

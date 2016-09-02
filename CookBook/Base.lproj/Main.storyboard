@@ -150,7 +150,7 @@
                                     <constraint firstAttribute="height" constant="117" id="iou-o1-Tdq"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
@@ -317,11 +317,42 @@
                         <outlet property="noRecipes" destination="ysf-CA-v5A" id="gLk-J9-3HM"/>
                         <outlet property="recipeTableView" destination="K1i-w4-ebL" id="hOv-9k-PUA"/>
                         <outlet property="searchBar" destination="Ysg-bJ-QnO" id="w8U-Bu-jac"/>
+                        <segue destination="FjM-A3-5W9" kind="presentation" identifier="detailView" id="460-ZB-i4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbE-rX-SAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280.8000000000002" y="120.98950524737631"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="7KO-2O-FnS">
+            <objects>
+                <viewController id="FjM-A3-5W9" customClass="DetailViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Cu-s9-Ij6"/>
+                        <viewControllerLayoutGuide type="bottom" id="tbR-4a-UNX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0qH-Qg-Aeq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-Ao-QMe">
+                                <frame key="frameInset" minX="125" minY="118" width="189" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="recipeName" destination="fw0-Ao-QMe" id="s7z-5L-4bK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhT-go-4f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280.8000000000002" y="825.33733133433293"/>
         </scene>
         <!--New Recipe-->
         <scene sceneID="bgb-cL-UZJ">
@@ -743,7 +774,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qyE-fH-jRH" customClass="NavBarVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y4W-CU-yaI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y4W-CU-yaI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -762,7 +793,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VJO-Pc-2iE" customClass="NewRecipeNavBarVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GaU-kN-jsG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GaU-kN-jsG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

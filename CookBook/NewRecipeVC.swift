@@ -56,6 +56,9 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         self.ingredientsField.delegate = self
         self.instructionField.delegate = self
         self.additionalInfo.delegate = self
+        
+        //Disable save button at first
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     //Configure privacy picker
@@ -129,7 +132,13 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         return true
     }
     
-    
+    //Check to enable save button on end editing
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkForSaveEnabled()
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        checkForSaveEnabled()
+    }
     
     
     //Allows user to choose an image and import it
@@ -189,6 +198,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
         imageLabel.isHidden = true
+        checkForSaveEnabled()
     }
 
     
@@ -243,6 +253,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                 }
                 //Clear the instruction text field
                 ingredientsField.text = nil
+                checkForSaveEnabled()
             }
         }
     }
@@ -272,6 +283,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                 }
                 //Clear the instruction text field
                 instructionField.text = nil
+            checkForSaveEnabled()
             }
         }
     
@@ -290,6 +302,10 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
     }
     
-    
+    func checkForSaveEnabled() {
+        if nameTextField.text != nil && userImage.image != nil && timeField.text != nil && ingredientsTextView.text != nil && ingredientsTextView.text != "Add an ingredient!" && instructionsTextView.text != nil && instructionsTextView.text != "Add an instruction!" && additionalInfo.text != nil && additionalInfo.text != "Add any additional info here!"{
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
     
 }

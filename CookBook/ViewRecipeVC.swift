@@ -12,6 +12,8 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
 
     @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var likeButton: UIImageView!
+    @IBOutlet weak var likeCount: UILabel!
     
     //RECIPE OUTLETS
     @IBOutlet weak var instructionsTextView: UITextView!
@@ -54,6 +56,7 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBAction func backButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
+
 
 
     

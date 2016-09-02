@@ -540,7 +540,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add an ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-c3-SiX">
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -581,7 +581,7 @@
                                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add an instruction" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iq2-4v-YDx">
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -884,18 +884,32 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQf-Wq-HQf"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yQO-YT-gQO">
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unliked" translatesAutoresizingMaskIntoConstraints="NO" id="kZl-uD-YBy"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="6PH-Pz-mcZ">
+                                                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="36"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="WQf-Wq-HQf" secondAttribute="trailing" constant="12" id="1VU-TA-DFb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="yQO-YT-gQO" secondAttribute="bottom" constant="15" id="5vA-of-cyF"/>
                                                     <constraint firstItem="WQf-Wq-HQf" firstAttribute="centerY" secondItem="nDu-u9-mgx" secondAttribute="centerY" id="97Y-O5-HzF"/>
+                                                    <constraint firstItem="yQO-YT-gQO" firstAttribute="top" secondItem="nDu-u9-mgx" secondAttribute="top" constant="15" id="9LY-Nc-MpK"/>
                                                     <constraint firstItem="uUe-S4-kmN" firstAttribute="leading" secondItem="nDu-u9-mgx" secondAttribute="leading" id="FfO-Ha-EGO"/>
                                                     <constraint firstAttribute="trailing" secondItem="uUe-S4-kmN" secondAttribute="trailing" id="JxJ-b0-Yf2"/>
                                                     <constraint firstItem="w7e-me-F8v" firstAttribute="centerY" secondItem="nDu-u9-mgx" secondAttribute="centerY" id="MVn-5a-njA"/>
                                                     <constraint firstItem="KMx-QI-4cH" firstAttribute="centerY" secondItem="nDu-u9-mgx" secondAttribute="centerY" id="N2e-MJ-iZ1"/>
+                                                    <constraint firstItem="yQO-YT-gQO" firstAttribute="leading" secondItem="nDu-u9-mgx" secondAttribute="leading" constant="8" id="TAX-ep-9Le"/>
                                                     <constraint firstAttribute="bottom" secondItem="uUe-S4-kmN" secondAttribute="bottom" id="URA-fO-Ktl"/>
                                                     <constraint firstItem="KMx-QI-4cH" firstAttribute="leading" secondItem="w7e-me-F8v" secondAttribute="trailing" constant="8" id="X8q-S9-ukM"/>
                                                     <constraint firstItem="w7e-me-F8v" firstAttribute="height" secondItem="nDu-u9-mgx" secondAttribute="height" id="fME-cL-kAe"/>
+                                                    <constraint firstItem="w7e-me-F8v" firstAttribute="leading" secondItem="yQO-YT-gQO" secondAttribute="trailing" constant="8" id="ihg-3k-zXf"/>
                                                     <constraint firstItem="WQf-Wq-HQf" firstAttribute="leading" secondItem="KMx-QI-4cH" secondAttribute="trailing" constant="8" id="nXQ-dY-nRs"/>
                                                     <constraint firstItem="w7e-me-F8v" firstAttribute="centerX" secondItem="nDu-u9-mgx" secondAttribute="centerX" id="pdY-w3-fI9"/>
                                                     <constraint firstAttribute="height" constant="70" id="vOp-W9-lPi"/>
@@ -941,14 +955,21 @@
                                                 <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="13"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27L-MA-vuC" userLabel="Ingredients Text View">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27L-MA-vuC" userLabel="Ingredients Text View">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="95" id="T11-lZ-1Zn"/>
                                                 </constraints>
-                                                <string key="text">Ingredients: 2 teaspoons olive oil, 2 leeks, 2 carrots, 1 garlic clove, 1 celery stalk, 3 cups of turkey, 2 bay leaves, 2 teaspoons dried thyme, 1/2 teaspoon salt, 6 . . .</string>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="17"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Ingredients: 2 teaspoons olive oil, 2 leeks, 2 carrots, 1 garlic clove, 1 celery stalk, 3 cups of turkey, 2 bay leaves, 2 teaspoons dried thyme, 1/2 teaspoon salt, 6 . . .</string>
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="17" name="AdobeGothicStd-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.5" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>

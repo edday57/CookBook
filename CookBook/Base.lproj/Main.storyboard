@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A284a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,8 +10,29 @@
         <array key="AdobeGothicStd-Bold.otf">
             <string>AdobeGothicStd-Bold</string>
         </array>
+        <array key="LucidaGrande.ttc">
+            <string>LucidaGrande-Bold</string>
+        </array>
     </customFonts>
     <scenes>
+        <!--Reset Pass View Controller-->
+        <scene sceneID="1hT-Zw-9PT">
+            <objects>
+                <viewController id="Q1m-BM-h85" customClass="ResetPassViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tkc-eW-TRe"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxc-tc-1bq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7FS-pz-PhM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAO-PW-vCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="126"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -133,6 +154,24 @@
             </objects>
             <point key="canvasLocation" x="734" y="121"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="ffQ-Az-phx">
+            <objects>
+                <viewController id="kwo-AC-QbV" customClass="SignUpViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yYe-w6-beu"/>
+                        <viewControllerLayoutGuide type="bottom" id="6aD-xk-oHl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vUV-5s-DdK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQb-U4-nbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="985"/>
+        </scene>
         <!--CookBook-->
         <scene sceneID="J1t-hl-Iie">
             <objects>
@@ -157,7 +196,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TV1-xz-gv7" id="Fdn-oN-SvS">
-                                            <frame key="frameInset" width="375" height="139"/>
+                                            <frame key="frameInset" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-FF-TtB">
@@ -318,43 +357,11 @@
                         <outlet property="recipeTableView" destination="K1i-w4-ebL" id="hOv-9k-PUA"/>
                         <outlet property="searchBar" destination="Ysg-bJ-QnO" id="w8U-Bu-jac"/>
                         <segue destination="r5A-RR-WxS" kind="presentation" identifier="detailView" id="gFx-Mk-BGm"/>
-                        <segue destination="FjM-A3-5W9" kind="presentation" identifier="detailView2" id="M3m-D9-PDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbE-rX-SAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280.8000000000002" y="120.98950524737631"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="7KO-2O-FnS">
-            <objects>
-                <viewController id="FjM-A3-5W9" customClass="DetailViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Cu-s9-Ij6"/>
-                        <viewControllerLayoutGuide type="bottom" id="tbR-4a-UNX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0qH-Qg-Aeq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw0-Ao-QMe">
-                                <frame key="frameInset" minX="125" minY="118" width="189" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="aF1-Ux-YVY"/>
-                    <connections>
-                        <outlet property="recipeName" destination="fw0-Ao-QMe" id="s7z-5L-4bK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vhT-go-4f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1505" y="985"/>
         </scene>
         <!--New Recipe-->
         <scene sceneID="bgb-cL-UZJ">
@@ -847,7 +854,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA1-UW-NMF">
                                                         <frame key="frameInset" minX="8" width="359" height="53"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="25"/>
                                                         <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>

@@ -1,22 +1,19 @@
 //
-//  DetailViewController.swift
+//  ResetPassViewController.swift
 //  CookBook
 //
-//  Created by Edward Day on 02/09/2016.
+//  Created by Edward Day on 03/09/2016.
 //  Copyright © 2016 Edward Day. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class ResetPassViewController: UIViewController {
 
-    @IBOutlet weak var recipeName: UILabel!
-    var recipe: Recipe?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        recipeName.text = recipe!.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +22,6 @@ class DetailViewController: UIViewController {
     }
     
 
-    
     /*
     // MARK: - Navigation
 

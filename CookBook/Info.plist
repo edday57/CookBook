@@ -27,6 +27,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>AppleGothic.ttf</string>
+		<string>LucidaGrande.ttc</string>
 		<string>AdobeGothicStd-Bold.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -11,9 +11,11 @@
 		2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */; };
 		2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609A81D783EBC00EEA826 /* Recipe.swift */; };
 		2BD609AE1D79743200EEA826 /* NoPasteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609AD1D79743200EEA826 /* NoPasteTextField.swift */; };
-		2BD609B11D797D7800EEA826 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609B01D797D7800EEA826 /* DetailViewController.swift */; };
 		2BD609B31D798C1700EEA826 /* ViewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */; };
 		2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */; };
+		2BD609D71D7B026C00EEA826 /* LucidaGrande.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */; };
+		2BD609D91D7B053600EEA826 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609D81D7B053600EEA826 /* SignUpVC.swift */; };
+		2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */; };
 		64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A61D6F00590061D601 /* AppDelegate.swift */; };
 		64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A81D6F00590061D601 /* ViewController.swift */; };
 		64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AA1D6F00590061D601 /* Main.storyboard */; };
@@ -31,9 +33,11 @@
 		2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecipeNavBarVC.swift; sourceTree = "<group>"; };
 		2BD609A81D783EBC00EEA826 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		2BD609AD1D79743200EEA826 /* NoPasteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPasteTextField.swift; sourceTree = "<group>"; };
-		2BD609B01D797D7800EEA826 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecipeVC.swift; sourceTree = "<group>"; };
 		2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecipeNavBarVC.swift; sourceTree = "<group>"; };
+		2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = LucidaGrande.ttc; sourceTree = "<group>"; };
+		2BD609D81D7B053600EEA826 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
 		64B9C8A31D6F00590061D601 /* CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B9C8A61D6F00590061D601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B9C8A81D6F00590061D601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,9 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				64B9C8A81D6F00590061D601 /* ViewController.swift */,
+				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */,
-				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
+				2BD609D81D7B053600EEA826 /* SignUpVC.swift */,
+				2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -86,6 +92,7 @@
 				64B9C8A61D6F00590061D601 /* AppDelegate.swift */,
 				64B9C8AF1D6F00590061D601 /* LaunchScreen.storyboard */,
 				64B9C8B21D6F00590061D601 /* Info.plist */,
+				2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */,
 				64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */,
 				64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */,
 			);
@@ -123,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
-				2BD609B01D797D7800EEA826 /* DetailViewController.swift */,
 				2BD609AA1D783ED500EEA826 /* View Controllers */,
 				2BD609AB1D783EEF00EEA826 /* Navigation Bars */,
 				2BD609AF1D79757200EEA826 /* Custom Files */,
@@ -195,6 +201,7 @@
 			files = (
 				64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */,
 				64B9C8B91D6F05050061D601 /* AdobeGothicStd-Bold.otf in Resources */,
+				2BD609D71D7B026C00EEA826 /* LucidaGrande.ttc in Resources */,
 				64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */,
 				64B9C8AE1D6F00590061D601 /* Assets.xcassets in Resources */,
 				64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */,
@@ -214,8 +221,9 @@
 				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,
 				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
+				2BD609D91D7B053600EEA826 /* SignUpVC.swift in Sources */,
 				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
-				2BD609B11D797D7800EEA826 /* DetailViewController.swift in Sources */,
+				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
 				2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */,
 				2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */,
 				2BD609B31D798C1700EEA826 /* ViewRecipeVC.swift in Sources */,

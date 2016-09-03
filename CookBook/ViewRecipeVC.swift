@@ -27,8 +27,11 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "CookBook"
+        
         //Adds a white border to the gradient view
-        gradientView.layer.borderWidth = 2.0
+        gradientView.layer.borderWidth = 1.0
         gradientView.layer.borderColor = UIColor.white.cgColor
         
         //Adds a shadow to the gradient
@@ -36,12 +39,17 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         gradientView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         gradientView.layer.shadowRadius = 5.0
         
+
+        
         userImage.image = recipe!.photo
         recipeName.text = recipe!.name
         recipeTime.text = "\(recipe!.time) mins"
         ingredientsTextView.text = "Ingredients: \(recipe!.ingredients)"
         instructionsTextView.text = recipe!.instructions
 
+        recipeName.layer.shadowOpacity = 0.5
+        recipeName.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        recipeName.layer.shadowRadius = 6
     }
     
     

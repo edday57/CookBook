@@ -468,7 +468,7 @@
         <!--CookBook-->
         <scene sceneID="J1t-hl-Iie">
             <objects>
-                <viewController id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feedVC" id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fE2-YU-6mL"/>
                         <viewControllerLayoutGuide type="bottom" id="l6G-jJ-T80"/>
@@ -1388,6 +1388,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="k65-br-0ee" kind="relationship" relationship="viewControllers" id="P5d-Ei-RKX"/>
+                        <segue destination="9vA-YT-9GD" kind="relationship" relationship="viewControllers" id="gVh-7u-ekl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkh-Bz-aoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1397,8 +1398,8 @@
         <!--ProfileVC-->
         <scene sceneID="Zzs-Kd-HzX">
             <objects>
-                <collectionViewController id="9vA-YT-9GD" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jPz-Rs-lm9">
+                <collectionViewController storyboardIdentifier="profileVC" id="9vA-YT-9GD" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jPz-Rs-lm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1409,16 +1410,25 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I0j-g4-LJC">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="I0j-g4-LJC" customClass="pictureCell" customModule="CookBook" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="274" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="er5-Kg-yEK">
+                                            <frame key="frameInset" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <connections>
+                                    <outlet property="picImg" destination="er5-Kg-yEK" id="lvI-rA-OB2"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c9h-25-FlV" customClass="ProfileHeaderView" customModule="CookBook" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="c9h-25-FlV" customClass="ProfileHeaderView" customModule="CookBook" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -1431,7 +1441,7 @@
                                         <navigationItem title="Username" id="xYl-wq-aUu"/>
                                     </items>
                                 </navigationBar>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="79D-KH-eQ6">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="79D-KH-eQ6">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="112" id="Av0-du-S31"/>
                                         <constraint firstAttribute="width" constant="112" id="WCy-0S-5Z1"/>
@@ -1451,7 +1461,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founder of CookBook App!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-0g-smu">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founder of CookBook App!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-0g-smu">
                                     <frame key="frameInset" minX="133" minY="136" width="220" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
@@ -1532,6 +1542,7 @@
                                 <outlet property="followingTitle" destination="cqQ-Ts-Gkm" id="ae6-Ie-NWd"/>
                                 <outlet property="fullnameLbl" destination="RkS-1J-YY5" id="DLO-aT-sRn"/>
                                 <outlet property="navBar" destination="J66-rM-8o9" id="AuX-F9-vJO"/>
+                                <outlet property="navTitle" destination="xYl-wq-aUu" id="aef-IU-zXt"/>
                                 <outlet property="postTitle" destination="Beg-Us-yAC" id="3nH-9q-nXh"/>
                                 <outlet property="posts" destination="cmc-IA-iL3" id="l2p-Wx-WLX"/>
                                 <outlet property="usernameLbl" destination="Bjg-ek-6ps" id="Vd6-xO-ek8"/>
@@ -1542,6 +1553,7 @@
                             <outlet property="delegate" destination="9vA-YT-9GD" id="hbR-h1-KZy"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="8cd-Et-2Yn"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okY-dJ-zfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,5 +26,6 @@ class ProfileHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var button: UIButton!
     
+    @IBOutlet weak var navTitle: UINavigationItem!
     
 }

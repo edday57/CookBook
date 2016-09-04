@@ -105,7 +105,7 @@
                                     <color key="titleColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qyE-fH-jRH" kind="show" id="xsx-Jl-VLr"/>
+                                    <segue destination="k65-br-0ee" kind="presentation" id="uG9-2N-fje"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIk-S3-4bJ">
@@ -376,10 +376,46 @@
             </objects>
             <point key="canvasLocation" x="734" y="985"/>
         </scene>
+        <!--Item 1-->
+        <scene sceneID="G3a-YF-GSI">
+            <objects>
+                <viewController id="bGv-Mw-Cvb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wh2-eO-5oe"/>
+                        <viewControllerLayoutGuide type="bottom" id="bK2-WO-bLu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W4Z-7J-SqX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="42L-CP-VlX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-oz-9Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="-548"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="EcR-hg-ySu">
+            <objects>
+                <tabBarController id="39X-ZR-Pgp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="C9U-Ob-Oae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bGv-Mw-Cvb" kind="relationship" relationship="viewControllers" id="If2-ei-Qb3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbf-Bd-O5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505" y="-548"/>
+        </scene>
         <!--CookBook-->
         <scene sceneID="J1t-hl-Iie">
             <objects>
-                <viewController id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fE2-YU-6mL"/>
                         <viewControllerLayoutGuide type="bottom" id="l6G-jJ-T80"/>
@@ -508,6 +544,33 @@
                                     <constraint firstAttribute="height" constant="1" id="KLn-dk-5Pf"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a recipe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-CA-v5A">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="7lS-Xh-s82"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zx-Hf-nt3">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JO4-E0-nJW"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="CookBook" id="dfr-QQ-clE">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsp-yd-nOz">
+                                            <connections>
+                                                <segue destination="VJO-Pc-2iE" kind="presentation" id="WOA-aI-0Mi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <searchBar alpha="0.29999999999999999" contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Ysg-bJ-QnO">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="LiL-2e-yCG"/>
@@ -519,44 +582,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a recipe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-CA-v5A">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="7lS-Xh-s82"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K1i-w4-ebL" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="0am-K4-sF9"/>
                             <constraint firstItem="Kfs-7s-6k4" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="7KE-lX-dMD"/>
                             <constraint firstAttribute="trailing" secondItem="Kfs-7s-6k4" secondAttribute="trailing" id="94F-OH-TCc"/>
+                            <constraint firstItem="5Zx-Hf-nt3" firstAttribute="top" secondItem="fE2-YU-6mL" secondAttribute="bottom" id="9P6-nx-ryi"/>
                             <constraint firstAttribute="trailing" secondItem="Ysg-bJ-QnO" secondAttribute="trailing" id="9VZ-vM-O7T"/>
                             <constraint firstItem="OEW-aR-8Jo" firstAttribute="top" secondItem="qoV-bE-DIV" secondAttribute="top" id="DuS-za-POd"/>
-                            <constraint firstItem="Kfs-7s-6k4" firstAttribute="top" secondItem="fE2-YU-6mL" secondAttribute="bottom" id="H02-ai-LUY"/>
+                            <constraint firstItem="5Zx-Hf-nt3" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="IO4-k2-WxQ"/>
                             <constraint firstAttribute="trailing" secondItem="ysf-CA-v5A" secondAttribute="trailing" id="Ksu-CR-QGd"/>
                             <constraint firstItem="Ysg-bJ-QnO" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="LHS-3v-PO3"/>
                             <constraint firstAttribute="trailing" secondItem="K1i-w4-ebL" secondAttribute="trailing" id="MCe-P3-BAT"/>
                             <constraint firstItem="l6G-jJ-T80" firstAttribute="top" secondItem="K1i-w4-ebL" secondAttribute="bottom" id="MZT-Vu-fS8"/>
                             <constraint firstItem="ysf-CA-v5A" firstAttribute="top" secondItem="OEW-aR-8Jo" secondAttribute="bottom" constant="30" id="RRw-yP-XEf"/>
+                            <constraint firstItem="Ysg-bJ-QnO" firstAttribute="top" secondItem="Kfs-7s-6k4" secondAttribute="bottom" id="Ylc-X0-arJ"/>
                             <constraint firstItem="ysf-CA-v5A" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="adf-aS-Zr0"/>
-                            <constraint firstItem="Ysg-bJ-QnO" firstAttribute="top" secondItem="Kfs-7s-6k4" secondAttribute="bottom" id="eOk-8l-OkO"/>
                             <constraint firstAttribute="trailing" secondItem="OEW-aR-8Jo" secondAttribute="trailing" id="ge2-bl-Xa2"/>
                             <constraint firstItem="K1i-w4-ebL" firstAttribute="top" secondItem="OEW-aR-8Jo" secondAttribute="bottom" constant="1" id="k53-ah-Lwj"/>
                             <constraint firstItem="OEW-aR-8Jo" firstAttribute="leading" secondItem="qoV-bE-DIV" secondAttribute="leading" id="uso-DM-9lM"/>
+                            <constraint firstItem="Kfs-7s-6k4" firstAttribute="top" secondItem="5Zx-Hf-nt3" secondAttribute="bottom" id="vBa-7f-7fu"/>
+                            <constraint firstAttribute="trailing" secondItem="5Zx-Hf-nt3" secondAttribute="trailing" id="xnq-4R-VE5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CookBook" id="bIc-va-9PZ">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="YZW-kJ-Vwa"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="C6m-pR-uc0">
-                            <connections>
-                                <segue destination="VJO-Pc-2iE" kind="presentation" identifier="AddNewRecipe" id="IEr-yb-NGS"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="C6m-pR-uc0"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="navigationBar" destination="5Zx-Hf-nt3" id="wk3-EY-6UL"/>
                         <outlet property="noRecipes" destination="ysf-CA-v5A" id="gLk-J9-3HM"/>
                         <outlet property="recipeTableView" destination="K1i-w4-ebL" id="hOv-9k-PUA"/>
                         <outlet property="searchBar" destination="Ysg-bJ-QnO" id="w8U-Bu-jac"/>
@@ -983,25 +1038,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3959.1999999999998" y="119.1904047976012"/>
-        </scene>
-        <!--Nav BarVC-->
-        <scene sceneID="Cnd-iA-E5R">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qyE-fH-jRH" customClass="NavBarVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y4W-CU-yaI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="k65-br-0ee" kind="relationship" relationship="rootViewController" id="ngV-Ch-Ygh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zxp-cP-dP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1506" y="121"/>
         </scene>
         <!--New Recipe Nav BarVC-->
         <scene sceneID="mLg-9q-BT1">

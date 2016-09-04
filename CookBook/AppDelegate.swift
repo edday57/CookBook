@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,6 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func login() {
+        
+        //recall users login
+        let username: String? = UserDefaults.standard.string(forKey: "username")
+        
+        //if logged in
+        if username != nil {
+            let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeView = storyboard.instantiateViewController(withIdentifier: "homeView")
+            window?.rootViewController = homeView
+        }
+    }
 
 
 }

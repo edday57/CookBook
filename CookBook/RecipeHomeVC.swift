@@ -64,6 +64,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     //OUTLETS
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var navigationBar: UINavigationBar!
 
     //VARIABLES
     var recipes = [Recipe]()
@@ -87,7 +88,15 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             noRecipes.isHidden = false
         }
         
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.isTranslucent = true
+        let attrs = [
+            NSForegroundColorAttributeName : UIColor.white,
+            //   NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 24)!
+        ]
         
+        UINavigationBar.appearance().titleTextAttributes = attrs
 
     }
 
@@ -121,7 +130,9 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         if editingStyle == UITableViewCellEditingStyle.delete {
             recipes.remove(at: indexPath.row)
             recipeTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            if recipes.count == 0 {
             noRecipes.isHidden = false
+            }
         }
     }
     

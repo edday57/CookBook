@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
              // Override point for customization after application launch.
         
+        Parse.enableLocalDatastore()
+        
         //Parse configuration
         let configuration = ParseClientConfiguration {
             $0.applicationId = "oi98OHS4K8S0qq0mFrabNv7f7VVnQnxWdiWdS6Sa"
@@ -26,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
+        
+        PFAnalytics.trackAppOpened(launchOptions: launchOptions)
+        
+        login()
         
         UIApplication.shared.statusBarStyle = .lightContent
 

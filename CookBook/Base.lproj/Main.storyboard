@@ -73,17 +73,17 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-ZE-Gv4">
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKl-WH-Ijp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yKl-WH-Ijp">
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,7 +105,7 @@
                                     <color key="titleColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="k65-br-0ee" kind="presentation" id="uG9-2N-fje"/>
+                                    <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qT8-k2-m2Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIk-S3-4bJ">
@@ -126,6 +126,7 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fap-49-3lm" secondAttribute="bottom" id="19i-tw-TXg"/>
                             <constraint firstItem="Uph-g3-KAF" firstAttribute="centerX" secondItem="ba9-iK-0LM" secondAttribute="centerX" id="7se-75-1hB"/>
+                            <constraint firstItem="yKl-WH-Ijp" firstAttribute="leading" secondItem="hvM-iq-ot8" secondAttribute="leading" constant="20" id="8Lr-8f-NU9"/>
                             <constraint firstItem="1zG-zo-llv" firstAttribute="top" secondItem="ba9-iK-0LM" secondAttribute="bottom" constant="27" id="8Wb-fa-pB5"/>
                             <constraint firstItem="OC3-PA-ym1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8mj-z4-0eP"/>
                             <constraint firstItem="1zG-zo-llv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8qt-XT-Hng"/>
@@ -134,6 +135,7 @@
                             <constraint firstItem="1zG-zo-llv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AT2-2j-Icr"/>
                             <constraint firstItem="ba9-iK-0LM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="CJm-By-3J2"/>
                             <constraint firstItem="ZIk-S3-4bJ" firstAttribute="top" secondItem="1zG-zo-llv" secondAttribute="bottom" constant="1" id="D1T-PV-8Sv"/>
+                            <constraint firstItem="Q63-ZE-Gv4" firstAttribute="leading" secondItem="aep-nO-QUo" secondAttribute="leading" constant="20" id="DoC-sJ-l8B"/>
                             <constraint firstItem="fap-49-3lm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DoI-Fx-jKa"/>
                             <constraint firstItem="hvM-iq-ot8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="HQB-tz-UfH"/>
                             <constraint firstItem="Uph-g3-KAF" firstAttribute="centerY" secondItem="ba9-iK-0LM" secondAttribute="centerY" id="JP4-oT-7Z0"/>
@@ -156,12 +158,12 @@
                             <constraint firstItem="ba9-iK-0LM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z2E-59-zwP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OC3-PA-ym1" secondAttribute="trailing" constant="37" id="b2j-3O-OSe"/>
                             <constraint firstItem="aep-nO-QUo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bZL-gR-IVS"/>
+                            <constraint firstItem="Q63-ZE-Gv4" firstAttribute="trailing" secondItem="aep-nO-QUo" secondAttribute="trailing" constant="-20" id="dOy-HJ-bd1"/>
                             <constraint firstItem="hvM-iq-ot8" firstAttribute="top" secondItem="aep-nO-QUo" secondAttribute="bottom" constant="21" id="ezM-HZ-3Vm"/>
-                            <constraint firstItem="yKl-WH-Ijp" firstAttribute="centerX" secondItem="hvM-iq-ot8" secondAttribute="centerX" id="s1C-CZ-dfC"/>
+                            <constraint firstItem="yKl-WH-Ijp" firstAttribute="trailing" secondItem="hvM-iq-ot8" secondAttribute="trailing" constant="-20" id="pNe-JK-jT6"/>
                             <constraint firstItem="hvM-iq-ot8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t05-Z4-eeR"/>
                             <constraint firstItem="aep-nO-QUo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="vcq-gj-Cky"/>
                             <constraint firstAttribute="trailing" secondItem="fap-49-3lm" secondAttribute="trailing" id="wlm-H7-3UP"/>
-                            <constraint firstItem="Q63-ZE-Gv4" firstAttribute="centerX" secondItem="aep-nO-QUo" secondAttribute="centerX" id="yj3-X8-BSo"/>
                             <constraint firstItem="UBW-8Q-nKy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zPe-Va-eUc"/>
                         </constraints>
                     </view>
@@ -177,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734" y="121"/>
+            <point key="canvasLocation" x="733.60000000000002" y="120.98950524737631"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="NZ6-6Z-GNE">
@@ -420,7 +422,7 @@
         <!--CookBook-->
         <scene sceneID="J1t-hl-Iie">
             <objects>
-                <viewController storyboardIdentifier="homeView" id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k65-br-0ee" customClass="RecipeHomeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fE2-YU-6mL"/>
                         <viewControllerLayoutGuide type="bottom" id="l6G-jJ-T80"/>
@@ -611,6 +613,7 @@
                             <constraint firstAttribute="trailing" secondItem="5Zx-Hf-nt3" secondAttribute="trailing" id="xnq-4R-VE5"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="LS1-ag-KyQ"/>
                     <navigationItem key="navigationItem" title="CookBook" id="bIc-va-9PZ">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="YZW-kJ-Vwa"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C6m-pR-uc0"/>
@@ -625,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbE-rX-SAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280.8000000000002" y="120.98950524737631"/>
+            <point key="canvasLocation" x="2895" y="126"/>
         </scene>
         <!--New Recipe-->
         <scene sceneID="bgb-cL-UZJ">
@@ -1042,7 +1045,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3959.1999999999998" y="119.1904047976012"/>
+            <point key="canvasLocation" x="4898.3999999999996" y="119.1904047976012"/>
         </scene>
         <!--New Recipe Nav BarVC-->
         <scene sceneID="mLg-9q-BT1">
@@ -1061,7 +1064,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ReQ-27-ccH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3084" y="126.38680659670166"/>
+            <point key="canvasLocation" x="4023.1999999999998" y="126.38680659670166"/>
         </scene>
         <!--View Recipe-->
         <scene sceneID="0aS-VD-9zW">
@@ -1325,6 +1328,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cK-D2-hJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2281" y="985"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="i4H-N0-Wsw">
+            <objects>
+                <tabBarController storyboardIdentifier="homeView" automaticallyAdjustsScrollViewInsets="NO" id="3Rl-Uc-AW6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="zJ2-h1-AR9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.84705882352941175" green="0.5490196078431373" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="k65-br-0ee" kind="relationship" relationship="viewControllers" id="P5d-Ei-RKX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bkh-Bz-aoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="119"/>
         </scene>
     </scenes>
     <resources>

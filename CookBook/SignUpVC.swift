@@ -7,20 +7,51 @@
 //
 
 import UIKit
+import Parse
 
-class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
-    @IBOutlet weak var userImg: UIImageView!
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var BottomView: UIView!
     
+   ////////////////////////////////////////
+    //Outlets
+    
+    //user img
+    @IBOutlet weak var userImg: UIImageView!
+    
+    //text fields
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var repeatPasswordTxt: UITextField!
+    @IBOutlet weak var fullnameTxt: UITextField!
+    @IBOutlet weak var aboutTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
+    
+    //buttons
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    //other outlets
+    @IBOutlet weak var BottomView: UIView!
+    @IBOutlet weak var alertTxt: UILabel!
+    //////////////////////////////////////
+    
+    
+    
+    
+    
+    ///////////////////////////////////////
+    //ViewDidLoad - Initial Configuration
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Configure user image
         userImg.layer.cornerRadius = 54
         userImg.layer.masksToBounds = true
+        userImg.layer.borderWidth = 3
+        userImg.layer.borderColor = UIColor.white.cgColor
         
+        //Configure sign up button
         let buttonOrange = signUpButton.currentTitleColor
         signUpButton.layer.cornerRadius = 5
         signUpButton.layer.borderWidth = 1
@@ -28,24 +59,87 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         signUpButton.layer.shadowOpacity = 0.3
         signUpButton.layer.shadowOffset = CGSize(width: 1, height: 4)
         signUpButton.layer.shadowRadius = 4
+        
+        //Add an upwards shadow from the bottom view
         BottomView.layer.shadowOpacity = 0.3
         BottomView.layer.shadowRadius = 7
         BottomView.layer.shadowOffset = CGSize(width: 0, height: -3)
-        userImg.layer.borderWidth = 3
-        userImg.layer.borderColor = UIColor.white.cgColor
+        
+        //Configure text field delegates
+        self.usernameTxt.delegate = self
+        self.passwordTxt.delegate = self
+        self.repeatPasswordTxt.delegate = self
+        self.emailTxt.delegate = self
+        self.aboutTxt.delegate = self
+        self.fullnameTxt.delegate = self
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    ///////////////////////////////////////
+    
+    @IBAction func signUpBtnTapped(_ sender: AnyObject) {
+        
+        //dismiss keyboard
+        self.view.endEditing(true)
+        
+        //if a field is empty then alert the user
+        if (usernameTxt.text!.isEmpty ||  passwordTxt.text!.isEmpty || repeatPasswordTxt.text!.isEmpty || emailTxt.text!.isEmpty || fullnameTxt.text!.isEmpty || aboutTxt.text!.isEmpty) {
+            
+            alertTxt.text = "Please fill all fields."
+            
+        }
+        
+        //if passwords dont match then alert the user
+        else if passwordTxt.text != repeatPasswordTxt.text {
+            
+            alertTxt.text = "Passwords do not match!"
+        }
+        
+        let user = PFUser()
+        user.username = usernameTxt.text?.lowercased()
+        user.email = emailTxt.text?.lowercased()
+        user.password = passwordTxt.text
+        user["fullname"] = fullnameTxt.text?.lowercased()
+        user["about"] = aboutTxt.text
+        
+        //Will be avaliable in edit profile
+        user["phone"] = ""
+        user["gender"] = ""
+        
+        //convert image for sending to server
+        let avaData = UIImageJPEGRepresentation(userImg.image!, 0.5)
+        let avaFile = PFFile(name: "ava.jpg", data: avaData!)
+        user["ava"] = avaFile
+        
+        user.signUpInBackground { (success:Bool, error:Error?) in
+            if success {
+                print("registered")
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+        
+    }
+
+    
+    
+    
+    //Hide keyboard when user presses done key
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //Hide all keyboards
+        self.view.endEditing(true)
+        return true
     }
     
-    @IBAction func cancelBtnTapped(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
+    
+
+    //////////////////////////////////////////////////////////////////////////////
+    //Allows user to pick a profile photo, set it as the current image, and allows it to be editted.
     
     let picker = UIImagePickerController()
-    
+
     @IBAction func addImageTapped(_ sender: UITapGestureRecognizer) {
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         alert.view.tintColor = UIColor.orange
@@ -77,11 +171,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             picker.sourceType = UIImagePickerControllerSourceType.camera
             self.present(picker, animated: true, completion: nil)
         }else{
-            let alert = UIAlertView()
-            alert.title = "Warning"
-            alert.message = "You don't have camera"
-            alert.addButton(withTitle: "OK")
-            alert.show()
+            let alert = UIAlertController(title: "Warning", message: "You don't have a camera", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     func openGallery(){
@@ -103,36 +196,15 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
 
     }
+    //////////////////////////////////////////////////////////////////////////////
     
     
     
     
-    
-    
-    //User cancels creating a new recipe
-    @IBAction func cancelButtonClicked(_ sender: AnyObject) {
-        let alert:UIAlertController=UIAlertController(title: "Are you sure you want to discard changes?", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        alert.view.tintColor = UIColor.orange
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default)
-        {
-            UIAlertAction in
-        }
-        let discardAction = UIAlertAction(title: "Discard Changes", style: UIAlertActionStyle.default)
-        {
-            UIAlertAction in
-            self.discardChanges()
-            print("Discarded")
-        }
-        
-        alert.addAction(cancelAction)
-        alert.addAction(discardAction)
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    func discardChanges() {
+    //Dismiss the view when user presses the cancel button
+     @IBAction func cancelBtnTapped(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
-
 
     /*
     // MARK: - Navigation

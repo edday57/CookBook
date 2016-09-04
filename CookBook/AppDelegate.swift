@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+             // Override point for customization after application launch.
+        
+        //Parse configuration
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "oi98OHS4K8S0qq0mFrabNv7f7VVnQnxWdiWdS6Sa"
+            $0.clientKey = "UZDXgrsgfZ3fiSI8rkbhrN2QX7Ajh8loyhqJyWPe"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: configuration)
+        
         UIApplication.shared.statusBarStyle = .lightContent
-        // Override point for customization after application launch.
+
         return true
     }
 

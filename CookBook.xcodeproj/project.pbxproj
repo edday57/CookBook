@@ -14,9 +14,20 @@
 		2BD609B31D798C1700EEA826 /* ViewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */; };
 		2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */; };
 		2BD609D71D7B026C00EEA826 /* LucidaGrande.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */; };
-		2BD609D91D7B053600EEA826 /* SignUp2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609D81D7B053600EEA826 /* SignUp2VC.swift */; };
 		2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */; };
+		6437C1081D7C4C0A002D01F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C0FE1D7C4C0A002D01F4 /* AudioToolbox.framework */; };
+		6437C1091D7C4C0A002D01F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C0FF1D7C4C0A002D01F4 /* CFNetwork.framework */; };
+		6437C10A1D7C4C0A002D01F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1001D7C4C0A002D01F4 /* CoreGraphics.framework */; };
+		6437C10B1D7C4C0A002D01F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1011D7C4C0A002D01F4 /* CoreLocation.framework */; };
+		6437C10C1D7C4C0A002D01F4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1021D7C4C0A002D01F4 /* libsqlite3.tbd */; };
+		6437C10D1D7C4C0A002D01F4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1031D7C4C0A002D01F4 /* libz.tbd */; };
+		6437C10E1D7C4C0A002D01F4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1041D7C4C0A002D01F4 /* QuartzCore.framework */; };
+		6437C10F1D7C4C0A002D01F4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1051D7C4C0A002D01F4 /* Security.framework */; };
+		6437C1101D7C4C0A002D01F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1061D7C4C0A002D01F4 /* StoreKit.framework */; };
+		6437C1111D7C4C0A002D01F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1071D7C4C0A002D01F4 /* SystemConfiguration.framework */; };
 		64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64672EEC1D7B829F000D0762 /* SignUpVC.swift */; };
+		64AF2C2E1D7C4DBF00199810 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2D1D7C4DBF00199810 /* Bolts.framework */; };
+		64AF2C301D7C4DC600199810 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2F1D7C4DC600199810 /* Parse.framework */; };
 		64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A61D6F00590061D601 /* AppDelegate.swift */; };
 		64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A81D6F00590061D601 /* ViewController.swift */; };
 		64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AA1D6F00590061D601 /* Main.storyboard */; };
@@ -37,9 +48,20 @@
 		2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecipeVC.swift; sourceTree = "<group>"; };
 		2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecipeNavBarVC.swift; sourceTree = "<group>"; };
 		2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = LucidaGrande.ttc; sourceTree = "<group>"; };
-		2BD609D81D7B053600EEA826 /* SignUp2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2VC.swift; sourceTree = "<group>"; };
 		2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassVC.swift; sourceTree = "<group>"; };
+		6437C0FE1D7C4C0A002D01F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6437C0FF1D7C4C0A002D01F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6437C1001D7C4C0A002D01F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6437C1011D7C4C0A002D01F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6437C1021D7C4C0A002D01F4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6437C1031D7C4C0A002D01F4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6437C1041D7C4C0A002D01F4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6437C1051D7C4C0A002D01F4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6437C1061D7C4C0A002D01F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6437C1071D7C4C0A002D01F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		64672EEC1D7B829F000D0762 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		64AF2C2D1D7C4DBF00199810 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		64AF2C2F1D7C4DC600199810 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		64B9C8A31D6F00590061D601 /* CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B9C8A61D6F00590061D601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64B9C8A81D6F00590061D601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +81,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6437C1081D7C4C0A002D01F4 /* AudioToolbox.framework in Frameworks */,
+				6437C1091D7C4C0A002D01F4 /* CFNetwork.framework in Frameworks */,
+				6437C10A1D7C4C0A002D01F4 /* CoreGraphics.framework in Frameworks */,
+				6437C10B1D7C4C0A002D01F4 /* CoreLocation.framework in Frameworks */,
+				6437C10C1D7C4C0A002D01F4 /* libsqlite3.tbd in Frameworks */,
+				6437C10D1D7C4C0A002D01F4 /* libz.tbd in Frameworks */,
+				6437C10E1D7C4C0A002D01F4 /* QuartzCore.framework in Frameworks */,
+				6437C10F1D7C4C0A002D01F4 /* Security.framework in Frameworks */,
+				64AF2C2E1D7C4DBF00199810 /* Bolts.framework in Frameworks */,
+				6437C1101D7C4C0A002D01F4 /* StoreKit.framework in Frameworks */,
+				64AF2C301D7C4DC600199810 /* Parse.framework in Frameworks */,
+				6437C1111D7C4C0A002D01F4 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +106,6 @@
 				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */,
-				2BD609D81D7B053600EEA826 /* SignUp2VC.swift */,
 				64672EEC1D7B829F000D0762 /* SignUpVC.swift */,
 				2BD609DA1D7B055C00EEA826 /* ResetPassVC.swift */,
 			);
@@ -112,12 +145,32 @@
 			name = "Custom Files";
 			sourceTree = "<group>";
 		};
+		6437C0FD1D7C4C0A002D01F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64AF2C2F1D7C4DC600199810 /* Parse.framework */,
+				64AF2C2D1D7C4DBF00199810 /* Bolts.framework */,
+				6437C0FE1D7C4C0A002D01F4 /* AudioToolbox.framework */,
+				6437C0FF1D7C4C0A002D01F4 /* CFNetwork.framework */,
+				6437C1001D7C4C0A002D01F4 /* CoreGraphics.framework */,
+				6437C1011D7C4C0A002D01F4 /* CoreLocation.framework */,
+				6437C1021D7C4C0A002D01F4 /* libsqlite3.tbd */,
+				6437C1031D7C4C0A002D01F4 /* libz.tbd */,
+				6437C1041D7C4C0A002D01F4 /* QuartzCore.framework */,
+				6437C1051D7C4C0A002D01F4 /* Security.framework */,
+				6437C1061D7C4C0A002D01F4 /* StoreKit.framework */,
+				6437C1071D7C4C0A002D01F4 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64B9C89A1D6F00590061D601 = {
 			isa = PBXGroup;
 			children = (
 				64B9C8A51D6F00590061D601 /* CookBook */,
 				64B9C8AD1D6F00590061D601 /* Assets.xcassets */,
 				64B9C8A41D6F00590061D601 /* Products */,
+				6437C0FD1D7C4C0A002D01F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,7 +277,6 @@
 				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,
 				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
-				2BD609D91D7B053600EEA826 /* SignUp2VC.swift in Sources */,
 				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
 				64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */,
 				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
@@ -359,6 +411,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ELD85TA58A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CookBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edwardday.CookBook;
@@ -375,6 +431,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ELD85TA58A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CookBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edwardday.CookBook;

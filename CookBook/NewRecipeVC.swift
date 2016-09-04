@@ -173,11 +173,10 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             picker.sourceType = UIImagePickerControllerSourceType.camera
             self.present(picker, animated: true, completion: nil)
         }else{
-            let alert = UIAlertView()
-            alert.title = "Warning"
-            alert.message = "You don't have camera"
-            alert.addButton(withTitle: "OK")
-            alert.show()
+            let alert = UIAlertController(title: "Warning", message: "You don't have a camera", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     func openGallery(){

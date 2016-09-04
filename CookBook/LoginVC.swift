@@ -122,6 +122,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.login()
                 
+            } else {
+                
+                //SHOW alert message
+                    let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                
+
             }
         })
         }

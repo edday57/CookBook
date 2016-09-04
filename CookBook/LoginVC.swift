@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Parse
+
+////////////////////////////////////////////////////////////////////////
 
 extension UIDevice {
     var iPhone: Bool {
@@ -51,11 +54,27 @@ extension UIDevice {
     static func isScreen55inch() -> Bool {
         return UIDevice().screenType == .iPhone6Plus
     }}
+////////////////////////////////////////////////////////////////////////
 
 
-class ViewController: UIViewController, UITextFieldDelegate {
+
+
+
+
+class LoginViewController: UIViewController, UITextFieldDelegate {
    
-
+    //OUTLETS
+    
+    //text fields
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
+    //buttons
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    //other
     @IBOutlet weak var usernameImage: UIImageView!
     @IBOutlet weak var loginTopSpacing: NSLayoutConstraint!
 

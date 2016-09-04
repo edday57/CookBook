@@ -32,12 +32,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAO-PW-vCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="126"/>
+            <point key="canvasLocation" x="-278" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -166,8 +166,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="1zG-zo-llv" id="lYj-ae-Xo7"/>
+                        <outlet property="loginButton" destination="Uph-g3-KAF" id="4Pj-HY-FVl"/>
                         <outlet property="loginTopSpacing" destination="OHs-l5-tqO" id="fEH-HQ-Upb"/>
+                        <outlet property="passwordTxt" destination="yKl-WH-Ijp" id="Bkj-dI-VKU"/>
+                        <outlet property="signUpButton" destination="ZIk-S3-4bJ" id="Uqs-2d-fRh"/>
                         <outlet property="usernameImage" destination="aep-nO-QUo" id="NYi-0O-gGf"/>
+                        <outlet property="usernameTxt" destination="Q63-ZE-Gv4" id="6rW-W9-GqI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -374,7 +379,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="734" y="985"/>
+            <point key="canvasLocation" x="775" y="1002"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="G3a-YF-GSI">

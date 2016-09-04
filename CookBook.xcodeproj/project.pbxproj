@@ -29,7 +29,7 @@
 		64AF2C2E1D7C4DBF00199810 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2D1D7C4DBF00199810 /* Bolts.framework */; };
 		64AF2C301D7C4DC600199810 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2F1D7C4DC600199810 /* Parse.framework */; };
 		64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A61D6F00590061D601 /* AppDelegate.swift */; };
-		64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A81D6F00590061D601 /* ViewController.swift */; };
+		64B9C8A91D6F00590061D601 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A81D6F00590061D601 /* LoginVC.swift */; };
 		64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AA1D6F00590061D601 /* Main.storyboard */; };
 		64B9C8AE1D6F00590061D601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AD1D6F00590061D601 /* Assets.xcassets */; };
 		64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8AF1D6F00590061D601 /* LaunchScreen.storyboard */; };
@@ -64,7 +64,7 @@
 		64AF2C2F1D7C4DC600199810 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		64B9C8A31D6F00590061D601 /* CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B9C8A61D6F00590061D601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64B9C8A81D6F00590061D601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64B9C8A81D6F00590061D601 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		64B9C8AB1D6F00590061D601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64B9C8AD1D6F00590061D601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CookBook/Assets.xcassets; sourceTree = "<group>"; };
 		64B9C8B01D6F00590061D601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		2BD609AA1D783ED500EEA826 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				64B9C8A81D6F00590061D601 /* ViewController.swift */,
+				64B9C8A81D6F00590061D601 /* LoginVC.swift */,
 				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */,
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */,
-				64B9C8A91D6F00590061D601 /* ViewController.swift in Sources */,
+				64B9C8A91D6F00590061D601 /* LoginVC.swift in Sources */,
 				64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */,
 				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,

@@ -9,7 +9,6 @@
 import UIKit
 
 class ProfileHeaderView: UICollectionReusableView {
-    @IBOutlet weak var navBar: UINavigationBar!
         
     @IBOutlet weak var avaImg: UIImageView!
     @IBOutlet weak var fullnameLbl: UILabel!
@@ -26,6 +25,5 @@ class ProfileHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var navTitle: UINavigationItem!
     
 }

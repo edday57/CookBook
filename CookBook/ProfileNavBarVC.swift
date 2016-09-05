@@ -1,29 +1,27 @@
 //
-//  NewRecipeNavBarVC.swift
+//  ProfileNavBarVC.swift
 //  CookBook
 //
-//  Created by Edward Day on 28/08/2016.
+//  Created by Edward Day on 05/09/2016.
 //  Copyright © 2016 Edward Day. All rights reserved.
 //
 
 import UIKit
 
-class NewRecipeNavBarVC: UINavigationController {
+class ProfileNavBarVC: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let navBarbackground = UIImage(named: "NavBarLarge")
-       self.navigationBar.setBackgroundImage(navBarbackground, for: UIBarMetrics.default)
+        self.navigationBar.setBackgroundImage(navBarbackground, for: UIBarMetrics.default)
         
         self.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.navigationBar.layer.shadowRadius = 4
         self.navigationBar.layer.shadowOpacity = 0.5
-        
-        
         //self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        //self.navigationBar.shadowImage = UIImage()
+        // self.navigationBar.shadowImage = UIImage()
         self.navigationBar.isTranslucent = true
         let attrs = [
             NSForegroundColorAttributeName : UIColor.white,
@@ -31,7 +29,8 @@ class NewRecipeNavBarVC: UINavigationController {
         ]
         
         UINavigationBar.appearance().titleTextAttributes = attrs
-        
+
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,8 +38,6 @@ class NewRecipeNavBarVC: UINavigationController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
 
     /*

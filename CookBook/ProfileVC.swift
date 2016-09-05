@@ -12,33 +12,93 @@ import Parse
 
 
 class ProfileVC: UICollectionViewController {
+    
+    var refresher: UIRefreshControl!
+    //size of page
+    var page: Int = 10
+    
+    var uuidArray = [String]()
+    
+    var picArray = [PFFile]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(ProfileVC.refresh), for: UIControlEvents.valueChanged)
+        collectionView?.addSubview(refresher)
+        
+        //load posts
+        loadPosts()
+        
     }
 
-
+    //refresh function
+    func refresh() {
+        collectionView?.reloadData()
+        refresher.endRefreshing()
+    }
+    
+    //load posts function
+    func loadPosts() {
+        
+        let query = PFQuery(className: "posts")
+        query.whereKey("username", equalTo: PFUser.current()!.username!)
+        query.limit = page
+        query.findObjectsInBackground (block: { (objects:[PFObject]?, error:Error?) in
+            if error == nil {
+                
+                //clean up
+                self.uuidArray.removeAll(keepingCapacity: false)
+                self.picArray.removeAll(keepingCapacity: false)
+                
+                //find related objects to request
+                for object in objects! {
+                    self.uuidArray.append(object.value(forKey: "uuid") as! String)
+                    self.picArray.append(object.value(forKey: "picture") as! PFFile)
+                }
+                self.collectionView?.reloadData()
+            } else {
+                print(error!.localizedDescription)
+            }
+        })
+        
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return picArray.count
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! pictureCell
+        
+        //get picture from pic array
+        picArray[indexPath.row].getDataInBackground { (data:Data?, error:Error?) in
+            if error == nil {
+                cell.picImg.image = UIImage(data: data!)
+            }
+        }
+        return cell
+    }
+    
+    
+    /////////////////////////
+    
+    //Header config
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! ProfileHeaderView
         
+        
+        header.posts.text = nil
+        header.following.text = nil
+        header.followers.text = nil
+        
+        
         //Configure the nav bar
-        header.navBar.setBackgroundImage(UIImage(), for: .default)
-        header.navBar.shadowImage = UIImage()
-        header.navBar.isTranslucent = true
-        let attrs = [
-            NSForegroundColorAttributeName : UIColor.white,
-            //   NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 24)!
-        ]
-        UINavigationBar.appearance().titleTextAttributes = attrs
-        header.navTitle.title = PFUser.current()!.username!.uppercased()
+        
+        self.navigationItem.title = PFUser.current()!.username!
+        
         
         
         //Get user data and set labels
@@ -52,9 +112,79 @@ class ProfileVC: UICollectionViewController {
             }
         }
         
+        //posts
+        let posts = PFQuery(className: "posts")
+        posts.whereKey("username", equalTo: PFUser.current()!.username!)
+        posts.countObjectsInBackground { (count:Int32, error:Error?) in
+            if error == nil {
+                header.posts.text = "\(count)"
+            }
+        }
+        
+        //followers
+        let followers = PFQuery(className: "follow")
+        followers.whereKey("following", equalTo: PFUser.current()!.username!)
+        followers.countObjectsInBackground { (count:Int32, error:Error?) in
+            if error == nil {
+                header.followers.text = "\(count)"
+            }
+        }
+        
+        //following
+        let following = PFQuery(className: "follow")
+        following.whereKey("follower", equalTo: PFUser.current()!.username!)
+        following.countObjectsInBackground { (count:Int32, error:Error?) in
+            if error == nil {
+                header.following.text = "\(count)"
+            }
+        }
+        
+        //Implement tap gestures
+        //tap posts
+        let postsTap = UITapGestureRecognizer(target: self, action: "postsTap")
+        postsTap.numberOfTapsRequired = 1
+        header.posts.isUserInteractionEnabled = true
+        header.posts.addGestureRecognizer(postsTap)
+        
+        let followingTap = UITapGestureRecognizer(target: self, action: "followingTap")
+        followingTap.numberOfTapsRequired = 1
+        header.following.isUserInteractionEnabled = true
+        header.following.addGestureRecognizer(followingTap)
+        
+        let followersTap = UITapGestureRecognizer(target: self, action: "followersTap")
+        followersTap.numberOfTapsRequired = 1
+        header.followers.isUserInteractionEnabled = true
+        header.followers.addGestureRecognizer(followersTap)
+        
         return header
     }
 
+    //tapped posts label
+    func postsTap() {
+        if !picArray.isEmpty {
+            let  index = NSIndexPath(item: 0, section: 0)
+            self.collectionView?.scrollToItem(at: index as IndexPath, at: UICollectionViewScrollPosition.top, animated: true)
+        }
+    }
+    
+    //tapped followers label
+    func followersTap() {
+        user = PFUser.current()!.username!
+        show_ = "Followers"
+        
+        let followers = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(followers, animated: true)
+    }
+    
+    func followingTap() {
+        user = PFUser.current()!.username!
+        show_ = "Following"
+        
+        let following = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(following, animated: true)
+    }
+    
+    ///////////////////////////////
     /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)

@@ -13,8 +13,16 @@ class ViewRecipeNavBarVC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
+        
+        let navBarbackground = UIImage(named: "NavBarLarge")
+        self.navigationBar.setBackgroundImage(navBarbackground, for: UIBarMetrics.default)
+        
+        self.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.navigationBar.layer.shadowRadius = 4
+        self.navigationBar.layer.shadowOpacity = 0.5
+        //self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+       // self.navigationBar.shadowImage = UIImage()
         self.navigationBar.isTranslucent = true
         let attrs = [
             NSForegroundColorAttributeName : UIColor.white,

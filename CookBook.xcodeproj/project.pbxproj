@@ -29,6 +29,7 @@
 		6437C1101D7C4C0A002D01F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1061D7C4C0A002D01F4 /* StoreKit.framework */; };
 		6437C1111D7C4C0A002D01F4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6437C1071D7C4C0A002D01F4 /* SystemConfiguration.framework */; };
 		64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64672EEC1D7B829F000D0762 /* SignUpVC.swift */; };
+		647A29461D7DB00100A49A6B /* GuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A29451D7DB00100A49A6B /* GuestVC.swift */; };
 		64AF2C2E1D7C4DBF00199810 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2D1D7C4DBF00199810 /* Bolts.framework */; };
 		64AF2C301D7C4DC600199810 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF2C2F1D7C4DC600199810 /* Parse.framework */; };
 		64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8A61D6F00590061D601 /* AppDelegate.swift */; };
@@ -40,6 +41,9 @@
 		64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */; };
 		64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */; };
 		64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */; };
+		64F9A0911D7D786E0097CF7F /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0901D7D786E0097CF7F /* FollowersVC.swift */; };
+		64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0921D7D78820097CF7F /* FollowersCell.swift */; };
+		64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */; };
 		64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +70,7 @@
 		6437C1061D7C4C0A002D01F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6437C1071D7C4C0A002D01F4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		64672EEC1D7B829F000D0762 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		647A29451D7DB00100A49A6B /* GuestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuestVC.swift; sourceTree = "<group>"; };
 		64AF2C2D1D7C4DBF00199810 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		64AF2C2F1D7C4DC600199810 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		64B9C8A31D6F00590061D601 /* CookBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +84,9 @@
 		64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleGothic.ttf; sourceTree = "<group>"; };
 		64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHomeVC.swift; sourceTree = "<group>"; };
 		64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarVC.swift; sourceTree = "<group>"; };
+		64F9A0901D7D786E0097CF7F /* FollowersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
+		64F9A0921D7D78820097CF7F /* FollowersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
+		64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavBarVC.swift; sourceTree = "<group>"; };
 		64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +121,8 @@
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */,
 				642F54D71D7CBD8A000ED2B4 /* ProfileVC.swift */,
+				647A29451D7DB00100A49A6B /* GuestVC.swift */,
+				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -123,6 +133,7 @@
 				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
 				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
 				2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */,
+				64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */,
 			);
 			name = "Navigation Bars";
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 		2BD609AF1D79757200EEA826 /* Custom Files */ = {
 			isa = PBXGroup;
 			children = (
+				64F9A0921D7D78820097CF7F /* FollowersCell.swift */,
 				642F54DC1D7CE225000ED2B4 /* pictureCell.swift */,
 				642F54DA1D7CBDCC000ED2B4 /* ProfileHeaderView.swift */,
 				2BD609A81D783EBC00EEA826 /* Recipe.swift */,
@@ -291,19 +303,23 @@
 				64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */,
 				64B9C8A91D6F00590061D601 /* LoginVC.swift in Sources */,
 				642F54D81D7CBD8A000ED2B4 /* ProfileVC.swift in Sources */,
+				64F9A0911D7D786E0097CF7F /* FollowersVC.swift in Sources */,
 				64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */,
 				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,
 				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
 				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
+				647A29461D7DB00100A49A6B /* GuestVC.swift in Sources */,
 				64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */,
 				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
 				642F54DD1D7CE225000ED2B4 /* pictureCell.swift in Sources */,
 				2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */,
 				2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */,
 				2BD609B31D798C1700EEA826 /* ViewRecipeVC.swift in Sources */,
+				64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */,
 				2BD609AE1D79743200EEA826 /* NoPasteTextField.swift in Sources */,
 				642F54DB1D7CBDCC000ED2B4 /* ProfileHeaderView.swift in Sources */,
+				64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

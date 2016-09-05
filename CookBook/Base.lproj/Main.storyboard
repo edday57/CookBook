@@ -429,42 +429,6 @@
             </objects>
             <point key="canvasLocation" x="775" y="1002"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="G3a-YF-GSI">
-            <objects>
-                <viewController id="bGv-Mw-Cvb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wh2-eO-5oe"/>
-                        <viewControllerLayoutGuide type="bottom" id="bK2-WO-bLu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="W4Z-7J-SqX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="42L-CP-VlX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-oz-9Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2281" y="-548"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="EcR-hg-ySu">
-            <objects>
-                <tabBarController id="39X-ZR-Pgp" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="C9U-Ob-Oae">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="bGv-Mw-Cvb" kind="relationship" relationship="viewControllers" id="If2-ei-Qb3"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbf-Bd-O5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1505" y="-548"/>
-        </scene>
         <!--CookBook-->
         <scene sceneID="J1t-hl-Iie">
             <objects>
@@ -1025,7 +989,7 @@
                                     <constraint firstItem="YSj-eF-3vy" firstAttribute="top" secondItem="7Wc-B4-Cth" secondAttribute="top" id="yQ2-A5-h3z"/>
                                 </constraints>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-Ty-hch">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-Ty-hch">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="wQp-gm-d6b"/>
                                 </constraints>
@@ -1314,7 +1278,7 @@
                                     <constraint firstItem="m5n-Sv-YP3" firstAttribute="top" secondItem="F1Z-sr-BVs" secondAttribute="top" id="lKf-kf-MS9"/>
                                 </constraints>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="6Vh-3E-rqF">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="6Vh-3E-rqF">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="nMA-0D-yJg"/>
                                 </constraints>
@@ -1385,39 +1349,40 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.84705882352941175" green="0.5490196078431373" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.84705882352941175" green="0.5490196078431373" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="k65-br-0ee" kind="relationship" relationship="viewControllers" id="P5d-Ei-RKX"/>
-                        <segue destination="9vA-YT-9GD" kind="relationship" relationship="viewControllers" id="gVh-7u-ekl"/>
+                        <segue destination="3JE-90-uM4" kind="relationship" relationship="viewControllers" id="gVh-7u-ekl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkh-Bz-aoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1570" y="119"/>
         </scene>
-        <!--ProfileVC-->
+        <!--Profile VC-->
         <scene sceneID="Zzs-Kd-HzX">
             <objects>
-                <collectionViewController storyboardIdentifier="profileVC" id="9vA-YT-9GD" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="jPz-Rs-lm9">
+                <collectionViewController storyboardIdentifier="profileVC" id="9vA-YT-9GD" userLabel="Profile VC" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="jPz-Rs-lm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nIG-Ys-yfK">
-                            <size key="itemSize" width="125" height="125"/>
-                            <size key="headerReferenceSize" width="50" height="274"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="nIG-Ys-yfK">
+                            <size key="itemSize" width="124" height="124"/>
+                            <size key="headerReferenceSize" width="50" height="208"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="I0j-g4-LJC" customClass="pictureCell" customModule="CookBook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="274" width="125" height="125"/>
+                                <rect key="frame" x="0.0" y="208" width="124" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="er5-Kg-yEK">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="er5-Kg-yEK">
                                             <frame key="frameInset" width="125" height="125"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -1429,18 +1394,9 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="c9h-25-FlV" customClass="ProfileHeaderView" customModule="CookBook" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="EzP-Ba-aWk">
-                                    <frame key="frameInset" width="375" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J66-rM-8o9">
-                                    <items>
-                                        <navigationItem title="Username" id="xYl-wq-aUu"/>
-                                    </items>
-                                </navigationBar>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="79D-KH-eQ6">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="112" id="Av0-du-S31"/>
@@ -1448,89 +1404,86 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edward Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkS-1J-YY5">
-                                    <frame key="frameInset" minX="133" minY="81" width="212" height="29"/>
+                                    <frame key="frameInset" minX="133" minY="16" width="212" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="24"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@EdDay57" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjg-ek-6ps">
-                                    <frame key="frameInset" minX="133" minY="113" width="212" height="20"/>
+                                    <frame key="frameInset" minX="133" minY="48" width="212" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founder of CookBook App!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-0g-smu">
-                                    <frame key="frameInset" minX="133" minY="136" width="220" height="20"/>
+                                    <frame key="frameInset" minX="133" minY="71" width="220" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-nV-f8N">
+                                    <frame key="frameInset" minX="133" minY="99" width="220" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
+                                    <state key="normal" title="Edit Profile">
+                                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beg-Us-yAC">
-                                    <frame key="frameInset" minX="22" minY="207" width="67" height="14"/>
+                                    <frame key="frameInset" minX="22" minY="141" width="67" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-nV-f8N">
-                                    <frame key="frameInset" minX="133" minY="164" width="220" height="26"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
-                                    <state key="normal" title="Following">
-                                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-IA-iL3">
-                                    <frame key="frameInset" minX="22" minY="229" width="55" height="30"/>
+                                    <frame key="frameInset" minX="22" minY="163" width="55" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB7-MR-IRF">
-                                    <frame key="frameInset" minX="159" minY="207" width="67" height="17"/>
+                                    <frame key="frameInset" minX="159" minY="141" width="67" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="178" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-dk-Mxh">
-                                    <frame key="frameInset" minX="159" minY="229" width="59" height="30"/>
+                                    <frame key="frameInset" minX="159" minY="163" width="59" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-Ts-Gkm">
-                                    <frame key="frameInset" minX="286" minY="207" width="67" height="17"/>
+                                    <frame key="frameInset" minX="286" minY="141" width="67" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="344" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-tA-U6d">
-                                    <frame key="frameInset" minX="286" minY="229" width="59" height="30"/>
+                                    <frame key="frameInset" minX="286" minY="163" width="59" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1pxGradient2" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-h5-Glc">
-                                    <frame key="frameInset" minY="269" width="375" height="5"/>
+                                    <frame key="frameInset" minY="203" width="375" height="5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="J66-rM-8o9" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" id="DOy-GQ-u8R"/>
-                                <constraint firstItem="J66-rM-8o9" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" constant="21" id="K1R-eC-QhH"/>
+                                <constraint firstItem="79D-KH-eQ6" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" constant="13" id="KRq-el-Pmg"/>
                                 <constraint firstItem="79D-KH-eQ6" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" constant="13" id="SKV-Sv-uhO"/>
-                                <constraint firstAttribute="trailing" secondItem="J66-rM-8o9" secondAttribute="trailing" id="Zcn-79-hFI"/>
-                                <constraint firstItem="79D-KH-eQ6" firstAttribute="top" secondItem="J66-rM-8o9" secondAttribute="bottom" constant="13" id="wAC-Sz-PSe"/>
                             </constraints>
                             <connections>
                                 <outlet property="aboutLbl" destination="Mm3-0g-smu" id="t6T-yz-CAo"/>
@@ -1541,8 +1494,6 @@
                                 <outlet property="following" destination="PK9-tA-U6d" id="P0H-ai-LeD"/>
                                 <outlet property="followingTitle" destination="cqQ-Ts-Gkm" id="ae6-Ie-NWd"/>
                                 <outlet property="fullnameLbl" destination="RkS-1J-YY5" id="DLO-aT-sRn"/>
-                                <outlet property="navBar" destination="J66-rM-8o9" id="AuX-F9-vJO"/>
-                                <outlet property="navTitle" destination="xYl-wq-aUu" id="aef-IU-zXt"/>
                                 <outlet property="postTitle" destination="Beg-Us-yAC" id="3nH-9q-nXh"/>
                                 <outlet property="posts" destination="cmc-IA-iL3" id="l2p-Wx-WLX"/>
                                 <outlet property="usernameLbl" destination="Bjg-ek-6ps" id="Vd6-xO-ek8"/>
@@ -1553,9 +1504,237 @@
                             <outlet property="delegate" destination="9vA-YT-9GD" id="hbR-h1-KZy"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="8cd-Et-2Yn"/>
+                    <navigationItem key="navigationItem" title="Username" id="yTv-LE-fnM"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okY-dJ-zfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3832.8000000000002" y="854.1229385307347"/>
+        </scene>
+        <!--Guest Profile VC-->
+        <scene sceneID="Wnd-g0-ZbC">
+            <objects>
+                <collectionViewController id="A77-Kv-eL6" userLabel="Guest Profile VC" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="2Yy-gQ-wx3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="S9C-Yo-JOd">
+                            <size key="itemSize" width="124" height="124"/>
+                            <size key="headerReferenceSize" width="50" height="208"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="cYV-Wk-JW8" customClass="pictureCell" customModule="CookBook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="208" width="124" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-S0-7oz">
+                                            <frame key="frameInset" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="picImg" destination="0bd-S0-7oz" id="sjm-2P-HMy"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="geB-8h-rHG" customClass="ProfileHeaderView" customModule="CookBook" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-uu-5q0">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="112" id="BXR-Kd-oh7"/>
+                                        <constraint firstAttribute="height" constant="112" id="K4s-CM-EYZ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogo-dM-HKo">
+                                    <frame key="frameInset" minX="133" minY="16" width="212" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@Unknown" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-Pe-AGa">
+                                    <frame key="frameInset" minX="133" minY="48" width="212" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest information here!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Uim-q3-xBC">
+                                    <frame key="frameInset" minX="133" minY="71" width="220" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiI-z6-KZn">
+                                    <frame key="frameInset" minX="133" minY="99" width="220" height="26"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
+                                    <state key="normal" title="Follow">
+                                        <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-hJ-MCy">
+                                    <frame key="frameInset" minX="22" minY="141" width="67" height="14"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8e-sp-Rjs">
+                                    <frame key="frameInset" minX="22" minY="163" width="55" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-JV-abA">
+                                    <frame key="frameInset" minX="159" minY="141" width="67" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="178" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9II-16-Thy">
+                                    <frame key="frameInset" minX="159" minY="163" width="59" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrH-nc-TfH">
+                                    <frame key="frameInset" minX="286" minY="141" width="67" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="344" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-xQ-fCY">
+                                    <frame key="frameInset" minX="286" minY="163" width="59" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1pxGradient2" translatesAutoresizingMaskIntoConstraints="NO" id="ZD2-oD-nZb">
+                                    <frame key="frameInset" minY="203" width="375" height="5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="uDl-uu-5q0" firstAttribute="leading" secondItem="geB-8h-rHG" secondAttribute="leading" constant="13" id="KYG-kd-r2w"/>
+                                <constraint firstItem="uDl-uu-5q0" firstAttribute="top" secondItem="geB-8h-rHG" secondAttribute="top" constant="13" id="ZCx-kB-1bR"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="aboutLbl" destination="Uim-q3-xBC" id="zYl-Bw-KOP"/>
+                                <outlet property="avaImg" destination="uDl-uu-5q0" id="qsU-cS-o6p"/>
+                                <outlet property="button" destination="QiI-z6-KZn" id="F8k-lG-JWz"/>
+                                <outlet property="followers" destination="9II-16-Thy" id="bao-lh-eqn"/>
+                                <outlet property="followersTitle" destination="Zmx-JV-abA" id="Qkm-AI-qfy"/>
+                                <outlet property="following" destination="Ncg-xQ-fCY" id="09K-Tt-fIi"/>
+                                <outlet property="followingTitle" destination="OrH-nc-TfH" id="LnT-xP-5Ii"/>
+                                <outlet property="fullnameLbl" destination="Ogo-dM-HKo" id="yaB-8Y-otu"/>
+                                <outlet property="postTitle" destination="RhO-hJ-MCy" id="ZLM-mB-8Kz"/>
+                                <outlet property="posts" destination="w8e-sp-Rjs" id="ZYt-GG-H2T"/>
+                                <outlet property="usernameLbl" destination="c4h-Pe-AGa" id="8Yj-zn-D4v"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="A77-Kv-eL6" id="suf-D1-4PG"/>
+                            <outlet property="delegate" destination="A77-Kv-eL6" id="ccN-vl-p2H"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Username" id="FuT-Ae-T53"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E14-Wa-ffv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5327" y="854"/>
+        </scene>
+        <!--FollowersVC-->
+        <scene sceneID="VUg-sx-xPh">
+            <objects>
+                <tableViewController storyboardIdentifier="followersVC" id="Tbd-3Z-SnI" customClass="FollowersVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="SOd-AC-yMV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="KpN-6m-FR2" customClass="FollowersCell" customModule="CookBook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KpN-6m-FR2" id="ZUl-5Q-AHf">
+                                    <frame key="frameInset" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="gtC-7K-Bht">
+                                            <frame key="frameInset" minX="10" minY="10" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmj-9B-NMJ">
+                                            <frame key="frameInset" minX="78" minY="26" width="164" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="19"/>
+                                            <color key="textColor" red="0.59584857047872342" green="0.59584857047872342" blue="0.59584857047872342" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c7-GG-PLl">
+                                            <frame key="frameInset" minX="250" minY="24" width="117" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.1655400746" green="0.70293006039999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Follow">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="followBtnTapped:" destination="KpN-6m-FR2" eventType="touchUpInside" id="6by-AR-8US"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avaImg" destination="gtC-7K-Bht" id="ch4-6b-GqY"/>
+                                    <outlet property="followBtn" destination="5c7-GG-PLl" id="hsT-nF-aEz"/>
+                                    <outlet property="usernameLbl" destination="Xmj-9B-NMJ" id="bIq-BT-de0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tbd-3Z-SnI" id="v7M-e8-ylw"/>
+                            <outlet property="delegate" destination="Tbd-3Z-SnI" id="JLr-ec-f2V"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugf-0y-Jm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4548" y="855.9220389805098"/>
+        </scene>
+        <!--Profile Nav BarVC-->
+        <scene sceneID="FKz-ln-nE3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3JE-90-uM4" customClass="ProfileNavBarVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="8cd-Et-2Yn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="70L-eX-nR6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9vA-YT-9GD" kind="relationship" relationship="rootViewController" id="Mcu-5F-mu4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82H-P8-6xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2893.5999999999999" y="854.1229385307347"/>
         </scene>

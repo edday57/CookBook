@@ -29,15 +29,15 @@ class GuestVC: UICollectionViewController {
         self.collectionView!.alwaysBounceVertical = true
         
         //Nav Title
-        self.navigationItem.title = guestname.last!
+        self.navigationItem.title = guestname.last
         
         //Custom Back Button
         self.navigationItem.hidesBackButton = true
-        let backBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: "back:")
+        let backBtn = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(GuestVC.back(_:)))
         self.navigationItem.leftBarButtonItem = backBtn
         
         //Swipe to go back
-        let backSwipe = UISwipeGestureRecognizer(target: self, action: "back:")
+        let backSwipe = UISwipeGestureRecognizer(target: self, action: #selector(GuestVC.back(_:)))
         backSwipe.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(backSwipe)
         
@@ -51,13 +51,14 @@ class GuestVC: UICollectionViewController {
     }
 
    //Back function
-    func back(sender : UIBarButtonItem) {
+    func back(_ sender : UIBarButtonItem) {
             self.navigationController?.popViewController(animated: true)
         
             //Remove last guest username from guest name array
         if !guestname.isEmpty {
             guestname.removeLast()
         }
+
     }
     
     //Refresh function
@@ -117,9 +118,9 @@ class GuestVC: UICollectionViewController {
         
         
         //Load guest data
-        let infoQuery = PFQuery(className: "_User")
-        infoQuery.whereKey("username", equalTo: guestname.last)
-        infoQuery.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+        let infoQuery = PFUser.query()
+        infoQuery?.whereKey("username", equalTo: guestname.last!)
+        infoQuery?.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 if objects!.isEmpty {
                     print("Wrong user!")
@@ -129,7 +130,7 @@ class GuestVC: UICollectionViewController {
                 for object in objects! {
                     header.fullnameLbl.text = (object.object(forKey: "fullname") as? String)?.capitalized
                     header.aboutLbl.text = (object.object(forKey: "about")as? String)
-                    header.usernameLbl.text = object.object(forKey: "username") as? String
+                    header.usernameLbl.text = "@\(object.object(forKey: "username") as! String)"
                     
                     let avaFile : PFFile = (object.object(forKey: "ava") as? PFFile)!
                     avaFile.getDataInBackground(block: { (data:Data?, error:Error?) in
@@ -193,10 +194,55 @@ class GuestVC: UICollectionViewController {
             }
         }
         
+        //Tap gestures
+        //tap posts
+        let postsTap = UITapGestureRecognizer(target: self, action: #selector(GuestVC.postsTap))
+        postsTap.numberOfTapsRequired = 1
+        header.posts.isUserInteractionEnabled = true
+        header.posts.addGestureRecognizer(postsTap)
+        
+        //tap following
+        let followersTap = UITapGestureRecognizer(target: self, action: #selector(GuestVC.followersTap))
+        followersTap.numberOfTapsRequired = 1
+        header.followers.isUserInteractionEnabled = true
+        header.followers.addGestureRecognizer(followersTap)
+        
+        //tap following
+        let followingTap = UITapGestureRecognizer(target: self, action: #selector(GuestVC.followingTap))
+        followingTap.numberOfTapsRequired = 1
+        header.following.isUserInteractionEnabled = true
+        header.following.addGestureRecognizer(followingTap)
+        
        return header
         
     }
     
+    //Tap posts label
+    func postsTap() {
+        if !picArray.isEmpty {
+            let index = NSIndexPath(item: 0, section: 0)
+            self.collectionView?.scrollToItem(at: index as IndexPath, at: UICollectionViewScrollPosition.top, animated: true)
+        }
+    }
+    
+    //Tap following label
+    func followingTap() {
+        user = guestname.last!
+        show_ = "Followers"
+        
+        let followers = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(followers, animated: true)
+    }
+    
+    //Tap followers label
+    func followersTap() {
+        user = guestname.last!
+        show_ = "Following"
+        
+        let following = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(following, animated: true)
+
+    }
 }
 
 

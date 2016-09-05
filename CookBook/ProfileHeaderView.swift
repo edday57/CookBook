@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileHeaderView: UICollectionReusableView {
         
@@ -25,5 +26,42 @@ class ProfileHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var button: UIButton!
     
+    @IBAction func followButtonClicked(_ sender: AnyObject) {
+        let title = button.title(for: UIControlState.normal)!
+        print(title)
+        if title == "Follow" {
+            let object = PFObject(className: "follow")
+            object["follower"] = PFUser.current()?.username
+            object["following"] = guestname.last!
+            object.saveInBackground(block: { (success:Bool, error:Error?) in
+                if success {
+                    self.button.setTitle("Following", for: UIControlState.normal)
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+        } else {
+            
+            let query = PFQuery(className: "follow")
+            query.whereKey("follower", equalTo: PFUser.current()!.username!)
+            query.whereKey("following", equalTo: guestname.last!)
+            query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                if error == nil {
+                    for object in objects! {
+                        object.deleteInBackground(block: { (success:Bool, error:Error?) in
+                            if success {
+                                self.button.setTitle("Follow", for: UIControlState.normal)
+                            } else {
+                                print(error!.localizedDescription)
+                            }
+                        })
+                    }
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+        }
+    }
+
     
 }

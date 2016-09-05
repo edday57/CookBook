@@ -141,17 +141,17 @@ class ProfileVC: UICollectionViewController {
         
         //Implement tap gestures
         //tap posts
-        let postsTap = UITapGestureRecognizer(target: self, action: "postsTap")
+        let postsTap = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.postsTap))
         postsTap.numberOfTapsRequired = 1
         header.posts.isUserInteractionEnabled = true
         header.posts.addGestureRecognizer(postsTap)
         
-        let followingTap = UITapGestureRecognizer(target: self, action: "followingTap")
+        let followingTap = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.followingTap))
         followingTap.numberOfTapsRequired = 1
         header.following.isUserInteractionEnabled = true
         header.following.addGestureRecognizer(followingTap)
         
-        let followersTap = UITapGestureRecognizer(target: self, action: "followersTap")
+        let followersTap = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.followersTap))
         followersTap.numberOfTapsRequired = 1
         header.followers.isUserInteractionEnabled = true
         header.followers.addGestureRecognizer(followersTap)
@@ -184,6 +184,21 @@ class ProfileVC: UICollectionViewController {
         self.navigationController?.pushViewController(following, animated: true)
     }
     
+    //User clicked log out
+    @IBAction func logout(_ sender: AnyObject) {
+        PFUser.logOutInBackground { (error:Error?) in
+            if error == nil {
+                
+                //Remove saved login info
+                UserDefaults.standard.removeObject(forKey: "username")
+                UserDefaults.standard.synchronize()
+                
+                let signin = self.storyboard?.instantiateViewController(withIdentifier: "signInVC") as! LoginViewController
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController =  signin
+            }
+        }
+    }
     ///////////////////////////////
     /*
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

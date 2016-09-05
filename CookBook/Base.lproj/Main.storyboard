@@ -83,7 +83,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signInVC" id="BYZ-38-t0r" customClass="LoginViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -1364,7 +1364,7 @@
         <scene sceneID="Zzs-Kd-HzX">
             <objects>
                 <collectionViewController storyboardIdentifier="profileVC" id="9vA-YT-9GD" userLabel="Profile VC" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="jPz-Rs-lm9">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="jPz-Rs-lm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1504,7 +1504,13 @@
                             <outlet property="delegate" destination="9vA-YT-9GD" id="hbR-h1-KZy"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Username" id="yTv-LE-fnM"/>
+                    <navigationItem key="navigationItem" title="Username" id="yTv-LE-fnM">
+                        <barButtonItem key="rightBarButtonItem" image="logout" id="qX7-dQ-Re6">
+                            <connections>
+                                <action selector="logout:" destination="9vA-YT-9GD" id="1ad-U8-nJc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okY-dJ-zfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1513,7 +1519,7 @@
         <!--Guest Profile VC-->
         <scene sceneID="Wnd-g0-ZbC">
             <objects>
-                <collectionViewController id="A77-Kv-eL6" userLabel="Guest Profile VC" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="guestVC" id="A77-Kv-eL6" userLabel="Guest Profile VC" customClass="GuestVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="2Yy-gQ-wx3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1582,6 +1588,9 @@
                                     <state key="normal" title="Follow">
                                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="followButtonClicked:" destination="geB-8h-rHG" eventType="touchUpInside" id="30W-Ta-szb"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-hJ-MCy">
                                     <frame key="frameInset" minX="22" minY="141" width="67" height="14"/>
@@ -1753,6 +1762,7 @@
         <image name="TextField2" width="300" height="53"/>
         <image name="blank" width="375" height="218"/>
         <image name="blurredgreyscale" width="2122" height="1415"/>
+        <image name="logout" width="25" height="25"/>
         <image name="menu" width="22" height="22"/>
         <image name="recipe1" width="448" height="256"/>
         <image name="unliked" width="147" height="127"/>

@@ -1364,19 +1364,19 @@
         <scene sceneID="Zzs-Kd-HzX">
             <objects>
                 <collectionViewController storyboardIdentifier="profileVC" id="9vA-YT-9GD" userLabel="Profile VC" customClass="ProfileVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="jPz-Rs-lm9">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="jPz-Rs-lm9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="nIG-Ys-yfK">
                             <size key="itemSize" width="124" height="124"/>
-                            <size key="headerReferenceSize" width="50" height="208"/>
+                            <size key="headerReferenceSize" width="50" height="212"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="I0j-g4-LJC" customClass="pictureCell" customModule="CookBook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="208" width="124" height="124"/>
+                                <rect key="frame" x="0.0" y="212" width="124" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
@@ -1394,40 +1394,52 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="c9h-25-FlV" customClass="ProfileHeaderView" customModule="CookBook" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="79D-KH-eQ6">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noodlesPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="23n-8c-Amz"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtW-1P-Yu4">
+                                    <color key="backgroundColor" red="0.27450980390000002" green="0.2156862745" blue="0.12549019610000001" alpha="0.65188842020000004" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swu-P6-FU1">
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79D-KH-eQ6">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="112" id="e2d-9L-KUc"/>
+                                                <constraint firstAttribute="width" constant="112" id="vhz-L2-Cxd"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="112" id="Av0-du-S31"/>
-                                        <constraint firstAttribute="width" constant="112" id="WCy-0S-5Z1"/>
+                                        <constraint firstItem="79D-KH-eQ6" firstAttribute="top" secondItem="swu-P6-FU1" secondAttribute="top" id="7FJ-N9-4vB"/>
+                                        <constraint firstAttribute="height" constant="112" id="EJt-VK-oq5"/>
+                                        <constraint firstAttribute="bottom" secondItem="79D-KH-eQ6" secondAttribute="bottom" id="P1R-Jw-7mF"/>
+                                        <constraint firstItem="79D-KH-eQ6" firstAttribute="leading" secondItem="swu-P6-FU1" secondAttribute="leading" id="jdl-or-Wmx"/>
+                                        <constraint firstAttribute="trailing" secondItem="79D-KH-eQ6" secondAttribute="trailing" id="mR2-41-3t8"/>
+                                        <constraint firstAttribute="width" constant="112" id="qa1-PW-A3H"/>
                                     </constraints>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edward Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkS-1J-YY5">
-                                    <frame key="frameInset" minX="133" minY="16" width="212" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edward Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkS-1J-YY5">
                                     <fontDescription key="fontDescription" name="LucidaGrande-Bold" family="Lucida Grande" pointSize="24"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@EdDay57" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjg-ek-6ps">
-                                    <frame key="frameInset" minX="133" minY="48" width="212" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@EdDay57" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjg-ek-6ps">
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Founder of CookBook App!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-0g-smu">
-                                    <frame key="frameInset" minX="133" minY="71" width="220" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Founder of CookBook App!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-0g-smu">
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-nV-f8N">
-                                    <frame key="frameInset" minX="133" minY="99" width="220" height="26"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-nV-f8N">
                                     <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="26" id="ToA-Rq-JRt"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="16"/>
                                     <state key="normal" title="Edit Profile">
                                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1437,58 +1449,85 @@
                                     <frame key="frameInset" minX="22" minY="141" width="67" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-IA-iL3">
                                     <frame key="frameInset" minX="22" minY="163" width="55" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB7-MR-IRF">
-                                    <frame key="frameInset" minX="159" minY="141" width="67" height="17"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="178" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-dk-Mxh">
-                                    <frame key="frameInset" minX="159" minY="163" width="59" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-Ts-Gkm">
                                     <frame key="frameInset" minX="286" minY="141" width="67" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
-                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="344" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-tA-U6d">
                                     <frame key="frameInset" minX="286" minY="163" width="59" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1pxGradient2" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-h5-Glc">
-                                    <frame key="frameInset" minY="203" width="375" height="5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1pxGradient2" translatesAutoresizingMaskIntoConstraints="NO" id="IDN-h5-Glc">
                                     <color key="backgroundColor" red="0.84313725490000002" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="5" id="yxc-77-iDi"/>
+                                    </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB7-MR-IRF">
+                                    <frame key="frameInset" minX="154" minY="141" width="67" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="LucidaGrande" family="Lucida Grande" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="178" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-dk-Mxh">
+                                    <frame key="frameInset" minX="154" minY="163" width="59" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="30"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="79D-KH-eQ6" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" constant="13" id="KRq-el-Pmg"/>
-                                <constraint firstItem="79D-KH-eQ6" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" constant="13" id="SKV-Sv-uhO"/>
+                                <constraint firstItem="23n-8c-Amz" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" id="1zS-mD-xCx"/>
+                                <constraint firstItem="Mm3-0g-smu" firstAttribute="leading" secondItem="swu-P6-FU1" secondAttribute="trailing" constant="10" id="2Er-Lu-3hu"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="Mm3-0g-smu" secondAttribute="trailing" constant="8" id="2Qv-jn-Na0"/>
+                                <constraint firstItem="lTS-nV-f8N" firstAttribute="bottom" secondItem="swu-P6-FU1" secondAttribute="bottom" id="2xY-Tn-OEQ"/>
+                                <constraint firstItem="Bjg-ek-6ps" firstAttribute="leading" secondItem="swu-P6-FU1" secondAttribute="trailing" constant="10" id="3hN-r3-j10"/>
+                                <constraint firstItem="swu-P6-FU1" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" constant="12" id="6me-hD-qA6"/>
+                                <constraint firstItem="Bjg-ek-6ps" firstAttribute="top" secondItem="RkS-1J-YY5" secondAttribute="bottom" constant="7" id="B0O-hN-35u"/>
+                                <constraint firstAttribute="bottom" secondItem="ZtW-1P-Yu4" secondAttribute="bottom" constant="7" id="C8q-ld-Xvp"/>
+                                <constraint firstItem="23n-8c-Amz" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" id="EMb-tV-Nlf"/>
+                                <constraint firstAttribute="trailing" secondItem="IDN-h5-Glc" secondAttribute="trailing" id="FVu-EN-xWo"/>
+                                <constraint firstAttribute="trailing" secondItem="23n-8c-Amz" secondAttribute="trailing" id="I0E-4F-8em"/>
+                                <constraint firstAttribute="bottom" secondItem="23n-8c-Amz" secondAttribute="bottom" constant="7" id="Ilu-jn-5Ht"/>
+                                <constraint firstItem="RkS-1J-YY5" firstAttribute="top" secondItem="swu-P6-FU1" secondAttribute="top" id="OgP-Hh-wTF"/>
+                                <constraint firstItem="Mm3-0g-smu" firstAttribute="top" secondItem="Bjg-ek-6ps" secondAttribute="bottom" constant="7" id="QUt-iQ-bZx"/>
+                                <constraint firstItem="lTS-nV-f8N" firstAttribute="leading" secondItem="swu-P6-FU1" secondAttribute="trailing" constant="10" id="Rkh-6M-mTn"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="lTS-nV-f8N" secondAttribute="trailing" constant="8" id="TlL-aI-G80"/>
+                                <constraint firstItem="ZtW-1P-Yu4" firstAttribute="top" secondItem="c9h-25-FlV" secondAttribute="top" id="VA2-af-WWt"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="Bjg-ek-6ps" secondAttribute="trailing" constant="8" id="VOf-u1-Qjj"/>
+                                <constraint firstItem="RkS-1J-YY5" firstAttribute="leading" secondItem="swu-P6-FU1" secondAttribute="trailing" constant="10" id="Xsf-Lh-hzZ"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="RkS-1J-YY5" secondAttribute="trailing" constant="8" id="aRX-xH-oR9"/>
+                                <constraint firstAttribute="trailing" secondItem="ZtW-1P-Yu4" secondAttribute="trailing" id="azd-k6-Rbg"/>
+                                <constraint firstAttribute="bottom" secondItem="IDN-h5-Glc" secondAttribute="bottom" id="hIK-w7-Om9"/>
+                                <constraint firstItem="swu-P6-FU1" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" constant="12" id="mM9-F6-o1F"/>
+                                <constraint firstItem="IDN-h5-Glc" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" id="ofe-4D-AUa"/>
+                                <constraint firstItem="ZtW-1P-Yu4" firstAttribute="leading" secondItem="c9h-25-FlV" secondAttribute="leading" id="osa-FV-rrS"/>
+                                <constraint firstItem="lTS-nV-f8N" firstAttribute="top" secondItem="Mm3-0g-smu" secondAttribute="bottom" constant="5" id="xjP-Ce-r4t"/>
                             </constraints>
                             <connections>
                                 <outlet property="aboutLbl" destination="Mm3-0g-smu" id="t6T-yz-CAo"/>
                                 <outlet property="avaImg" destination="79D-KH-eQ6" id="Uot-oj-2af"/>
+                                <outlet property="backgroundImage" destination="23n-8c-Amz" id="V8M-ns-kya"/>
                                 <outlet property="button" destination="lTS-nV-f8N" id="Qpu-he-9el"/>
+                                <outlet property="container" destination="swu-P6-FU1" id="NvF-Lf-vx2"/>
                                 <outlet property="followers" destination="ZFx-dk-Mxh" id="0lL-3N-anb"/>
                                 <outlet property="followersTitle" destination="KB7-MR-IRF" id="jmD-Zh-1zN"/>
                                 <outlet property="following" destination="PK9-tA-U6d" id="P0H-ai-LeD"/>
@@ -1553,7 +1592,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-uu-5q0">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-uu-5q0">
                                     <constraints>
                                         <constraint firstAttribute="width" constant="112" id="BXR-Kd-oh7"/>
                                         <constraint firstAttribute="height" constant="112" id="K4s-CM-EYZ"/>
@@ -1764,6 +1803,7 @@
         <image name="blurredgreyscale" width="2122" height="1415"/>
         <image name="logout" width="25" height="25"/>
         <image name="menu" width="22" height="22"/>
+        <image name="noodlesPlaceholder" width="690" height="400"/>
         <image name="recipe1" width="448" height="256"/>
         <image name="unliked" width="147" height="127"/>
     </resources>

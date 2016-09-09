@@ -28,6 +28,9 @@ class ProfileVC: UICollectionViewController {
         refresher.addTarget(self, action: #selector(ProfileVC.refresh), for: UIControlEvents.valueChanged)
         collectionView?.addSubview(refresher)
         
+        //recive notification from editVC
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.reload(_:)), name: NSNotification.Name(rawValue: "reload"), object: nil)
+        
         //load posts
         loadPosts()
         
@@ -37,6 +40,10 @@ class ProfileVC: UICollectionViewController {
     func refresh() {
         collectionView?.reloadData()
         refresher.endRefreshing()
+    }
+    
+    func reload(_ notification:Notification) {
+        collectionView?.reloadData()
     }
     
     //load posts function
@@ -69,6 +76,14 @@ class ProfileVC: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return picArray.count
     }
+    
+    //Cell Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+     
+        let size = CGSize(width: self.view.frame.size.width / 3, height: self.view.frame.size.width / 3)
+        return size
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! pictureCell

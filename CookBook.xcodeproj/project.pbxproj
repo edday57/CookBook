@@ -41,6 +41,9 @@
 		64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */; };
 		64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */; };
 		64B9C8C51D6F5FE90061D601 /* NavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */; };
+		64BC16171D821B97000510D8 /* RecipeFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BC16161D821B97000510D8 /* RecipeFeedVC.swift */; };
+		64E734941D7F88D90084A59A /* EditProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */; };
+		64E734961D7F89400084A59A /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E734951D7F89400084A59A /* EditProfileVC.swift */; };
 		64F9A0911D7D786E0097CF7F /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0901D7D786E0097CF7F /* FollowersVC.swift */; };
 		64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0921D7D78820097CF7F /* FollowersCell.swift */; };
 		64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */; };
@@ -84,6 +87,10 @@
 		64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleGothic.ttf; sourceTree = "<group>"; };
 		64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHomeVC.swift; sourceTree = "<group>"; };
 		64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarVC.swift; sourceTree = "<group>"; };
+		64BC16151D814ADC000510D8 /* CookBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookBook.entitlements; sourceTree = "<group>"; };
+		64BC16161D821B97000510D8 /* RecipeFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeFeedVC.swift; sourceTree = "<group>"; };
+		64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProfileNavBarVC.swift; path = ../EditProfileNavBarVC.swift; sourceTree = "<group>"; };
+		64E734951D7F89400084A59A /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		64F9A0901D7D786E0097CF7F /* FollowersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
 		64F9A0921D7D78820097CF7F /* FollowersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
 		64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavBarVC.swift; sourceTree = "<group>"; };
@@ -116,13 +123,16 @@
 		2BD609AA1D783ED500EEA826 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
 				642F54D91D7CBD99000ED2B4 /* Login Controllers */,
 				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
+				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipeVC.swift */,
 				642F54D71D7CBD8A000ED2B4 /* ProfileVC.swift */,
 				647A29451D7DB00100A49A6B /* GuestVC.swift */,
 				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
+				64E734951D7F89400084A59A /* EditProfileVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		2BD609AB1D783EEF00EEA826 /* Navigation Bars */ = {
 			isa = PBXGroup;
 			children = (
+				64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */,
 				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
 				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
 				2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */,
@@ -214,7 +225,7 @@
 		64B9C8A51D6F00590061D601 /* CookBook */ = {
 			isa = PBXGroup;
 			children = (
-				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
+				64BC16151D814ADC000510D8 /* CookBook.entitlements */,
 				2BD609AA1D783ED500EEA826 /* View Controllers */,
 				2BD609AB1D783EEF00EEA826 /* Navigation Bars */,
 				2BD609AF1D79757200EEA826 /* Custom Files */,
@@ -258,6 +269,11 @@
 						DevelopmentTeam = ELD85TA58A;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -305,10 +321,13 @@
 				642F54D81D7CBD8A000ED2B4 /* ProfileVC.swift in Sources */,
 				64F9A0911D7D786E0097CF7F /* FollowersVC.swift in Sources */,
 				64B9C8BF1D6F56510061D601 /* RecipeHomeVC.swift in Sources */,
+				64BC16171D821B97000510D8 /* RecipeFeedVC.swift in Sources */,
 				64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */,
 				64B9C8A71D6F00590061D601 /* AppDelegate.swift in Sources */,
+				64E734941D7F88D90084A59A /* EditProfileNavBarVC.swift in Sources */,
 				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
 				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
+				64E734961D7F89400084A59A /* EditProfileVC.swift in Sources */,
 				647A29461D7DB00100A49A6B /* GuestVC.swift in Sources */,
 				64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */,
 				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
@@ -446,6 +465,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CookBook/CookBook.entitlements;
 				DEVELOPMENT_TEAM = ELD85TA58A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,6 +486,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CookBook/CookBook.entitlements;
 				DEVELOPMENT_TEAM = ELD85TA58A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

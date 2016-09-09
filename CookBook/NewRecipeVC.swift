@@ -80,7 +80,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             isPrivate = false
         }
         else if privacyNumber == 1 {
-            isPrivate == true
+            isPrivate = true
         }
     }
     
@@ -162,6 +162,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
         
         picker.delegate = self
+        picker.allowsEditing = true
         alert.addAction(cameraAction)
         alert.addAction(galleryAction)
         alert.addAction(cancelAction)
@@ -189,7 +190,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let selectedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         // Set photoImageView to display the selected image.
         userImage.image = selectedImage
@@ -287,7 +288,8 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
         }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if isPrivate == true {
         if nameTextField.text != nil && userImage.image != nil && timeField.text != nil && ingredientsTextView.text != nil && ingredientsTextView.text != "Add an ingredient!" && instructionsTextView.text != nil && instructionsTextView.text != "Add an instruction!" && additionalInfo.text != nil && additionalInfo.text != "Add any additional info here!" {
             let name = nameTextField.text!
             let photo = userImage.image!
@@ -299,12 +301,51 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
             
             recipe = Recipe(name: name, photo: photo, time: time!, ingredients: ingredients, instructions: instructions, isPrivate: isPrivate, additionalInfo: additionalInfo)
         }
+        } else if isPrivate == false {
+            
+        }
     }
-    
+    */
     func checkForSaveEnabled() {
         if nameTextField.text != nil && userImage.image != nil && timeField.text != nil && ingredientsTextView.text != nil && ingredientsTextView.text != "Add an ingredient!" && instructionsTextView.text != nil && instructionsTextView.text != "Add an instruction!" && additionalInfo.text != nil && additionalInfo.text != "Add any additional info here!"{
             navigationItem.rightBarButtonItem?.isEnabled = true
         }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: AnyObject) {
+                if nameTextField.text != nil && userImage.image != nil && timeField.text != nil && ingredientsTextView.text != nil && ingredientsTextView.text != "Add an ingredient!" && instructionsTextView.text != nil && instructionsTextView.text != "Add an instruction!" && additionalInfo.text != nil && additionalInfo.text != "Add any additional info here!" {
+                    print("gothere")
+                    if isPrivate == true{
+                        //PERFORM LOCAL ACTIONS
+                        print("hi")
+                        performSegue(withIdentifier: "unwindLocal", sender: self)
+                        
+                    }
+                    else if isPrivate == false{
+                        //PERFORM PUBLIC ACTIONS
+                    }
+        }
+                else {
+                    //GIVE PLEASE FILL ALL FIELDS MESSAGE
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindLocal"{
+            if nameTextField.text != nil && userImage.image != nil && timeField.text != nil && ingredientsTextView.text != nil && ingredientsTextView.text != "Add an ingredient!" && instructionsTextView.text != nil && instructionsTextView.text != "Add an instruction!" && additionalInfo.text != nil && additionalInfo.text != "Add any additional info here!" {
+                let name = nameTextField.text!
+                let photo = userImage.image!
+                let time = Int(timeField.text!)
+                let ingredients = ingredientsTextView.text!
+                let instructions = instructionsTextView.text!
+                let isPrivate = self.isPrivate
+                let additionalInfo = self.additionalInfo.text!
+                var destinationViewController = segue.destination as! RecipeHomeVC
+                destinationViewController.recipe = Recipe(name: name, photo: photo, time: time!, ingredients: ingredients, instructions: instructions, isPrivate: isPrivate, additionalInfo: additionalInfo)
+                recipe = Recipe(name: name, photo: photo, time: time!, ingredients: ingredients, instructions: instructions, isPrivate: isPrivate, additionalInfo: additionalInfo)
+            }
+
+        }
+        
     }
     
 }

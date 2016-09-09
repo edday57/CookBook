@@ -51,11 +51,15 @@ class ProfileHeaderView: UICollectionReusableView {
         avaImg.layer.borderColor = UIColor.white.cgColor
         avaImg.layer.borderWidth = 2
         
-        container.backgroundColor = UIColor.clear
+        
         container.layer.shadowColor = UIColor.black.cgColor
         container.layer.shadowRadius = 3
         container.layer.shadowOffset = CGSize(width: 0, height: 1)
         container.layer.shadowOpacity = 1
+        
+        button.layer.cornerRadius = 6
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 2
         
      //   let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
     //    let blurView = UIVisualEffectView(effect: blurEffect)
@@ -66,7 +70,7 @@ class ProfileHeaderView: UICollectionReusableView {
         let imageToBlur = CIImage(image:backgroundImage.image!)
         let blurfilter = CIFilter(name: "CIGaussianBlur")
         blurfilter!.setValue(imageToBlur, forKey: "inputImage")
-        blurfilter!.setValue(1.5, forKey: "inputRadius")
+        blurfilter!.setValue(1.8, forKey: "inputRadius")
         let resultImage = blurfilter!.value(forKey: "outputImage") as! CIImage
         let cgImage = context.createCGImage(resultImage, from: resultImage.extent)
         let blurredImage = UIImage(cgImage: cgImage!)

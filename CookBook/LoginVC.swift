@@ -85,7 +85,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
 
         // Do any additional setup after loading the view, typically from a nib.
-
+        let hideTap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.hideKeyboard))
+        hideTap.numberOfTapsRequired = 1
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(hideTap)
 
         }
 
@@ -98,6 +101,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
  
+    func hideKeyboard() {
+        self.view.endEditing(true)
+    }
     
     @IBAction func logInPressed(_ sender: AnyObject) {
         //hide keyboard

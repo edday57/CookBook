@@ -91,7 +91,12 @@ class GuestVC: UICollectionViewController {
         return picArray.count
     }
     
-    
+    //Cell Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
+        let size = CGSize(width: self.view.frame.size.width / 3, height: self.view.frame.size.width / 3)
+        return size
+    }
     
     
     
@@ -228,19 +233,19 @@ class GuestVC: UICollectionViewController {
     //Tap following label
     func followingTap() {
         user = guestname.last!
-        show_ = "Followers"
+        show_ = "Following"
         
-        let followers = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
-        self.navigationController?.pushViewController(followers, animated: true)
+        let following = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(following, animated: true)
     }
     
     //Tap followers label
     func followersTap() {
         user = guestname.last!
-        show_ = "Following"
+        show_ = "Followers"
         
-        let following = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
-        self.navigationController?.pushViewController(following, animated: true)
+        let followers = self.storyboard?.instantiateViewController(withIdentifier: "followersVC") as! FollowersVC
+        self.navigationController?.pushViewController(followers, animated: true)
 
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var noRecipes: UILabel!
     //Sets rows in table view
@@ -69,7 +69,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     //VARIABLES
     var recipes = [Recipe]()
     var selectedRecipe: Recipe?
-    var recipe: Recipe?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,46 +113,8 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     
-    //Updates the table view after returning from CreateRecipe page
-    @IBAction func unwindToRecipeList(sender: UIStoryboardSegue) {
-        if sender.source is NewRecipeVC/*, let recipe = sourceViewController.recipe */{
-            
-            let newIndexPath = IndexPath(row: recipes.count, section: 0)
-            if recipe != nil {
-            recipes.append(recipe!)
-            recipeTableView.insertRows(at: [newIndexPath], with: .bottom)
-            noRecipes.isHidden = true
-            }
-        }
-        
-    }
-    
-    
-    //Allows recipes to be deleted by sliding left
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            recipes.remove(at: indexPath.row)
-            recipeTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            if recipes.count == 0 {
-            noRecipes.isHidden = false
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       selectedRecipe = recipes[indexPath.row]
-       performSegue(withIdentifier: "detailView", sender: self)
-   }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "detailView") {
-            var destinationViewController = segue.destination as! ViewRecipeNavBarVC
-            let targetController = destinationViewController.topViewController as! ViewRecipeVC
-            targetController.recipe = selectedRecipe
 
-        }
-    }
-    
+
     
     /*
     // MARK: - Navigation

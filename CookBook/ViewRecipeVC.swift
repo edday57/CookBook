@@ -21,13 +21,26 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
+    @IBOutlet weak var additionalInfoView: UITextView!
+    @IBOutlet weak var additionalInfoLabel: UILabel!
 
+    @IBOutlet weak var containerHeight: NSLayoutConstraint!
 
     var recipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if recipe!.additionalInfoEnabled == true && recipe!.additionalInfo != "Add any additional info here!"{
+            containerHeight.constant = 770
+            additionalInfoView.text = recipe!.additionalInfo
+        }
+        if recipe!.additionalInfoEnabled == false {
+            containerHeight.constant = 620
+            additionalInfoView.isHidden = true
+            additionalInfoLabel.isHidden = true
+            
+        }
         navigationItem.title = "CookBook"
         
         //Adds a white border to the gradient view

@@ -30,7 +30,9 @@ class ProfileVC: UICollectionViewController {
         
         //recive notification from editVC
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.reload(_:)), name: NSNotification.Name(rawValue: "reload"), object: nil)
+
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.uploaded(_:)), name: NSNotification.Name(rawValue: "uploadedRecipe"), object: nil)
         //load posts
         loadPosts()
         
@@ -44,6 +46,10 @@ class ProfileVC: UICollectionViewController {
     
     func reload(_ notification:Notification) {
         collectionView?.reloadData()
+    }
+    
+    func uploaded(_ notification:Notification) {
+        loadPosts()
     }
     
     //load posts function
@@ -213,6 +219,9 @@ class ProfileVC: UICollectionViewController {
                 appDelegate.window?.rootViewController =  signin
             }
         }
+    }
+    
+    @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
     }
     ///////////////////////////////
     /*

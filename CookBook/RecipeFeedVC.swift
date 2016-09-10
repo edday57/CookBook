@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 
 class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -38,7 +38,7 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
         //Add border to gradient view
-        cell.gradientView.layer.borderWidth = 2.0
+        cell.gradientView.layer.borderWidth = 1.0
         cell.gradientView.layer.borderColor = UIColor.white.cgColor
         
         //Adds a shadow to image holder
@@ -107,7 +107,7 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func loadSampleRecipes() {
         let photo1 = UIImage(named: "recipe1")!
-        let recipe1 = Recipe(name: "Chicken Shawarma", photo: photo1, time: 40, ingredients: "Chicken, Wrap, Mixed Salad, Mustard", instructions: "1. Add all ingredients.", isPrivate: true, additionalInfo: "This is just a test")!
+        let recipe1 = Recipe(name: "Chicken Shawarma", photo: photo1, time: 40, ingredients: "Chicken, Wrap, Mixed Salad, Mustard", instructions: "1. Add all ingredients.",  additionalInfo: "This is just a test", additionalInfoEnabled: true)!
         recipes += [recipe1]
         
     }

@@ -75,6 +75,10 @@ class GuestVC: UICollectionViewController {
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 
+                //Clean Up
+                self.uuidArray.removeAll(keepingCapacity: false)
+                self.picArray.removeAll(keepingCapacity: false)
+                
                 //find related objects
                 for object in objects! {
                     self.uuidArray.append(object.value(forKey: "uuid") as! String)

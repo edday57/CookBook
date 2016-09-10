@@ -18,9 +18,10 @@ class Recipe {
     var ingredients: String
     var instructions: String
     var additionalInfo: String?
-    var isPrivate: Bool
+    var additionalInfoEnabled: Bool
+
     
-    init?(name: String, photo: UIImage, time: Int, ingredients: String , instructions: String, isPrivate: Bool, additionalInfo: String?) {
+    init?(name: String, photo: UIImage, time: Int, ingredients: String , instructions: String, additionalInfo: String?, additionalInfoEnabled: Bool) {
         // Initialize stored properties.
         self.name = name
         self.photo = photo
@@ -28,7 +29,7 @@ class Recipe {
         self.ingredients = ingredients
         self.instructions = instructions
         self.additionalInfo = additionalInfo
-        self.isPrivate = isPrivate
+        self.additionalInfoEnabled = additionalInfoEnabled
         
         // Initialization should fail if there is no name.
         if name.isEmpty {

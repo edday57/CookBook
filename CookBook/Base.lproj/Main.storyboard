@@ -446,7 +446,7 @@
                                     <constraint firstAttribute="height" constant="117" id="iou-o1-Tdq"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-w4-ebL">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TV1-xz-gv7" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
@@ -479,7 +479,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unliked" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-kL-T8H">
-                                                            <frame key="frameInset" minX="196" minY="46" width="26" height="24"/>
+                                                            <frame key="frameInset" minX="200" minY="46" width="22" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2du-rL-prj">
@@ -495,17 +495,16 @@
                                                                 <constraint firstItem="fS4-Bf-F88" firstAttribute="leading" secondItem="2du-rL-prj" secondAttribute="leading" id="ugR-x9-MoX"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-bv-7li">
-                                                            <frame key="frameInset" minX="192" minY="6" width="154" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-bv-7li">
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="eTd-ah-taf"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cristen-Profile-circle" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-KU-bKf">
-                                                            <frame key="frameInset" minX="270" minY="40" width="71" height="71"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cristen-Profile-circle" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-KU-bKf" userLabel="User Profile Picture">
+                                                            <frame key="frameInset" minX="271" minY="41" width="70" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 mins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Lq-g4-r4v">
@@ -546,6 +545,7 @@
                                             <outlet property="likeIcon" destination="gTE-kL-T8H" id="0UY-0G-zO1"/>
                                             <outlet property="recipeName" destination="hkq-bv-7li" id="C1u-eu-3hg"/>
                                             <outlet property="recipeTime" destination="8Lq-g4-r4v" id="ubY-k4-h0Y"/>
+                                            <outlet property="userImg" destination="eCg-KU-bKf" id="Wqv-xQ-DE4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -690,7 +690,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unliked" translatesAutoresizingMaskIntoConstraints="NO" id="erY-Ry-oIl">
-                                                            <frame key="frameInset" minX="196" minY="46" width="26" height="24"/>
+                                                            <frame key="frameInset" minX="200" minY="46" width="22" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkh-JX-Kip">
@@ -706,12 +706,12 @@
                                                                 <constraint firstAttribute="width" constant="187" id="eqy-Zz-xe5"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mte-v0-hUx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="mte-v0-hUx">
                                                             <frame key="frameInset" minX="192" minY="6" width="154" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="5QM-HL-L7v"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -871,7 +871,8 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-eF-3vy" userLabel="Container View">
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-E2-RsS">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-E2-RsS">
+                                                <color key="backgroundColor" red="0.87058823529411766" green="0.87450980392156863" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="218" id="2As-0A-9LK"/>
@@ -1246,6 +1247,7 @@
                         <outlet property="timeField" destination="rqX-Lc-7tE" id="jFA-1s-Pty"/>
                         <outlet property="userImage" destination="i6D-E2-RsS" id="RzQ-nk-FON"/>
                         <segue destination="uFS-5h-q1c" kind="unwind" identifier="unwindLocal" unwindAction="unwindToRecipeListWithSender:" id="29N-WQ-N9d"/>
+                        <segue destination="uFS-5h-q1c" kind="unwind" identifier="unwindProfile" unwindAction="unwindToProfilePageWithSender:" id="85O-e4-sba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LY6-hS-boC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1296,7 +1298,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qkp-w8-bMb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="piD-QM-64q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="832"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-vX-6Ls">
@@ -1419,7 +1421,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="VWI-nu-mFb" firstAttribute="leading" secondItem="idM-Ds-Hue" secondAttribute="leading" constant="8" id="CWm-gy-K0F"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="IMB-l5-dQf"/>
+                                                    <constraint firstAttribute="height" constant="40" id="IMB-l5-dQf"/>
                                                     <constraint firstItem="VWI-nu-mFb" firstAttribute="centerY" secondItem="idM-Ds-Hue" secondAttribute="centerY" id="eZe-Ag-82D"/>
                                                     <constraint firstAttribute="height" constant="40" id="lVb-iQ-pyy"/>
                                                 </constraints>
@@ -1450,6 +1452,36 @@
                                                 </attributedString>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-Dm-SFf" userLabel="Add Ingredients View">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH3-1O-BTN">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="rQK-4g-qiZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="9pq-Cn-AmY"/>
+                                                    <constraint firstItem="aH3-1O-BTN" firstAttribute="centerY" secondItem="rg2-Dm-SFf" secondAttribute="centerY" id="Fij-dX-Qz9"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Mtz-Zb-vWU"/>
+                                                    <constraint firstItem="aH3-1O-BTN" firstAttribute="leading" secondItem="rg2-Dm-SFf" secondAttribute="leading" constant="8" id="SHa-qz-nem"/>
+                                                    <constraint firstAttribute="height" constant="40" id="itT-Uv-Pxl"/>
+                                                </constraints>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" editable="NO" text="Additional Info..." translatesAutoresizingMaskIntoConstraints="NO" id="q0C-lT-ZCp" userLabel="Additional Info Text View">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="95" id="7F3-zs-NmR"/>
+                                                    <constraint firstAttribute="height" constant="95" id="9Np-3h-TuX"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
@@ -1459,6 +1491,7 @@
                                             <constraint firstAttribute="trailing" secondItem="YpX-GE-rKc" secondAttribute="trailing" id="2nk-nm-KYz"/>
                                             <constraint firstItem="qHP-y1-vMs" firstAttribute="top" secondItem="idM-Ds-Hue" secondAttribute="bottom" constant="4" id="3sm-C8-eMZ"/>
                                             <constraint firstItem="nDu-u9-mgx" firstAttribute="top" secondItem="NKP-xX-8bn" secondAttribute="bottom" id="5a2-js-osx"/>
+                                            <constraint firstAttribute="trailing" secondItem="q0C-lT-ZCp" secondAttribute="trailing" constant="8" id="6di-YW-ifo"/>
                                             <constraint firstItem="nDu-u9-mgx" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" id="7jr-fN-E1A"/>
                                             <constraint firstItem="idM-Ds-Hue" firstAttribute="top" secondItem="6Ti-e7-GRr" secondAttribute="bottom" constant="8" id="E5V-o2-THu"/>
                                             <constraint firstItem="NKP-xX-8bn" firstAttribute="top" secondItem="YpX-GE-rKc" secondAttribute="bottom" id="GE7-mn-l5f"/>
@@ -1470,14 +1503,19 @@
                                             <constraint firstAttribute="trailing" secondItem="nDu-u9-mgx" secondAttribute="trailing" id="Sfv-lk-1AY"/>
                                             <constraint firstAttribute="trailing" secondItem="NKP-xX-8bn" secondAttribute="trailing" id="Sfw-5V-pLo"/>
                                             <constraint firstItem="vTn-8M-Si2" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" constant="8" id="TXS-5e-1J3"/>
+                                            <constraint firstItem="q0C-lT-ZCp" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" constant="8" id="Y2M-rg-SeN"/>
+                                            <constraint firstAttribute="trailing" secondItem="rg2-Dm-SFf" secondAttribute="trailing" id="YOj-m0-Jnw"/>
                                             <constraint firstItem="6Ti-e7-GRr" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" constant="8" id="a5Z-iF-uH7"/>
+                                            <constraint firstItem="rg2-Dm-SFf" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" id="bu6-6H-Y6g"/>
                                             <constraint firstItem="YpX-GE-rKc" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" id="eyR-tn-zbr"/>
                                             <constraint firstItem="27L-MA-vuC" firstAttribute="top" secondItem="nDu-u9-mgx" secondAttribute="bottom" constant="8" id="gtO-Ec-NBH"/>
-                                            <constraint firstAttribute="height" constant="1150" id="ilu-qH-tOF"/>
+                                            <constraint firstAttribute="height" constant="770" id="ilu-qH-tOF"/>
                                             <constraint firstAttribute="trailing" secondItem="qHP-y1-vMs" secondAttribute="trailing" constant="8" id="oIw-nR-cF1"/>
                                             <constraint firstItem="NKP-xX-8bn" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" id="pQH-jn-QDa"/>
                                             <constraint firstAttribute="trailing" secondItem="idM-Ds-Hue" secondAttribute="trailing" id="pTK-3F-53b"/>
+                                            <constraint firstItem="q0C-lT-ZCp" firstAttribute="top" secondItem="rg2-Dm-SFf" secondAttribute="bottom" constant="4" id="qzC-eX-0c1"/>
                                             <constraint firstItem="YpX-GE-rKc" firstAttribute="top" secondItem="m5n-Sv-YP3" secondAttribute="top" id="sQt-kk-iAD"/>
+                                            <constraint firstItem="rg2-Dm-SFf" firstAttribute="top" secondItem="vTn-8M-Si2" secondAttribute="bottom" constant="8" id="swn-IE-D93"/>
                                             <constraint firstItem="idM-Ds-Hue" firstAttribute="leading" secondItem="m5n-Sv-YP3" secondAttribute="leading" id="ulS-Jx-tgT"/>
                                         </constraints>
                                     </view>
@@ -1515,8 +1553,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
+                    <size key="freeformSize" width="375" height="832"/>
                     <connections>
+                        <outlet property="additionalInfoLabel" destination="aH3-1O-BTN" id="6RQ-Lz-d60"/>
+                        <outlet property="additionalInfoView" destination="q0C-lT-ZCp" id="U8f-h4-5Ph"/>
+                        <outlet property="containerHeight" destination="ilu-qH-tOF" id="bvi-Zo-oPH"/>
                         <outlet property="gradientView" destination="NKP-xX-8bn" id="pYO-f3-oBn"/>
                         <outlet property="ingredientsTextView" destination="27L-MA-vuC" id="8RQ-Ue-dG4"/>
                         <outlet property="instructionsTextView" destination="qHP-y1-vMs" id="MJx-6B-Gui"/>
@@ -2394,6 +2435,6 @@
         <image name="unliked" width="147" height="127"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WOA-aI-0Mi"/>
+        <segue reference="BCG-qf-I7I"/>
     </inferredMetricsTieBreakers>
 </document>

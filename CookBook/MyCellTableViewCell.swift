@@ -20,6 +20,7 @@ class MyCellTableViewCell: UITableViewCell {
     @IBOutlet weak var likeIcon: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
+    @IBOutlet weak var userImg: UIImageView!
 
     
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 
 class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -25,6 +25,19 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.separatorStyle = .none
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyCellTableViewCell
         let recipe = recipes[indexPath.row]
+
+        
+        let avaQuery = PFUser.current()?.value(forKey: "ava") as! PFFile
+        avaQuery.getDataInBackground { (data:Data?, error:Error?) in
+            if error == nil {
+                cell.userImg.image = UIImage(data: data!)
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+        cell.userImg.layer.cornerRadius = 35
+        cell.userImg.clipsToBounds = true
         
         cell.recipeName.text = recipe.name
         cell.cellImage.image = recipe.photo
@@ -38,7 +51,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
         //Add border to gradient view
-        cell.gradientView.layer.borderWidth = 2.0
+        cell.gradientView.layer.borderWidth = 1.0
         cell.gradientView.layer.borderColor = UIColor.white.cgColor
         
         //Adds a shadow to image holder
@@ -48,7 +61,6 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         //Makes image adapt to device size
         cell.imageHolderWidth.constant = (view.bounds.width * 0.5)
-        
         
 
         
@@ -70,6 +82,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var recipes = [Recipe]()
     var selectedRecipe: Recipe?
     var recipe: Recipe?
+    var refresher: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,16 +111,23 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         UINavigationBar.appearance().titleTextAttributes = attrs
 
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(RecipeHomeVC.refresh), for: UIControlEvents.valueChanged)
+        recipeTableView.addSubview(refresher)
+        
+
+
+    }
+    
+    func refresh() {
+        recipeTableView.reloadData()
+        refresher.endRefreshing()
     }
     
     func loadSampleRecipes() {
         let photo1 = UIImage(named: "recipe1")!
-        let recipe1 = Recipe(name: "Chicken Shawarma", photo: photo1, time: 40, ingredients: "Chicken, Wrap, Mixed Salad, Mustard", instructions: "1. Add all ingredients.", isPrivate: true, additionalInfo: "This is just a test")!
+        let recipe1 = Recipe(name: "Chicken Shawarma", photo: photo1, time: 40, ingredients: "Chicken, Wrap, Mixed Salad, Mustard", instructions: "1. Add all ingredients.", additionalInfo: "This is just a test", additionalInfoEnabled: true)!
         recipes += [recipe1]
         
     }
@@ -126,7 +146,7 @@ class RecipeHomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         
     }
-    
+ 
     
     //Allows recipes to be deleted by sliding left
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

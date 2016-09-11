@@ -46,6 +46,7 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var additionalInfoView: UITextView!
     @IBOutlet weak var additionalInfoLabel: UILabel!
 
+    @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var containerHeight: NSLayoutConstraint!
 
     
@@ -141,34 +142,6 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
         })
         postUsername.text = usernameArray.last
         */
-        //Calculate post data
-        /*
-        let from = dateArray.last
-        let now = Date()
-        let difference = NSCalendar.current.dateComponents([.second, .minute, .hour, .day, .weekOfMonth], from: from!, to: now)
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.long
-        formatter.timeStyle = DateFormatter.Style.none
-        
-        if difference.second! <= 0 {
-            postDate.text = "NOW"
-        }
-        if difference.second! > 0 && difference.minute! == 0 {
-            postDate.text = "NOW"
-        }
-        if difference.minute! > 0 && difference.hour! == 0 {
-            postDate.text = "\(difference.minute) MINUTES AGO"
-        }
-        if difference.hour! > 0 && difference.day! == 0 {
-            postDate.text = "\(difference.hour) HOURS AGO"
-        }
-        if difference.day! > 0 && difference.weekOfMonth! == 0 {
-            postDate.text = "\(difference.day) DAYS AGO"
-        }
-        if difference.weekOfMonth! < 0 {
-            postDate.text = "\(formatter.string(from: dateArray.last!))"
-        }
- */
  
         
         let postQuery = PFQuery(className: "posts")
@@ -197,6 +170,8 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
                     self.ingredientsTextView.text = "Ingredients: \((object.value(forKey: "ingredients") as! String))"
                     self.instructionsTextView.text = (object.value(forKey: "instructions")as! String)
                     self.postUsername.text = (object.value(forKey: "username")as! String)
+                    self.uuidArray.append(object.value(forKey: "uuid")as! String)
+                    self.uuidLabel.text = self.uuidArray.last
                     self.additionalInfoEnabledArray.append(object.value(forKey: "additionalInfoEnabled")as! Int)
                     if self.additionalInfoEnabledArray.last == 1 {
                         self.additionalInfoView.text = (object.value(forKey: "additionalInfo") as! String)
@@ -230,17 +205,71 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
  
         //show like button depending on whether it is liked or not
         let didLike = PFQuery(className: "likes")
-        didLike.whereKey("by", equalTo: PFUser.current()?.username)
-        didLike.whereKey("to", equalTo: postuuid.last)
-        didLike.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+        didLike.whereKey("by", equalTo: PFUser.current()!.username!)
+        didLike.whereKey("to", equalTo: postuuid.last!)
+        didLike.countObjectsInBackground { (count:Int32, error:Error?) in
             if error == nil {
-                
-                for object in objects! {
+                if count == 1 {
+                    self.likeButton.image = UIImage(named: "liked")
+                } else {
+                    self.likeButton.image = UIImage(named: "unliked")
                     
                 }
             }
         }
+        
+        let likeCount = PFQuery(className: "likes")
+        likeCount.whereKey("to", equalTo: postuuid.last!)
+        likeCount.countObjectsInBackground { (count:Int32, error:Error?) in
+            if error == nil {
+                self.likeCount.text = String(count)
+            }
         }
+        
+        //double tap to like
+        let likeTap = UITapGestureRecognizer(target: self, action: "likeTap")
+        likeTap.numberOfTapsRequired = 2
+        userImage.isUserInteractionEnabled = true
+        userImage.addGestureRecognizer(likeTap)
+
+        
+        
+        }
+    
+    func likeTap() {
+        
+        //create large like heart
+        let likePic = UIImageView(image: UIImage(named: "unlike"))
+        likePic.frame.size.width = userImage.frame.size.height / 1.5
+        likePic.frame.size.height = userImage.frame.size.height / 1.5
+       // likePic.center = userImage.center
+
+        
+        likePic.center = CGPoint(x: userImage.center.x, y: userImage.center.y - 70)
+        likePic.alpha = 0.9
+        userImage.addSubview(likePic)
+        
+        //hide likePic with animation and transform
+        UIView.animate(withDuration: 0.6) {
+            likePic.alpha = 0
+            likePic.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        }
+        if likeButton.image == UIImage(named: "unliked") {
+            let object = PFObject(className: "likes")
+            object["by"] = PFUser.current()!.username!
+            object["to"] = postuuid.last!
+            
+            object.saveInBackground(block: { (success:Bool, error:Error?) in
+                if success {
+                    self.likeButton.image = UIImage(named: "liked")
+                    self.likeCount.text = String(Int(self.likeCount.text!)! + 1)
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+            
+        }
+    }
     
     
     func calculateDate(_ date: Date) {
@@ -271,6 +300,40 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
             postDate.text = "\(formatter.string(from: dateArray.last!))"
         }
         
+    @IBAction func likeButtonTapped(_ sender: AnyObject) {
+        //If the user hasnt liked it then like it!
+        if likeButton.image == UIImage(named: "unliked") {
+            
+            let object = PFObject(className: "likes")
+            object["by"] = PFUser.current()!.username!
+            object["to"] = postuuid.last!
+            
+            object.saveInBackground(block: { (success:Bool, error:Error?) in
+                if success {
+                    self.likeButton.image = UIImage(named: "liked")
+                    self.likeCount.text = String(Int(self.likeCount.text!)! + 1)
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+        } else {
+            let query = PFQuery(className: "likes")
+            query.whereKey("by", equalTo: PFUser.current()!.username!)
+            query.whereKey("to", equalTo: postuuid.last!)
+            query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                if error == nil {
+                    for object in objects! {
+                        object.deleteInBackground(block: { (success:Bool, error:Error?) in
+                            if success {
+                                self.likeButton.image = UIImage(named: "unliked")
+                                self.likeCount.text = String(Int(self.likeCount.text!)! - 1)
+                            }
+                        })
+                    }
+                }
+            })
+        }
+    }
     
     
     
@@ -283,6 +346,18 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
         scrollView.contentOffset = CGPoint(x: 0, y: 81)
     }
     
+    @IBAction func usernameTapped(_ sender: AnyObject) {
+        if postUsername.text == PFUser.current()!.username! {
+            //If it is users own post then go home
+            let home = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! ProfileVC
+            self.navigationController?.pushViewController(home, animated: true)
+        } else {
+            //If user is someone elses post then go to their page
+            guestname.append(postUsername!.text!)
+            let guest = self.storyboard?.instantiateViewController(withIdentifier: "guestVC") as! GuestVC
+            self.navigationController?.pushViewController(guest, animated: true)
+        }
+    }
 
     
     //User cancels creating a new recipe

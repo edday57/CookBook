@@ -302,6 +302,16 @@ class GuestVC: UICollectionViewController {
         self.navigationController?.pushViewController(followers, animated: true)
 
     }
+    
+    //Go to post
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        postuuid.append(uuidArray[indexPath.row])
+        
+        let post = self.storyboard?.instantiateViewController(withIdentifier: "ViewRecipePublicVC") as! ViewRecipePublicVC
+        self.navigationController?.pushViewController(post, animated: true)
+    }
+    
+    
 }
 
 

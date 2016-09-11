@@ -22,7 +22,7 @@ class ViewRecipeNavBarVC: UINavigationController {
         self.navigationBar.layer.shadowRadius = 4
         self.navigationBar.layer.shadowOpacity = 0.5
         //self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-       // self.navigationBar.shadowImage = UIImage()
+        // self.navigationBar.shadowImage = UIImage()
         self.navigationBar.isTranslucent = true
         let attrs = [
             NSForegroundColorAttributeName : UIColor.white,

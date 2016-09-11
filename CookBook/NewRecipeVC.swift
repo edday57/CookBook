@@ -330,7 +330,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                         let object = PFObject(className: "posts")
                         object["username"] = PFUser.current()!.username
                         object["ava"] = PFUser.current()?.value(forKey: "ava") as! PFFile
-                        object["uuid"] = "\(PFUser.current()!.username) \(NSUUID().uuidString)"
+                        object["uuid"] = "\(PFUser.current()!.username!) \(NSUUID().uuidString)"
                         object["title"] = nameTextField.text!.capitalized
                         object["time"] = Int(timeField.text!)
                         object["ingredients"] = ingredientsTextView.text!

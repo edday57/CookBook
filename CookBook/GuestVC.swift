@@ -15,7 +15,7 @@ class GuestVC: UICollectionViewController {
 
     //UI Objects
     var refresher : UIRefreshControl!
-    var page : Int = 10
+    var page : Int = 9
     
     //arrays for server data
     var uuidArray = [String]()
@@ -90,6 +90,56 @@ class GuestVC: UICollectionViewController {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    //load more while scrolling down
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= scrollView.contentSize.height - self.view.frame.size.height {
+            self.loadMore()
+        }
+    }
+    
+    
+    
+    
+    //Load more posts
+    func loadMore() {
+        //if there are unloaded posts
+        if page <= picArray.count {
+            //increase page size by 9
+            page = page + 9
+            
+            //load more posts
+            let query = PFQuery(className: "posts")
+            query.whereKey("username", equalTo: guestname.last!)
+            query.limit = page
+            query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                if error == nil {
+                    
+                    //clean up
+                    self.uuidArray.removeAll(keepingCapacity: false)
+                    self.picArray.removeAll(keepingCapacity: false)
+                    for object in objects! {
+                        self.uuidArray.append(object.value(forKey: "uuid") as! String)
+                        self.picArray.append(object.value(forKey: "picture") as! PFFile)
+                    }
+                    print("Loaded \(self.page) recipes!")
+                    self.collectionView?.reloadData()
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+            
+        }
+    }
+    
+    
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picArray.count

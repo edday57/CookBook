@@ -112,6 +112,9 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showPost", sender: self)
+    }
     
 
 

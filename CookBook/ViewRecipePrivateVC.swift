@@ -14,6 +14,7 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var likeButton: UIImageView!
     @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     //RECIPE OUTLETS
     @IBOutlet weak var instructionsTextView: UITextView!
@@ -63,6 +64,8 @@ class ViewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigat
         recipeName.layer.shadowOpacity = 0.5
         recipeName.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         recipeName.layer.shadowRadius = 6
+        
+        
     }
     
     

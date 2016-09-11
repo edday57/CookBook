@@ -222,12 +222,26 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
                     })
                     self.dateArray.append(object.createdAt!)
                     self.calculateDate(self.dateArray.last!)
+                    
+                    
                 }
             }
         }
  
-
-    }
+        //show like button depending on whether it is liked or not
+        let didLike = PFQuery(className: "likes")
+        didLike.whereKey("by", equalTo: PFUser.current()?.username)
+        didLike.whereKey("to", equalTo: postuuid.last)
+        didLike.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+            if error == nil {
+                
+                for object in objects! {
+                    
+                }
+            }
+        }
+        }
+    
     
     func calculateDate(_ date: Date) {
       //  let from = date

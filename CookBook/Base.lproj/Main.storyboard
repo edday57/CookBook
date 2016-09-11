@@ -579,7 +579,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="CookBook" id="dfr-QQ-clE">
+                                    <navigationItem title="Saved Recipes" id="dfr-QQ-clE">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dsp-yd-nOz">
                                             <connections>
                                                 <segue destination="VJO-Pc-2iE" kind="presentation" id="WOA-aI-0Mi"/>
@@ -623,7 +623,7 @@
                             <constraint firstAttribute="trailing" secondItem="5Zx-Hf-nt3" secondAttribute="trailing" id="xnq-4R-VE5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="LS1-ag-KyQ"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="savedEmpty" selectedImage="savedFull" id="LS1-ag-KyQ"/>
                     <navigationItem key="navigationItem" title="CookBook" id="bIc-va-9PZ">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="YZW-kJ-Vwa"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C6m-pR-uc0"/>
@@ -834,7 +834,7 @@
                             <constraint firstItem="VWm-oG-20I" firstAttribute="top" secondItem="m8t-q7-Wxa" secondAttribute="bottom" constant="1" id="vwh-bE-vfF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="khe-dr-IwM"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeEmpty" selectedImage="homeFull" id="khe-dr-IwM"/>
                     <navigationItem key="navigationItem" title="CookBook" id="a4z-9l-l6Q">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Y4g-qt-ebX"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4We-u0-SeJ"/>
@@ -1585,6 +1585,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post uuid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6H-do-tVO">
+                                <frame key="frameInset" minX="75" minY="279" width="212" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-hc-nfN">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-Jg-EUb" userLabel="Container View">
@@ -1953,7 +1960,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="homeView" automaticallyAdjustsScrollViewInsets="NO" id="3Rl-Uc-AW6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="zJ2-h1-AR9">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="zJ2-h1-AR9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2731,11 +2738,11 @@
             </objects>
             <point key="canvasLocation" x="3317.5999999999999" y="1795.9520239880062"/>
         </scene>
-        <!--Profile Nav BarVC-->
+        <!--Me-->
         <scene sceneID="FKz-ln-nE3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3JE-90-uM4" customClass="ProfileNavBarVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="8cd-Et-2Yn"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="profileEmpty" selectedImage="profileFull" id="8cd-Et-2Yn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="70L-eX-nR6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2785,13 +2792,19 @@
         <image name="TextField2" width="300" height="53"/>
         <image name="blank" width="375" height="218"/>
         <image name="blurredgreyscale" width="2122" height="1415"/>
+        <image name="homeEmpty" width="28" height="28"/>
+        <image name="homeFull" width="28" height="28"/>
         <image name="logout" width="25" height="25"/>
         <image name="menu" width="22" height="22"/>
         <image name="noodlesPlaceholder" width="690" height="400"/>
+        <image name="profileEmpty" width="28" height="28"/>
+        <image name="profileFull" width="28" height="28"/>
         <image name="recipe1" width="448" height="256"/>
+        <image name="savedEmpty" width="28" height="28"/>
+        <image name="savedFull" width="28" height="28"/>
         <image name="unliked" width="147" height="127"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BCG-qf-I7I"/>
+        <segue reference="WOA-aI-0Mi"/>
     </inferredMetricsTieBreakers>
 </document>

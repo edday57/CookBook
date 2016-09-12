@@ -175,9 +175,9 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
                     self.additionalInfoEnabledArray.append(object.value(forKey: "additionalInfoEnabled")as! Int)
                     if self.additionalInfoEnabledArray.last == 1 {
                         self.additionalInfoView.text = (object.value(forKey: "additionalInfo") as! String)
-                        self.containerHeight.constant = 850
+                        self.containerHeight.constant = 900
                     } else {
-                        self.containerHeight.constant = 700
+                        self.containerHeight.constant = 750
                         self.additionalInfoView.isHidden = true
                         self.additionalInfoLabel.isHidden = true
                     }

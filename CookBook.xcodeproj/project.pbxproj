@@ -45,6 +45,7 @@
 		64D569F61D84915F0093AE8A /* ViewRecipePublicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */; };
 		64E734941D7F88D90084A59A /* EditProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */; };
 		64E734961D7F89400084A59A /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E734951D7F89400084A59A /* EditProfileVC.swift */; };
+		64F3C9E31D86C93600ABBDBF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 64F3C9E21D86C93600ABBDBF /* FontAwesome.otf */; };
 		64F9A0911D7D786E0097CF7F /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0901D7D786E0097CF7F /* FollowersVC.swift */; };
 		64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0921D7D78820097CF7F /* FollowersCell.swift */; };
 		64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */; };
@@ -93,6 +94,7 @@
 		64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecipePublicVC.swift; sourceTree = "<group>"; };
 		64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProfileNavBarVC.swift; path = ../EditProfileNavBarVC.swift; sourceTree = "<group>"; };
 		64E734951D7F89400084A59A /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		64F3C9E21D86C93600ABBDBF /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		64F9A0901D7D786E0097CF7F /* FollowersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
 		64F9A0921D7D78820097CF7F /* FollowersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
 		64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavBarVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				2BD609D61D7B026C00EEA826 /* LucidaGrande.ttc */,
 				64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */,
 				64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */,
+				64F3C9E21D86C93600ABBDBF /* FontAwesome.otf */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */,
 				64B9C8B91D6F05050061D601 /* AdobeGothicStd-Bold.otf in Resources */,
 				2BD609D71D7B026C00EEA826 /* LucidaGrande.ttc in Resources */,
+				64F3C9E31D86C93600ABBDBF /* FontAwesome.otf in Resources */,
 				64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */,
 				64B9C8AE1D6F00590061D601 /* Assets.xcassets in Resources */,
 				64B9C8AC1D6F00590061D601 /* Main.storyboard in Resources */,
@@ -481,6 +485,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edwardday.CookBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

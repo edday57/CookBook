@@ -41,7 +41,12 @@ class ProfileVC: UICollectionViewController {
 
     //refresh function
     func refresh() {
-        collectionView?.reloadData()
+        PFUser.current()?.fetchInBackground(block: { (objects:PFObject?, error:Error?) in
+            if error == nil {
+                self.collectionView?.reloadData()
+            }
+        })
+        
         refresher.endRefreshing()
     }
     
@@ -170,8 +175,10 @@ class ProfileVC: UICollectionViewController {
         header.button.setTitle("Edit Profile", for: UIControlState.normal)
         let avaQuery = PFUser.current()?.object(forKey: "ava") as! PFFile
         avaQuery.getDataInBackground { (data:Data?, error:Error?) in
-            if error == nil {header.avaImg.image = UIImage(data: data!)
-            }
+            if error == nil {
+                print("executed")
+                header.avaImg.image = UIImage(data: data!)
+           }
         }
         
         //posts

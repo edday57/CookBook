@@ -34,6 +34,7 @@
 		<string>AppleGothic.ttf</string>
 		<string>LucidaGrande.ttc</string>
 		<string>AdobeGothicStd-Bold.otf</string>
+		<string>FontAwesome.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

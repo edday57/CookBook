@@ -246,6 +246,14 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         dismiss(animated: true, completion: nil)
         
     }
+    @IBAction func refreshClicked(_ sender: AnyObject) {
+        do {
+        PFUser.current()!.fetchInBackground()
+        }
+        catch {
+            print("error")
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////
 
     

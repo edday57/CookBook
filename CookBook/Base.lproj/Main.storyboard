@@ -1786,7 +1786,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09/11/16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-gW-ihx">
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="76" id="Hta-74-Zc2"/>
+                                                            <constraint firstAttribute="width" constant="95" id="Hta-74-Zc2"/>
                                                             <constraint firstAttribute="height" constant="21" id="IEf-jA-aTN"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AdobeGothicStd-Bold" family="Adobe Gothic Std" pointSize="17"/>
@@ -2197,7 +2197,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okY-dJ-zfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2447" y="1027"/>
+            <point key="canvasLocation" x="2445.5999999999999" y="1026.8365817091455"/>
         </scene>
         <!--Guest Profile VC-->
         <scene sceneID="Wnd-g0-ZbC">
@@ -2670,6 +2670,15 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBe-Eu-5wm">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="xfR-mq-o0c"/>
+                                                </constraints>
+                                                <state key="normal" title="Refresh"/>
+                                                <connections>
+                                                    <action selector="refreshClicked:" destination="dN6-d1-fdT" eventType="touchUpInside" id="Mkd-NF-UPW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.89516497672872331" green="0.89516497672872331" blue="0.89516497672872331" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -2682,6 +2691,8 @@
                                             <constraint firstAttribute="trailing" secondItem="WFX-Q3-ABM" secondAttribute="trailing" id="9xE-Q7-iQY"/>
                                             <constraint firstItem="X5p-Ww-m4w" firstAttribute="top" secondItem="WFX-Q3-ABM" secondAttribute="bottom" id="Bot-Vc-TZG"/>
                                             <constraint firstAttribute="height" constant="700" id="CFg-30-VpW"/>
+                                            <constraint firstItem="HBe-Eu-5wm" firstAttribute="leading" secondItem="ax7-pP-Upy" secondAttribute="trailing" constant="10" id="GQy-bN-bxU"/>
+                                            <constraint firstItem="HBe-Eu-5wm" firstAttribute="top" secondItem="2T3-JJ-OIV" secondAttribute="top" constant="8" id="O0d-Zg-Gvb"/>
                                             <constraint firstItem="t9O-U3-iL8" firstAttribute="leading" secondItem="2T3-JJ-OIV" secondAttribute="leading" constant="10" id="PjG-vj-YVo"/>
                                             <constraint firstAttribute="trailing" secondItem="6E3-Kr-Yzr" secondAttribute="trailing" id="QQl-Lg-0Be"/>
                                             <constraint firstItem="WFX-Q3-ABM" firstAttribute="leading" secondItem="2T3-JJ-OIV" secondAttribute="leading" id="XJd-85-k24"/>
@@ -2698,6 +2709,7 @@
                                             <constraint firstItem="fKR-P8-Olf" firstAttribute="top" secondItem="6E3-Kr-Yzr" secondAttribute="bottom" id="gw1-kW-nvu"/>
                                             <constraint firstAttribute="trailing" secondItem="t9O-U3-iL8" secondAttribute="trailing" constant="10" id="i3f-v7-gU7"/>
                                             <constraint firstItem="fKR-P8-Olf" firstAttribute="leading" secondItem="2T3-JJ-OIV" secondAttribute="leading" id="lvJ-D3-fjo"/>
+                                            <constraint firstAttribute="trailing" secondItem="HBe-Eu-5wm" secondAttribute="trailing" constant="10" id="qma-Tb-DpC"/>
                                             <constraint firstItem="z4N-Dt-lUx" firstAttribute="leading" secondItem="2T3-JJ-OIV" secondAttribute="leading" id="tt2-gL-oc8"/>
                                         </constraints>
                                     </view>

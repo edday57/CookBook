@@ -180,6 +180,15 @@ class ProfileVC: UICollectionViewController {
                 header.avaImg.image = UIImage(data: data!)
            }
         }
+        let coverPhoto = PFUser.current()?.object(forKey: "coverPhoto") as? PFFile
+        if coverPhoto != nil {
+            //If a cover photo exists then set the cover photo as it
+            coverPhoto?.getDataInBackground(block: { (data:Data?, error:Error?) in
+                if error == nil {
+                    header.backgroundImage.image = UIImage(data: data!)
+                }
+            })
+        }
         
         //posts
         let posts = PFQuery(className: "posts")

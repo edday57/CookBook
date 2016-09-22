@@ -13,6 +13,7 @@ import Parse
 
 class ProfileVC: UICollectionViewController {
     
+
     var refresher: UIRefreshControl!
     //size of page
     var page: Int = 9
@@ -28,27 +29,33 @@ class ProfileVC: UICollectionViewController {
         refresher.addTarget(self, action: #selector(ProfileVC.refresh), for: UIControlEvents.valueChanged)
         collectionView?.addSubview(refresher)
         
-        
+        collectionView?.sendSubview(toBack: refresher)
         //recive notification from editVC
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.reload(_:)), name: NSNotification.Name(rawValue: "reload"), object: nil)
 
         
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileVC.uploaded(_:)), name: NSNotification.Name(rawValue: "uploadedRecipe"), object: nil)
+        
+     
+                
         //load posts
         loadPosts()
         
     }
-
+    
+    
     //refresh function
     func refresh() {
         PFUser.current()?.fetchInBackground(block: { (objects:PFObject?, error:Error?) in
             if error == nil {
                 self.collectionView?.reloadData()
+               
             }
         })
         
         refresher.endRefreshing()
     }
+    
     
     func reload(_ notification:Notification) {
         collectionView?.reloadData()
@@ -151,11 +158,15 @@ class ProfileVC: UICollectionViewController {
     
     
     /////////////////////////
+
+
+
     
     //Header config
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! ProfileHeaderView
         
+
         
         header.posts.text = nil
         header.following.text = nil
@@ -176,7 +187,7 @@ class ProfileVC: UICollectionViewController {
         let avaQuery = PFUser.current()?.object(forKey: "ava") as! PFFile
         avaQuery.getDataInBackground { (data:Data?, error:Error?) in
             if error == nil {
-                print("executed")
+                
                 header.avaImg.image = UIImage(data: data!)
            }
         }
@@ -186,9 +197,11 @@ class ProfileVC: UICollectionViewController {
             coverPhoto?.getDataInBackground(block: { (data:Data?, error:Error?) in
                 if error == nil {
                     header.backgroundImage.image = UIImage(data: data!)
+
                 }
             })
         }
+
         
         //posts
         let posts = PFQuery(className: "posts")
@@ -233,7 +246,8 @@ class ProfileVC: UICollectionViewController {
         followersTap.numberOfTapsRequired = 1
         header.followers.isUserInteractionEnabled = true
         header.followers.addGestureRecognizer(followersTap)
-        
+
+
         return header
     }
 
@@ -330,4 +344,5 @@ class ProfileVC: UICollectionViewController {
     }
     */
 
+    
 }

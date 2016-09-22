@@ -78,9 +78,9 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         // Do any additional setup after loading the view.
         
         //Make search bar transparent
-        let image = UIImage()
-        searchBar.setBackgroundImage(image, for: .any, barMetrics: .default)
-        searchBar.scopeBarBackgroundImage = image
+     //   let image = UIImage()
+      //  searchBar.setBackgroundImage(image, for: .any, barMetrics: .default)
+      //  searchBar.scopeBarBackgroundImage = image
         
         //Load sample recipes
         loadSampleRecipes()
@@ -112,9 +112,9 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPost", sender: self)
-    }
+  //  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //    performSegue(withIdentifier: "showPost", sender: self)
+   // }
     
 
 

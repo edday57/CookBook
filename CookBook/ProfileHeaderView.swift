@@ -32,6 +32,8 @@ class ProfileHeaderView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+
+        
         //allignment
         let width = UIScreen.main.bounds.width
         
@@ -75,10 +77,10 @@ class ProfileHeaderView: UICollectionReusableView {
         let cgImage = context.createCGImage(resultImage, from: resultImage.extent)
         let blurredImage = UIImage(cgImage: cgImage!)
         backgroundImage.image = blurredImage
-        
+    
         
     }
-
+    
 
     
     

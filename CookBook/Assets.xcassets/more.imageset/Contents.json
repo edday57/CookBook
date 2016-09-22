@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "GradientBackgroundx1.png",
+      "filename" : "more.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "GradientBackgroundx2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "GradientBackgroundx3.png",
       "scale" : "3x"
     }
   ],

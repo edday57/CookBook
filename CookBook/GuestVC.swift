@@ -45,7 +45,7 @@ class GuestVC: UICollectionViewController {
         refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(GuestVC.refresh), for: UIControlEvents.valueChanged)
         collectionView?.addSubview(refresher)
-        
+        collectionView?.sendSubview(toBack: refresher)
         //Call load posts function
         loadPosts()
     }

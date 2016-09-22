@@ -16,6 +16,9 @@ var user = String()
 class FollowersVC: UITableViewController {
     
     //arrays
+    let lightBlue = UIColor(colorLiteralRed: 88/255, green: 190/255, blue: 239/255, alpha: 1)
+    let lightGreen = UIColor(colorLiteralRed: 105/255, green: 212/255, blue: 66/255, alpha: 1)
+    var fullnameArray = [String]()
     var usernameArray = [String]()
     var avaArray = [PFFile]()
     
@@ -63,10 +66,12 @@ class FollowersVC: UITableViewController {
                 query?.addDescendingOrder("createdAt")
                 query?.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
                     if error == nil {
+                        self.fullnameArray.removeAll(keepingCapacity: false)
                         self.usernameArray.removeAll(keepingCapacity: false)
                         self.avaArray.removeAll(keepingCapacity: false)
                         
                         for object in objects! {
+                            self.fullnameArray.append((object.object(forKey: "fullname")as! String).capitalized)
                             self.usernameArray.append(object.object(forKey: "username")as! String)
                             self.avaArray.append(object.object(forKey: "ava")as! PFFile)
                             self.tableView.reloadData()
@@ -98,10 +103,12 @@ class FollowersVC: UITableViewController {
                 query?.addDescendingOrder("createdAt")
                 query?.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
                     if error == nil {
+                        self.fullnameArray.removeAll(keepingCapacity: false)
                         self.usernameArray.removeAll(keepingCapacity: false)
                         self.avaArray.removeAll(keepingCapacity: false)
                         
                         for object in objects! {
+                            self.fullnameArray.append((object.object(forKey: "fullname")as! String).capitalized)
                             self.usernameArray.append(object.object(forKey: "username")as! String)
                             self.avaArray.append(object.object(forKey: "ava")as! PFFile)
                             self.tableView.reloadData()
@@ -128,6 +135,7 @@ class FollowersVC: UITableViewController {
         
         //connect server data to cell
         cell.usernameLbl.text = usernameArray[indexPath.row]
+        cell.fullnameLbl.text = fullnameArray[indexPath.row]
         avaArray[indexPath.row].getDataInBackground { (data:Data?, error:Error?) in
             if error == nil {
                 cell.avaImg.image = UIImage(data: data!)
@@ -143,10 +151,21 @@ class FollowersVC: UITableViewController {
         query.countObjectsInBackground { (count:Int32, error:Error?) in
             if error == nil {
                 if count == 0 {
-                    cell.followBtn.setTitle("Follow", for: UIControlState.normal)
+                    cell.followBtn.setTitle("FOLLOW", for: UIControlState.normal)
+                    cell.followBtn.layer.backgroundColor = UIColor.white.cgColor
+                    cell.followBtn.layer.cornerRadius = 2
+                    cell.followBtn.layer.masksToBounds = true
+                    cell.followBtn.layer.borderWidth = 1
+                    cell.followBtn.layer.borderColor = self.lightBlue.cgColor
+                    cell.followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
                     
                 } else {
-                    cell.followBtn.setTitle("Following", for: UIControlState.normal)
+                    cell.followBtn.setTitle("FOLLOWING", for: UIControlState.normal)
+                    cell.followBtn.layer.cornerRadius = 2
+                    cell.followBtn.layer.masksToBounds = true
+                    cell.followBtn.layer.backgroundColor = self.lightGreen.cgColor
+                    cell.followBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+                    cell.followBtn.layer.borderWidth = 0
                 }
             }
         }

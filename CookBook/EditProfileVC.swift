@@ -23,6 +23,8 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var avaImg: UIImageView!
     
+    @IBOutlet weak var changeCoverBtn: UIButton!
+    @IBOutlet weak var coverImg: UIImageView!
     
         //picker view and picker data
         var genderPicker : UIPickerView!
@@ -63,6 +65,9 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func changeCoverBtnTapped(_ sender: AnyObject) {
+
+    }
     //user info function
     func information() {
         
@@ -246,14 +251,7 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         dismiss(animated: true, completion: nil)
         
     }
-    @IBAction func refreshClicked(_ sender: AnyObject) {
-        do {
-        PFUser.current()!.fetchInBackground()
-        }
-        catch {
-            print("error")
-        }
-    }
+
     //////////////////////////////////////////////////////////////////////////////
 
     

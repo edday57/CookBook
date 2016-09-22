@@ -71,7 +71,7 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
         //Adds a shadow to the recipe name
         recipeName.layer.shadowOpacity = 0.5
         recipeName.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        recipeName.layer.shadowRadius = 6
+        recipeName.layer.shadowRadius = 4
         
        /*
         let postQuery = PFQuery(className: "posts")
@@ -183,12 +183,7 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
                     }
 
                     
-                    let avaFile = object.value(forKey: "ava") as! PFFile
-                    avaFile.getDataInBackground(block: { (data:Data?, error:Error?) in
-                        if error == nil {
-                            self.avaImage.image = UIImage(data: data!)
-                        }
-                    })
+
                     let pictureFile = object.value(forKey: "picture") as! PFFile
                     pictureFile.getDataInBackground(block: { (data:Data?, error:Error?) in
                         if error == nil {
@@ -200,7 +195,24 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
                     
                     
                 }
+                let avaQuery = PFUser.query()
+                avaQuery?.whereKey("username", equalTo: self.postUsername.text!)
+                avaQuery?.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                    if error == nil {
+                        for object in objects! {
+                            let avaFile = object.value(forKey: "ava") as! PFFile
+                            avaFile.getDataInBackground(block: { (data:Data?, error:Error?) in
+                                if error == nil {
+                                    self.avaImage.image = UIImage(data: data!)
+                                }
+                            })
+                        }
+                    }
+                })
+
             }
+            
+
         }
  
         //show like button depending on whether it is liked or not
@@ -344,6 +356,10 @@ class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLayoutSubviews() {
         scrollView.contentOffset = CGPoint(x: 0, y: 81)
+        avaImage.layer.cornerRadius = avaImage.frame.width / 2
+        avaImage.layer.masksToBounds = true
+        avaImage.layer.borderWidth = 1
+        avaImage.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func usernameTapped(_ sender: AnyObject) {

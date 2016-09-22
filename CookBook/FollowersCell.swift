@@ -11,14 +11,22 @@ import Parse
 
 class FollowersCell: UITableViewCell {
 
+    let lightBlue = UIColor(colorLiteralRed: 88/255, green: 190/255, blue: 239/255, alpha: 1)
+    let lightGreen = UIColor(colorLiteralRed: 105/255, green: 212/255, blue: 66/255, alpha: 1)
+    @IBOutlet weak var fullnameLbl: UILabel!
     @IBOutlet weak var followBtn: UIButton!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var avaImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        followBtn.setTitle("FOLLOW", for: UIControlState.normal)
+        followBtn.layer.backgroundColor = UIColor.white.cgColor
+        followBtn.layer.cornerRadius = 2
+        followBtn.layer.masksToBounds = true
+        followBtn.layer.borderWidth = 1
+        followBtn.layer.borderColor = self.lightBlue.cgColor
+        followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
 
-        avaImg.layer.cornerRadius = avaImg.frame.size.width / 2
-        avaImg.clipsToBounds = true
         
     }
 
@@ -27,13 +35,19 @@ class FollowersCell: UITableViewCell {
         
         let title = followBtn.title(for: UIControlState.normal)!
         print(title)
-        if title == "Follow" {
+        if title == "FOLLOW" {
             let object = PFObject(className: "follow")
             object["follower"] = PFUser.current()?.username
             object["following"] = usernameLbl.text
             object.saveInBackground(block: { (success:Bool, error:Error?) in
                 if success {
-                    self.followBtn.setTitle("Following", for: UIControlState.normal)
+                    self.followBtn.setTitle("FOLLOWING", for: UIControlState.normal)
+                    self.followBtn.layer.cornerRadius = 2
+                    self.followBtn.layer.masksToBounds = true
+                    self.followBtn.layer.borderWidth = 0
+                    self.followBtn.layer.backgroundColor = self.lightGreen.cgColor
+                    self.followBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+
                 } else {
                     print(error!.localizedDescription)
                 }
@@ -48,7 +62,14 @@ class FollowersCell: UITableViewCell {
                     for object in objects! {
                         object.deleteInBackground(block: { (success:Bool, error:Error?) in
                             if success {
-                                self.followBtn.setTitle("Follow", for: UIControlState.normal)
+                                self.followBtn.setTitle("FOLLOW", for: UIControlState.normal)
+                                self.followBtn.layer.backgroundColor = UIColor.white.cgColor
+                                self.followBtn.layer.cornerRadius = 2
+                                self.followBtn.layer.masksToBounds = true
+                                self.followBtn.layer.borderWidth = 1
+                                self.followBtn.layer.borderColor = self.lightBlue.cgColor
+                                self.followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
+
                             } else {
                                 print(error!.localizedDescription)
                             }
@@ -62,4 +83,9 @@ class FollowersCell: UITableViewCell {
     }
 
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        avaImg.layer.cornerRadius = 22
+        avaImg.clipsToBounds = true
+    }
 }

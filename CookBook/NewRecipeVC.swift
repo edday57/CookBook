@@ -377,7 +377,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                     additionalInfoEnabled = false
                 }
                 let additionalInfo = self.additionalInfo.text!
-                var destinationViewController = segue.destination as! RecipeHomeVC
+                let destinationViewController = segue.destination as! RecipeHomeVC
                 destinationViewController.recipe = Recipe(name: name, photo: photo, time: time!, ingredients: ingredients, instructions: instructions, additionalInfo: additionalInfo, additionalInfoEnabled: additionalInfoEnabled)
                 recipe = Recipe(name: name, photo: photo, time: time!, ingredients: ingredients, instructions: instructions, additionalInfo: additionalInfo, additionalInfoEnabled: additionalInfoEnabled)
             }

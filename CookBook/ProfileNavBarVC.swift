@@ -22,7 +22,7 @@ class ProfileNavBarVC: UINavigationController {
         self.navigationBar.layer.shadowOpacity = 0.5
         //self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         // self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
+        self.navigationBar.isTranslucent = false
         let attrs = [
             NSForegroundColorAttributeName : UIColor.white,
             //   NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 24)!

@@ -29,7 +29,7 @@ class FollowersVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
         //set tile
         self.navigationItem.title = show_
@@ -183,7 +183,7 @@ class FollowersVC: UITableViewController {
         
         //if select self then go home, otherwise go to guest
         if cell.usernameLbl.text! == PFUser.current()!.username! {
-            let home = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! ProfileVC
+            let home = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! NewProfileVC
             self.navigationController?.pushViewController(home, animated: true)
             
         } else {

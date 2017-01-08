@@ -15,7 +15,7 @@ class pictureCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         let width = UIScreen.main.bounds.width
-        picImg.frame = CGRect(x: 0, y: 0, width: width / 3, height: width / 3)
+        picImg.frame = CGRect(x: 0, y: 0, width: (width / 2), height: width / 2)
         picImg.layer.borderWidth = 1
         picImg.layer.borderColor = UIColor.white.cgColor
     }

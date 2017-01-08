@@ -9,10 +9,7 @@
 import UIKit
 import Parse
 
-
-
 class ProfileVC: UICollectionViewController {
-    
 
     var refresher: UIRefreshControl!
     //size of page
@@ -236,6 +233,8 @@ class ProfileVC: UICollectionViewController {
         postsTap.numberOfTapsRequired = 1
         header.posts.isUserInteractionEnabled = true
         header.posts.addGestureRecognizer(postsTap)
+        
+
         
         let followingTap = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.followingTap))
         followingTap.numberOfTapsRequired = 1

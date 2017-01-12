@@ -11,49 +11,45 @@ import Parse
 
 class FollowersCell: UITableViewCell {
 
-    let lightBlue = UIColor(colorLiteralRed: 88/255, green: 190/255, blue: 239/255, alpha: 1)
-    let lightGreen = UIColor(colorLiteralRed: 105/255, green: 212/255, blue: 66/255, alpha: 1)
-    @IBOutlet weak var fullnameLbl: UILabel!
     @IBOutlet weak var followBtn: UIButton!
+    @IBOutlet weak var followBg: UIView!
+    let lightBlue = UIColor(colorLiteralRed: 88/255, green: 190/255, blue: 239/255, alpha: 1)
+    let lightGreen = UIColor(colorLiteralRed: 139/255, green: 241/255, blue: 111/255, alpha: 1)
+    @IBOutlet weak var fullnameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var avaImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        followBtn.setTitle("FOLLOW", for: UIControlState.normal)
-        followBtn.layer.backgroundColor = UIColor.white.cgColor
-        followBtn.layer.cornerRadius = 2
-        followBtn.layer.masksToBounds = true
-        followBtn.layer.borderWidth = 1
-        followBtn.layer.borderColor = self.lightBlue.cgColor
-        followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
+        followBtn.setTitle("", for: UIControlState.normal)
+        followBg.layer.backgroundColor = UIColor.lightGray.cgColor
+        followBg.layer.cornerRadius = 5
+        followBg.layer.masksToBounds = true
 
         
     }
 
-    //tapped follow / unfollow
-    @IBAction func followBtnTapped(_ sender: AnyObject) {
+    @IBAction func followBtnTapped(_ sender: Any) {
         
         let title = followBtn.title(for: UIControlState.normal)!
         print(title)
-        if title == "FOLLOW" {
+        if title == "" {
             let object = PFObject(className: "follow")
             object["follower"] = PFUser.current()?.username
             object["following"] = usernameLbl.text
             object.saveInBackground(block: { (success:Bool, error:Error?) in
                 if success {
-                    self.followBtn.setTitle("FOLLOWING", for: UIControlState.normal)
-                    self.followBtn.layer.cornerRadius = 2
-                    self.followBtn.layer.masksToBounds = true
-                    self.followBtn.layer.borderWidth = 0
-                    self.followBtn.layer.backgroundColor = self.lightGreen.cgColor
-                    self.followBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
+                    self.followBtn.setTitle("", for: UIControlState.normal)
+                    self.followBg.layer.cornerRadius = 5
+                    self.followBg.layer.masksToBounds = true
+                    self.followBg.layer.backgroundColor = self.lightGreen.cgColor
 
+                    
                 } else {
                     print(error!.localizedDescription)
                 }
             })
         } else {
-
+            
             let query = PFQuery(className: "follow")
             query.whereKey("follower", equalTo: PFUser.current()!.username!)
             query.whereKey("following", equalTo: usernameLbl.text!)
@@ -62,18 +58,17 @@ class FollowersCell: UITableViewCell {
                     for object in objects! {
                         object.deleteInBackground(block: { (success:Bool, error:Error?) in
                             if success {
-                                self.followBtn.setTitle("FOLLOW", for: UIControlState.normal)
-                                self.followBtn.layer.backgroundColor = UIColor.white.cgColor
-                                self.followBtn.layer.cornerRadius = 2
-                                self.followBtn.layer.masksToBounds = true
-                                self.followBtn.layer.borderWidth = 1
-                                self.followBtn.layer.borderColor = self.lightBlue.cgColor
-                                self.followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
+                                self.followBtn.setTitle("", for: UIControlState.normal)
+                                self.followBg.layer.backgroundColor = UIColor.lightGray.cgColor
+                                self.followBg.layer.cornerRadius = 5
+                                self.followBg.layer.masksToBounds = true
 
+
+                                
                             } else {
                                 print(error!.localizedDescription)
                             }
-                     })
+                        })
                     }
                 } else {
                     print(error!.localizedDescription)
@@ -83,9 +78,12 @@ class FollowersCell: UITableViewCell {
     }
 
 
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        avaImg.layer.cornerRadius = 22
+        avaImg.layer.cornerRadius = avaImg.bounds.width / 2
+        avaImg.layer.borderWidth = 1
+        avaImg.layer.borderColor = UIColor.lightGray.cgColor
         avaImg.clipsToBounds = true
     }
 }

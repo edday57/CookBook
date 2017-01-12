@@ -51,6 +51,9 @@
 		64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0921D7D78820097CF7F /* FollowersCell.swift */; };
 		64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */; };
 		64FB2E801D70C1A2004647F5 /* MyCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */; };
+		F315E5D51E261F5400A67927 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315E5D41E261F5400A67927 /* RatingControl.swift */; };
+		F315E5D71E26B9EB00A67927 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F315E5D61E26B9EB00A67927 /* ionicons.ttf */; };
+		F315E5D91E26CAB400A67927 /* NewViewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */; };
 		F375C7821E20FBC7008884B2 /* NewProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */; };
 		F375C7841E20FBEB008884B2 /* NewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7831E20FBEB008884B2 /* NewProfileVC.swift */; };
 		F375C7861E21B87B008884B2 /* TransNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7851E21B87B008884B2 /* TransNavigationViewController.swift */; };
@@ -105,6 +108,9 @@
 		64F9A0921D7D78820097CF7F /* FollowersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
 		64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNavBarVC.swift; sourceTree = "<group>"; };
 		64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellTableViewCell.swift; sourceTree = "<group>"; };
+		F315E5D41E261F5400A67927 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		F315E5D61E26B9EB00A67927 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewViewRecipeVC.swift; path = ../NewViewRecipeVC.swift; sourceTree = "<group>"; };
 		F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileHeaderView.swift; sourceTree = "<group>"; };
 		F375C7831E20FBEB008884B2 /* NewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileVC.swift; sourceTree = "<group>"; };
 		F375C7851E21B87B008884B2 /* TransNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransNavigationViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
-				F375C7C11E2290D8008884B2 /* TabBar.swift */,
 				642F54D91D7CBD99000ED2B4 /* Login Controllers */,
 				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
 				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
@@ -151,6 +156,7 @@
 				64E734951D7F89400084A59A /* EditProfileVC.swift */,
 				647A29451D7DB00100A49A6B /* GuestVC.swift */,
 				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
+				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 				64B9C8B81D6F05050061D601 /* AdobeGothicStd-Bold.otf */,
 				64B9C8BA1D6F07BB0061D601 /* AppleGothic.ttf */,
 				64F3C9E21D86C93600ABBDBF /* FontAwesome.otf */,
+				F315E5D61E26B9EB00A67927 /* ionicons.ttf */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 		2BD609AF1D79757200EEA826 /* Custom Files */ = {
 			isa = PBXGroup;
 			children = (
+				F375C7C11E2290D8008884B2 /* TabBar.swift */,
+				F315E5D41E261F5400A67927 /* RatingControl.swift */,
 				64F9A0921D7D78820097CF7F /* FollowersCell.swift */,
 				642F54DC1D7CE225000ED2B4 /* pictureCell.swift */,
 				642F54DA1D7CBDCC000ED2B4 /* ProfileHeaderView.swift */,
@@ -323,6 +332,7 @@
 			files = (
 				64B9C8BB1D6F07BB0061D601 /* AppleGothic.ttf in Resources */,
 				64B9C8B91D6F05050061D601 /* AdobeGothicStd-Bold.otf in Resources */,
+				F315E5D71E26B9EB00A67927 /* ionicons.ttf in Resources */,
 				2BD609D71D7B026C00EEA826 /* LucidaGrande.ttc in Resources */,
 				64F3C9E31D86C93600ABBDBF /* FontAwesome.otf in Resources */,
 				64B9C8B11D6F00590061D601 /* LaunchScreen.storyboard in Resources */,
@@ -355,6 +365,7 @@
 				647A29461D7DB00100A49A6B /* GuestVC.swift in Sources */,
 				64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */,
 				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
+				F315E5D91E26CAB400A67927 /* NewViewRecipeVC.swift in Sources */,
 				642F54DD1D7CE225000ED2B4 /* pictureCell.swift in Sources */,
 				648AC2421D9B3039007C4F22 /* ViewRecipePublicSeg2.swift in Sources */,
 				2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */,
@@ -366,6 +377,7 @@
 				F375C7841E20FBEB008884B2 /* NewProfileVC.swift in Sources */,
 				F375C7861E21B87B008884B2 /* TransNavigationViewController.swift in Sources */,
 				64D569F61D84915F0093AE8A /* ViewRecipePublicVC.swift in Sources */,
+				F315E5D51E261F5400A67927 /* RatingControl.swift in Sources */,
 				64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

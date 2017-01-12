@@ -17,7 +17,7 @@ class FollowersVC: UITableViewController {
     
     //arrays
     let lightBlue = UIColor(colorLiteralRed: 88/255, green: 190/255, blue: 239/255, alpha: 1)
-    let lightGreen = UIColor(colorLiteralRed: 105/255, green: 212/255, blue: 66/255, alpha: 1)
+    let lightGreen = UIColor(colorLiteralRed: 139/255, green: 241/255, blue: 111/255, alpha: 1)
     var fullnameArray = [String]()
     var usernameArray = [String]()
     var avaArray = [PFFile]()
@@ -151,21 +151,19 @@ class FollowersVC: UITableViewController {
         query.countObjectsInBackground { (count:Int32, error:Error?) in
             if error == nil {
                 if count == 0 {
-                    cell.followBtn.setTitle("FOLLOW", for: UIControlState.normal)
-                    cell.followBtn.layer.backgroundColor = UIColor.white.cgColor
-                    cell.followBtn.layer.cornerRadius = 2
-                    cell.followBtn.layer.masksToBounds = true
-                    cell.followBtn.layer.borderWidth = 1
-                    cell.followBtn.layer.borderColor = self.lightBlue.cgColor
-                    cell.followBtn.setTitleColor(self.lightBlue, for: UIControlState.normal)
+                    cell.followBtn.setTitle("", for: UIControlState.normal)
+                    cell.followBg.layer.backgroundColor = UIColor.lightGray.cgColor
+                    cell.followBg.layer.cornerRadius = 5
+                    cell.followBg.layer.masksToBounds = true
+                    
+
                     
                 } else {
-                    cell.followBtn.setTitle("FOLLOWING", for: UIControlState.normal)
-                    cell.followBtn.layer.cornerRadius = 2
-                    cell.followBtn.layer.masksToBounds = true
-                    cell.followBtn.layer.backgroundColor = self.lightGreen.cgColor
-                    cell.followBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
-                    cell.followBtn.layer.borderWidth = 0
+                    cell.followBtn.setTitle("", for: UIControlState.normal)
+                    cell.followBg.layer.cornerRadius = 5
+                    cell.followBg.layer.masksToBounds = true
+                    cell.followBg.layer.backgroundColor = self.lightGreen.cgColor
+
                 }
             }
         }

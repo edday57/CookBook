@@ -22,7 +22,7 @@ class TransNavigationViewController: UINavigationController {
         self.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 1)
         self.navigationBar.layer.shadowRadius = 4
-        self.navigationBar.layer.shadowOpacity = 0.3
+        self.navigationBar.layer.shadowOpacity = 0.42
     }
 
 

@@ -11,7 +11,9 @@ import Parse
 
 class NewViewRecipeVC: UIViewController {
     
-    var darkMode:Bool = true
+    @IBOutlet weak var mainContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainContainer: UIView!
+    var darkMode:Bool = false
     var segment = String()
     
     //Top Section
@@ -28,11 +30,15 @@ class NewViewRecipeVC: UIViewController {
     @IBOutlet weak var ratingControl: RatingControl!
     var rating = 0
     
-    @IBOutlet weak var recipeBtn: UIButton!
     @IBOutlet weak var reviewsBtn: UIButton!
-    @IBOutlet weak var testBtn: UIButton!
+    @IBOutlet weak var stepsBtn: UIButton!
+    @IBOutlet weak var ingredientsBtn: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.mainContainerHeight.constant = 700
         
         //Dark Mode Config
         if darkMode == true {
@@ -44,16 +50,10 @@ class NewViewRecipeVC: UIViewController {
         avaImage.layer.cornerRadius = avaImage.bounds.width / 2
         avaImage.clipsToBounds = true
         
-        //Btn Config
-        recipeBtn.layer.cornerRadius = 8
-        recipeBtn.clipsToBounds = true
-        reviewsBtn.layer.cornerRadius = 8
-        reviewsBtn.clipsToBounds = true
-        recipeBtn.layer.borderColor = UIColor.lightGray.cgColor
-        reviewsBtn.layer.borderColor = UIColor.lightGray.cgColor
+
         
         //Set recipe as default segment
-        recipeSegment()
+        ingredientsSegment()
         
         ratingControl.rating = 4
         // Do any additional setup after loading the view.
@@ -61,27 +61,35 @@ class NewViewRecipeVC: UIViewController {
     
     //Segment Control
     /////////////////////////////////////////////////
-    @IBAction func recipeBtnTapped(_ sender: Any) {
-        recipeSegment()
-    }
+
     @IBAction func reviewsBtnTapped(_ sender: Any) {
         reviewsSegment()
     }
 
-    func recipeSegment() {
-        if segment != "recipe" {
-            //Change Btn Looks
-            recipeBtn.layer.borderWidth = 1
-            reviewsBtn.layer.borderWidth = 0
-            segment = "recipe"
+    @IBAction func stepsBtnTapped(_ sender: Any) {
+        stepsSegment()
+    }
+    
+    @IBAction func ingredientsBtnTapped(_ sender: Any) {
+        ingredientsSegment()
+    }
+
+
+    func ingredientsSegment() {
+        if segment != "ingredients" {
+            segment = "ingredients"
+        }
+    }
+    
+    func stepsSegment() {
+        if segment != "steps" {
+            segment = "steps"
+
         }
     }
     
     func reviewsSegment() {
         if segment != "reviews" {
-            //Change Btn Looks
-            recipeBtn.layer.borderWidth = 0
-            reviewsBtn.layer.borderWidth = 1
             segment = "reviews"
         }
     }

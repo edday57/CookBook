@@ -148,6 +148,7 @@
 				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
 				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
+				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipePrivateVC.swift */,
 				64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */,
 				648AC2411D9B3039007C4F22 /* ViewRecipePublicSeg2.swift */,
@@ -156,7 +157,6 @@
 				64E734951D7F89400084A59A /* EditProfileVC.swift */,
 				647A29451D7DB00100A49A6B /* GuestVC.swift */,
 				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
-				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

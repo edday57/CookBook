@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,33 +22,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlurredBackground" translatesAutoresizingMaskIntoConstraints="NO" id="KmP-Gf-PcZ"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="grH-Uy-Tju"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CookBook" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-Yq-eop"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2016 Edward Day. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I51-8G-Pad">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2017 Edward Day. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I51-8G-Pad">
+                                <rect key="frame" x="80" y="597" width="215" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rlh-YY-xnh"/>
                                     <constraint firstAttribute="width" constant="215" id="usK-xi-mhN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CookBook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-Ve-jLk">
+                                <rect key="frame" x="16" y="154" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WQ8-Py-fx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Beta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-ZI-ShL">
+                                <rect key="frame" x="16" y="206" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PPF-uL-SXe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91191709844559588" green="0.91191709844559588" blue="0.91191709844559588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="grH-Uy-Tju" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="2m8-67-Fqr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pnh-Ve-jLk" secondAttribute="trailing" id="3Vv-dH-UN4"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="I51-8G-Pad" secondAttribute="bottom" constant="20" id="4Uu-11-T39"/>
-                            <constraint firstAttribute="trailing" secondItem="grH-Uy-Tju" secondAttribute="trailing" id="EYx-yu-96G"/>
-                            <constraint firstItem="KmP-Gf-PcZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="N0f-xB-gYa"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="grH-Uy-Tju" secondAttribute="bottom" id="UVO-ZB-LKS"/>
-                            <constraint firstAttribute="trailing" secondItem="KmP-Gf-PcZ" secondAttribute="trailing" id="W7g-lK-S2g"/>
-                            <constraint firstItem="grH-Uy-Tju" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cXx-PR-5qd"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KmP-Gf-PcZ" secondAttribute="bottom" id="clb-e9-Yhv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rbf-ZI-ShL" secondAttribute="trailing" id="EYT-i5-FIZ"/>
+                            <constraint firstItem="Rbf-ZI-ShL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Mnj-ui-PYa"/>
+                            <constraint firstItem="Pnh-Ve-jLk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="134" id="Uud-y8-dcR"/>
                             <constraint firstItem="I51-8G-Pad" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hq2-fy-rSc"/>
-                            <constraint firstItem="4bm-Yq-eop" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rPg-Pb-exh"/>
-                            <constraint firstItem="4bm-Yq-eop" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ySk-dG-VJx"/>
-                            <constraint firstItem="KmP-Gf-PcZ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zTB-DU-Ggo"/>
+                            <constraint firstItem="Pnh-Ve-jLk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="k3G-1Y-lCQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -53,9 +68,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BlurredBackground" width="1028" height="687"/>
-        <image name="CookBook" width="250" height="66"/>
-        <image name="GradientBackground" width="375" height="667"/>
-    </resources>
 </document>

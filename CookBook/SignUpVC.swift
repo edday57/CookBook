@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var signUpButton: UIButton!
     
     //other outlets
-    @IBOutlet weak var BottomView: UIView!
+
     @IBOutlet weak var alertTxt: UILabel!
     //////////////////////////////////////
     
@@ -50,20 +50,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         userImg.layer.masksToBounds = true
         userImg.layer.borderWidth = 3
         userImg.layer.borderColor = UIColor.white.cgColor
+    
         
-        //Configure sign up button
-        let buttonOrange = signUpButton.currentTitleColor
-        signUpButton.layer.cornerRadius = 5
-        signUpButton.layer.borderWidth = 1
-        signUpButton.layer.borderColor = buttonOrange.cgColor
-        signUpButton.layer.shadowOpacity = 0.3
-        signUpButton.layer.shadowOffset = CGSize(width: 1, height: 4)
-        signUpButton.layer.shadowRadius = 4
-        
-        //Add an upwards shadow from the bottom view
-        BottomView.layer.shadowOpacity = 0.3
-        BottomView.layer.shadowRadius = 7
-        BottomView.layer.shadowOffset = CGSize(width: 0, height: -3)
         
         //Configure text field delegates
         self.usernameTxt.delegate = self
@@ -158,7 +146,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBAction func addImageTapped(_ sender: UITapGestureRecognizer) {
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        alert.view.tintColor = UIColor.orange
+        alert.view.tintColor = UIColor.darkGray
         let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.default)
         {
             UIAlertAction in

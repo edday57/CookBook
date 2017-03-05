@@ -19,6 +19,7 @@ class NewGuestHeaderView: UICollectionReusableView {
     @IBOutlet weak var aboutLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     
+    @IBOutlet weak var buttonBg: UIView!
     @IBOutlet weak var posts: UILabel!
     @IBOutlet weak var followers: UILabel!
     @IBOutlet weak var following: UILabel!
@@ -39,6 +40,13 @@ class NewGuestHeaderView: UICollectionReusableView {
         container.layer.shadowRadius = 3
         container.layer.shadowOffset = CGSize(width: 0, height: 1)
         container.layer.shadowOpacity = 0.4
+        buttonBg.layer.cornerRadius = 8
+        buttonBg.layer.borderWidth = 2.5
+        buttonBg.layer.borderColor = UIColor.white.cgColor
+        buttonBg.layer.shadowRadius = 1
+        buttonBg.layer.shadowOpacity = 0.6
+        buttonBg.layer.shadowOffset = CGSize(width: 1, height: 1)
+        buttonBg.layer.backgroundColor = UIColor.clear.cgColor
     }
 
     @IBAction func followButtonClicked(_ sender: AnyObject) {

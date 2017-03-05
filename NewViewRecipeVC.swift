@@ -271,11 +271,20 @@ class NewViewRecipeVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func nameTapped(_ sender: Any) {
+        if username == PFUser.current()!.username! {
+            //If it is users own post then go home
+            let home = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! NewProfileVC
+            self.navigationController?.pushViewController(home, animated: true)
+        } else {
+            //If user is someone elses post then go to their page
+            guestname.append(username)
+            let guest = self.storyboard?.instantiateViewController(withIdentifier: "guestVC") as! NewGuestVC
+            self.navigationController?.pushViewController(guest, animated: true)
+        }
     }
-    
+
+
 
     /*
     // MARK: - Navigation

@@ -146,7 +146,7 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
     let picker = UIImagePickerController()
     @IBAction func addImageTapped(_ sender: UITapGestureRecognizer) {
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-                alert.view.tintColor = UIColor.orange
+                alert.view.tintColor = UIColor.darkGray
         let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.default)
         {
             UIAlertAction in

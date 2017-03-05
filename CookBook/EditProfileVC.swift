@@ -254,6 +254,21 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
     }
 
+    @IBAction func logOutTapped(_ sender: Any) {
+        PFUser.logOutInBackground { (error:Error?) in
+            if error == nil {
+                
+                //Remove saved login info
+                UserDefaults.standard.removeObject(forKey: "username")
+                UserDefaults.standard.synchronize()
+                
+                let signin = self.storyboard?.instantiateViewController(withIdentifier: "signInVC") as! LoginViewController
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController =  signin
+            }
+        }
+
+    }
     @IBAction func darkModeSliderChanged(_ sender: Any) {
         let defaults = UserDefaults.standard
 

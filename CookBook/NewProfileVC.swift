@@ -41,9 +41,6 @@ class NewProfileVC: UICollectionViewController {
         
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        //navigationController?.setNavigationBarHidden(true, animated: false)
-    }
     
     //refresh function
     func refresh() {
@@ -59,8 +56,6 @@ class NewProfileVC: UICollectionViewController {
     
     
     func reload(_ notification:Notification) {
-        print("hi")
-        
         collectionView?.reloadData()
     }
     

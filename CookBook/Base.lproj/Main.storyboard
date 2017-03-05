@@ -2464,7 +2464,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Menu" id="UGy-MO-Jc6">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="menuBtnTapped:" destination="DIE-N5-Xzx" id="NtT-du-l3A"/>
+                                <action selector="menuBtnTapped:" destination="DIE-N5-Xzx" id="ga8-4T-8Sw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

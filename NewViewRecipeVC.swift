@@ -261,9 +261,7 @@ class NewViewRecipeVC: UIViewController {
 
     /////////////////////////////////////////////////
     
-    @IBAction func menuBtnTapped(_ sender: Any) {
-    }
-    
+
     @IBAction func backBtnTapped(_ sender: Any) {
         if !postuuid.isEmpty {
             postuuid.removeLast()
@@ -284,7 +282,66 @@ class NewViewRecipeVC: UIViewController {
         }
     }
 
+    @IBAction func menuBtnTapped(_ sender: Any) {
+        let alert:UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.view.tintColor = UIColor.darkGray
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive) {
+            UIAlertAction in
+            self.confirmDelete()
+        }
+        let  cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel){
+            UIAlertAction in
+        }
+        if username == PFUser.current()!.username {
+        alert.addAction(deleteAction)
+        }
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func confirmDelete(){
+        let alert:UIAlertController = UIAlertController(title: "Delete post?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.view.tintColor = UIColor.darkGray
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive) {
+            UIAlertAction in
+            self.deletePost()
+        }
+        let  cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel){
+            UIAlertAction in
+        }
+        if username == PFUser.current()!.username {
+            alert.addAction(deleteAction)
+        }
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
 
+    }
+
+    func deletePost() {
+        
+        let query = PFQuery(className: "posts")
+        query.whereKey("uuid", equalTo: postuuid.last!)
+        query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+            if error == nil {
+                for object in objects! {
+                    object.deleteInBackground(block: { (success:Bool, error:Error?) in
+                        if success {
+                            if !postuuid.isEmpty {
+                                postuuid.removeLast()
+                            }
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "uploadedRecipe"), object: nil)
+                            self.navigationController?.popViewController(animated: true)
+                        } else {
+                            print(error!.localizedDescription)
+                        }
+                    })
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        })
+
+    }
 
     /*
     // MARK: - Navigation

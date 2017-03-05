@@ -59,6 +59,7 @@
 		F375C7861E21B87B008884B2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7851E21B87B008884B2 /* NavigationViewController.swift */; };
 		F375C7C21E2290D8008884B2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7C11E2290D8008884B2 /* TabBar.swift */; };
 		F3F359EC1E6C6C8C0055F5DC /* NewGuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */; };
+		F3F359EE1E6C72250055F5DC /* NewGuestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F359ED1E6C72250055F5DC /* NewGuestHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		F375C7851E21B87B008884B2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F375C7C11E2290D8008884B2 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGuestVC.swift; sourceTree = "<group>"; };
+		F3F359ED1E6C72250055F5DC /* NewGuestHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGuestHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,13 +153,8 @@
 				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
-				2BD609B21D798C1700EEA826 /* ViewRecipePrivateVC.swift */,
-				64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */,
-				648AC2411D9B3039007C4F22 /* ViewRecipePublicSeg2.swift */,
-				642F54D71D7CBD8A000ED2B4 /* ProfileVC.swift */,
 				F375C7831E20FBEB008884B2 /* NewProfileVC.swift */,
 				64E734951D7F89400084A59A /* EditProfileVC.swift */,
-				647A29451D7DB00100A49A6B /* GuestVC.swift */,
 				F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */,
 				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
 			);
@@ -168,11 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				F375C7851E21B87B008884B2 /* NavigationViewController.swift */,
-				64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */,
-				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
-				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
-				2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */,
-				64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */,
 			);
 			name = "Navigation Bars";
 			sourceTree = "<group>";
@@ -199,8 +191,8 @@
 				F315E5D41E261F5400A67927 /* RatingControl.swift */,
 				64F9A0921D7D78820097CF7F /* FollowersCell.swift */,
 				642F54DC1D7CE225000ED2B4 /* pictureCell.swift */,
-				642F54DA1D7CBDCC000ED2B4 /* ProfileHeaderView.swift */,
 				F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */,
+				F3F359ED1E6C72250055F5DC /* NewGuestHeaderView.swift */,
 				2BD609A81D783EBC00EEA826 /* Recipe.swift */,
 				64FB2E7F1D70C1A2004647F5 /* MyCellTableViewCell.swift */,
 				2BD609AD1D79743200EEA826 /* NoPasteTextField.swift */,
@@ -260,11 +252,30 @@
 			children = (
 				64BC16151D814ADC000510D8 /* CookBook.entitlements */,
 				2BD609AA1D783ED500EEA826 /* View Controllers */,
+				F3F359EF1E6C8C480055F5DC /* Old / Unused  */,
 				2BD609AB1D783EEF00EEA826 /* Navigation Bars */,
 				2BD609AF1D79757200EEA826 /* Custom Files */,
 				2BD609AC1D783F1D00EEA826 /* Support Files */,
 			);
 			path = CookBook;
+			sourceTree = "<group>";
+		};
+		F3F359EF1E6C8C480055F5DC /* Old / Unused  */ = {
+			isa = PBXGroup;
+			children = (
+				2BD609B21D798C1700EEA826 /* ViewRecipePrivateVC.swift */,
+				64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */,
+				648AC2411D9B3039007C4F22 /* ViewRecipePublicSeg2.swift */,
+				642F54D71D7CBD8A000ED2B4 /* ProfileVC.swift */,
+				647A29451D7DB00100A49A6B /* GuestVC.swift */,
+				64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */,
+				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
+				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
+				2BD609B41D798C5E00EEA826 /* ViewRecipeNavBarVC.swift */,
+				64F9A0941D7D810F0097CF7F /* ProfileNavBarVC.swift */,
+				642F54DA1D7CBDCC000ED2B4 /* ProfileHeaderView.swift */,
+			);
+			name = "Old / Unused ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				2BD609DB1D7B055C00EEA826 /* ResetPassVC.swift in Sources */,
 				F315E5D91E26CAB400A67927 /* NewViewRecipeVC.swift in Sources */,
 				642F54DD1D7CE225000ED2B4 /* pictureCell.swift in Sources */,
+				F3F359EE1E6C72250055F5DC /* NewGuestHeaderView.swift in Sources */,
 				648AC2421D9B3039007C4F22 /* ViewRecipePublicSeg2.swift in Sources */,
 				2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */,
 				2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */,

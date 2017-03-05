@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-var guestname = [String]()
+//var guestname = [String]()
 
 class GuestVC: UICollectionViewController {
 

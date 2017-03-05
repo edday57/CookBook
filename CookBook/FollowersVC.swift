@@ -186,7 +186,7 @@ class FollowersVC: UITableViewController {
             
         } else {
             guestname.append(cell.usernameLbl.text!)
-            let guest = self.storyboard?.instantiateViewController(withIdentifier: "guestVC") as! GuestVC
+            let guest = self.storyboard?.instantiateViewController(withIdentifier: "guestVC") as! NewGuestVC
             self.navigationController?.pushViewController(guest, animated: true)
         }
     }

@@ -150,6 +150,7 @@ class NewViewRecipeVC: UIViewController {
         
         
         dateLbl.text = "\(formatter.string(from: dateArray.last!))"
+        //dateLbl.sizeToFit()
     }
     
     //Convert Ingredients Array to Unordered List

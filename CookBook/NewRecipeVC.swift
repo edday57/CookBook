@@ -331,7 +331,6 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                         //Create a new post and assign all the information from the form
                         let object = PFObject(className: "posts")
                         object["username"] = PFUser.current()!.username
-                        object["ava"] = PFUser.current()?.value(forKey: "ava") as! PFFile
                         object["uuid"] = "\(PFUser.current()!.username!) \(NSUUID().uuidString)"
                         object["title"] = nameTextField.text!.capitalized
                         object["time"] = Int(timeField.text!)

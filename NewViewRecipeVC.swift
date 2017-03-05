@@ -36,7 +36,12 @@ class NewViewRecipeVC: UIViewController {
     @IBOutlet weak var stepsBtn: UIButton!
     @IBOutlet weak var ingredientsBtn: UIButton!
 
+    @IBOutlet weak var stepsView: UIView!
+    @IBOutlet weak var stepsViewHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var ingredientsTextView: UITextView!
+    @IBOutlet weak var ingredientsViewHeight: NSLayoutConstraint!
     
     var avaArray = [PFFile]()
     var nameArray = [String]()
@@ -149,36 +154,14 @@ class NewViewRecipeVC: UIViewController {
             ingredientsList.append("- \(item) \n")
         }
         ingredientsTextView.text = ingredientsList
-    }
-    
-    
-    /*//When the user adds an instruction
-    var instructionsArray = [String]()
-    var instructionCount = 0
-    
-    @IBAction func addInstruction(_ sender: AnyObject) {
-        if let instruction = instructionField.text {
-            if instruction != "" {
-                
-                //If instruction text field has a value then...
-                instructionsArray.append(instruction)
-                
-                //If this is the first instruction then clear the text field
-                if instructionsArray.count == 1 {
-                    instructionsTextView.text = "1. \(instruction)."}
-                    
-                else {
-                    instructionCount += 1
-                    instructionsTextView.text.append("\n\(instructionCount + 1). \(instructionsArray[instructionCount]).")
-                    
-                }
-            }
-            //Clear the instruction text field
-            instructionField.text = nil
-            checkForSaveEnabled()
+        ingredientsTextView.sizeToFit()
+        ingredientsViewHeight.constant = 37 + 8 + ingredientsTextView.frame.height
+        if segment == "ingredients" {
+            ingredientsSegment()
         }
     }
-    */
+    
+
     //Segment Control
     /////////////////////////////////////////////////
 
@@ -194,23 +177,64 @@ class NewViewRecipeVC: UIViewController {
         ingredientsSegment()
     }
 
-
+ 
     func ingredientsSegment() {
+        let customGrey = UIColor(colorLiteralRed: 152/255, green: 152/255, blue: 152/255, alpha: 1)
         if segment != "ingredients" {
             segment = "ingredients"
+            
+            //Change fonts
+            ingredientsBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
+            stepsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            reviewsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            
+            stepsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            reviewsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            ingredientsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        }
+        if segment == "ingredients" {
+            mainContainerHeight.constant = 433 + ingredientsViewHeight.constant
+            ingredientsView.isHidden = false
+            stepsView.isHidden = true
+            //reviewsView.isHidden = true
         }
     }
     
     func stepsSegment() {
+        let customGrey = UIColor(colorLiteralRed: 152/255, green: 152/255, blue: 152/255, alpha: 1)
         if segment != "steps" {
             segment = "steps"
-
+            
+            //Change fonts
+            stepsBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
+            reviewsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            ingredientsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            
+            ingredientsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            reviewsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            stepsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        }
+        if segment == "steps" {
+            mainContainerHeight.constant = 433 + stepsViewHeight.constant
+            stepsView.isHidden = false
+            ingredientsView.isHidden = true
+            //reviewsView.isHidden = true
         }
     }
     
     func reviewsSegment() {
+        let customGrey = UIColor(colorLiteralRed: 152/255, green: 152/255, blue: 152/255, alpha: 1)
         if segment != "reviews" {
             segment = "reviews"
+            
+            //Change fonts
+            reviewsBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
+            stepsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            ingredientsBtn.setTitleColor(customGrey, for: UIControlState.normal)
+            
+            stepsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            ingredientsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+            reviewsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         }
     }
 

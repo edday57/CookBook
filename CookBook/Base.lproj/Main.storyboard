@@ -2420,7 +2420,7 @@
                                                         <color key="textColor" red="0.70264093149999995" green="0.70264093149999995" blue="0.70264093149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="112" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-h0-HZO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tBU-h0-HZO">
                                                         <rect key="frame" x="255" y="8" width="35" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="9KY-Wt-MDx"/>
@@ -2481,20 +2481,21 @@
                                                     <constraint firstAttribute="height" constant="73" id="uJj-1N-NZx"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-1p-K0p" userLabel="Recipe View">
-                                                <rect key="frame" x="0.0" y="433" width="375" height="378"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-1p-K0p" userLabel="Ingredients View">
+                                                <rect key="frame" x="0.0" y="433" width="375" height="200"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-nf-YDQ">
-                                                        <rect key="frame" x="8" y="8" width="98" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-nf-YDQ">
+                                                        <rect key="frame" x="12" y="8" width="98" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="AEU-Hj-k3A"/>
+                                                            <constraint firstAttribute="width" constant="98" id="ovz-Xf-SFS"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-e7-9Cm">
-                                                        <rect key="frame" x="8" y="37" width="359" height="102"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-e7-9Cm">
+                                                        <rect key="frame" x="12" y="37" width="355" height="128.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -2520,8 +2521,23 @@
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="xaR-e7-9Cm" firstAttribute="leading" secondItem="8L3-1p-K0p" secondAttribute="leading" constant="12" id="9e7-P1-zUJ"/>
+                                                    <constraint firstItem="xaR-e7-9Cm" firstAttribute="top" secondItem="IW6-nf-YDQ" secondAttribute="bottom" constant="8" id="fMk-Ex-aAv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xaR-e7-9Cm" secondAttribute="trailing" constant="8" id="kAb-1s-8kv"/>
+                                                    <constraint firstItem="IW6-nf-YDQ" firstAttribute="top" secondItem="8L3-1p-K0p" secondAttribute="top" constant="8" id="q4M-Jd-YBE"/>
+                                                    <constraint firstItem="IW6-nf-YDQ" firstAttribute="leading" secondItem="8L3-1p-K0p" secondAttribute="leading" constant="12" id="rfE-vB-Efi"/>
+                                                    <constraint firstAttribute="height" constant="200" id="wxG-Wo-gYG"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bw-aS-BBu">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-QO-hjF" userLabel="Steps View">
+                                                <rect key="frame" x="0.0" y="433" width="375" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="IlG-5H-a6s"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bw-aS-BBu" userLabel="Selector View">
                                                 <rect key="frame" x="0.0" y="372" width="375" height="53"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9f-65-UdO" userLabel="Divider">
@@ -2614,12 +2630,18 @@
                                             <constraint firstAttribute="trailing" secondItem="PB9-N2-lkx" secondAttribute="trailing" id="Da7-Ha-X1o"/>
                                             <constraint firstItem="7bw-aS-BBu" firstAttribute="top" secondItem="d8s-7q-ckb" secondAttribute="bottom" id="Djz-uc-wuz"/>
                                             <constraint firstItem="UIc-x8-eaq" firstAttribute="bottom" secondItem="F1N-lk-kEs" secondAttribute="bottom" constant="-9" id="DsS-Ce-Uys"/>
+                                            <constraint firstAttribute="trailing" secondItem="L1h-QO-hjF" secondAttribute="trailing" id="Feq-mR-Bcn"/>
+                                            <constraint firstAttribute="trailing" secondItem="8L3-1p-K0p" secondAttribute="trailing" id="HmJ-Qq-9m4"/>
+                                            <constraint firstItem="8L3-1p-K0p" firstAttribute="leading" secondItem="bgF-ED-s0U" secondAttribute="leading" id="Huw-1b-H4C"/>
                                             <constraint firstAttribute="height" constant="800" id="Kve-vk-S4G"/>
                                             <constraint firstAttribute="trailing" secondItem="d8s-7q-ckb" secondAttribute="trailing" id="ScN-Pv-7aa"/>
                                             <constraint firstItem="F1N-lk-kEs" firstAttribute="leading" secondItem="bgF-ED-s0U" secondAttribute="leading" id="THH-ny-c55"/>
                                             <constraint firstItem="d8s-7q-ckb" firstAttribute="leading" secondItem="bgF-ED-s0U" secondAttribute="leading" id="TwK-N3-UIV"/>
                                             <constraint firstAttribute="trailing" secondItem="7bw-aS-BBu" secondAttribute="trailing" id="aAS-QF-wvz"/>
                                             <constraint firstItem="PB9-N2-lkx" firstAttribute="top" secondItem="bgF-ED-s0U" secondAttribute="top" id="cLF-GU-SJf"/>
+                                            <constraint firstItem="8L3-1p-K0p" firstAttribute="top" secondItem="7bw-aS-BBu" secondAttribute="bottom" constant="8" id="eaN-bc-dDf"/>
+                                            <constraint firstItem="L1h-QO-hjF" firstAttribute="leading" secondItem="bgF-ED-s0U" secondAttribute="leading" id="img-7s-uYL"/>
+                                            <constraint firstItem="L1h-QO-hjF" firstAttribute="top" secondItem="7bw-aS-BBu" secondAttribute="bottom" constant="8" id="jkT-BR-H4U"/>
                                             <constraint firstItem="7bw-aS-BBu" firstAttribute="leading" secondItem="bgF-ED-s0U" secondAttribute="leading" id="unn-Yo-sYz"/>
                                             <constraint firstAttribute="trailing" secondItem="UIc-x8-eaq" secondAttribute="trailing" constant="21" id="wUG-N0-FuG"/>
                                             <constraint firstItem="d8s-7q-ckb" firstAttribute="top" secondItem="F1N-lk-kEs" secondAttribute="bottom" id="yM7-QP-UoB"/>
@@ -2665,6 +2687,8 @@
                         <outlet property="imageOverlay" destination="F1N-lk-kEs" id="L5l-dx-VwR"/>
                         <outlet property="ingredientsBtn" destination="fKA-FG-Po8" id="NMC-dz-d5L"/>
                         <outlet property="ingredientsTextView" destination="xaR-e7-9Cm" id="5G5-RG-GBG"/>
+                        <outlet property="ingredientsView" destination="8L3-1p-K0p" id="1Og-Y6-2kB"/>
+                        <outlet property="ingredientsViewHeight" destination="wxG-Wo-gYG" id="wRb-T0-ndY"/>
                         <outlet property="mainContainer" destination="bgF-ED-s0U" id="6Sn-Hl-5sG"/>
                         <outlet property="mainContainerHeight" destination="Kve-vk-S4G" id="gDi-Cp-C0X"/>
                         <outlet property="nameLbl" destination="HCi-Rd-g0Y" id="f1Z-bC-yc7"/>
@@ -2673,6 +2697,8 @@
                         <outlet property="reviewsBtn" destination="tvX-np-OmU" id="GTn-qf-VkO"/>
                         <outlet property="reviewsLbl" destination="tBU-h0-HZO" id="x4s-S9-1fj"/>
                         <outlet property="stepsBtn" destination="1pz-ew-vR9" id="qh9-vM-VHm"/>
+                        <outlet property="stepsView" destination="L1h-QO-hjF" id="tyb-Gx-t3O"/>
+                        <outlet property="stepsViewHeight" destination="IlG-5H-a6s" id="yJT-jW-Qye"/>
                         <outlet property="timeLbl" destination="viy-WI-YJg" id="9vH-oe-8Sh"/>
                         <outlet property="userImage" destination="PB9-N2-lkx" id="Qki-qb-1Nl"/>
                     </connections>

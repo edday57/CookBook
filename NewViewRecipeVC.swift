@@ -15,7 +15,8 @@ class NewViewRecipeVC: UIViewController {
     
     @IBOutlet weak var mainContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var mainContainer: UIView!
-    var darkMode:Bool = true
+
+    var darkMode:Bool = Bool()
     var segment = String()
     
     //Top Section
@@ -63,6 +64,8 @@ class NewViewRecipeVC: UIViewController {
         //self.mainContainerHeight.constant = 700
         
         //Dark Mode Config
+        let defaults = UserDefaults.standard
+        darkMode = defaults.bool(forKey: "darkMode")
         if darkMode == true {
             imageOverlay.image = UIImage(named: "Black Gradient - Food Overlay")
             recipeName.textColor = UIColor.white

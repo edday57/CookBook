@@ -23,8 +23,8 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var avaImg: UIImageView!
     
-    @IBOutlet weak var changeCoverBtn: UIButton!
-    @IBOutlet weak var coverImg: UIImageView!
+    @IBOutlet weak var darkModeSlider: UISwitch!
+
     
         //picker view and picker data
         var genderPicker : UIPickerView!
@@ -35,6 +35,8 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let defaults = UserDefaults.standard
+        darkModeSlider.isOn = defaults.bool(forKey: "darkMode")
         // Do any additional setup after loading the view.
         avaImg.layer.borderWidth = 1
         avaImg.layer.borderColor = UIColor.gray.cgColor
@@ -252,6 +254,15 @@ class EditProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
     }
 
+    @IBAction func darkModeSliderChanged(_ sender: Any) {
+        let defaults = UserDefaults.standard
+
+        if darkModeSlider.isOn {
+            defaults.set(true, forKey: "darkMode")
+        } else {
+            defaults.set(false, forKey: "darkMode")
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////
 
     

@@ -58,6 +58,7 @@
 		F375C7841E20FBEB008884B2 /* NewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7831E20FBEB008884B2 /* NewProfileVC.swift */; };
 		F375C7861E21B87B008884B2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7851E21B87B008884B2 /* NavigationViewController.swift */; };
 		F375C7C21E2290D8008884B2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7C11E2290D8008884B2 /* TabBar.swift */; };
+		F3F359EC1E6C6C8C0055F5DC /* NewGuestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		F375C7831E20FBEB008884B2 /* NewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileVC.swift; sourceTree = "<group>"; };
 		F375C7851E21B87B008884B2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F375C7C11E2290D8008884B2 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGuestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				F375C7831E20FBEB008884B2 /* NewProfileVC.swift */,
 				64E734951D7F89400084A59A /* EditProfileVC.swift */,
 				647A29451D7DB00100A49A6B /* GuestVC.swift */,
+				F3F359EB1E6C6C8C0055F5DC /* NewGuestVC.swift */,
 				64F9A0901D7D786E0097CF7F /* FollowersVC.swift */,
 			);
 			name = "View Controllers";
@@ -370,6 +373,7 @@
 				648AC2421D9B3039007C4F22 /* ViewRecipePublicSeg2.swift in Sources */,
 				2BD609A91D783EBC00EEA826 /* Recipe.swift in Sources */,
 				2BD609B51D798C5E00EEA826 /* ViewRecipeNavBarVC.swift in Sources */,
+				F3F359EC1E6C6C8C0055F5DC /* NewGuestVC.swift in Sources */,
 				2BD609B31D798C1700EEA826 /* ViewRecipePrivateVC.swift in Sources */,
 				64F9A0931D7D78820097CF7F /* FollowersCell.swift in Sources */,
 				2BD609AE1D79743200EEA826 /* NoPasteTextField.swift in Sources */,

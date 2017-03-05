@@ -1,5 +1,5 @@
 //
-//  TransNavigationViewController.swift
+//  NavigationViewController.swift
 //  CookBook
 //
 //  Created by Edward Day on 07/01/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransNavigationViewController: UINavigationController {
+class NavigationViewController: UINavigationController {
 
 
     override func viewDidLoad() {

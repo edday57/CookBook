@@ -56,7 +56,7 @@
 		F315E5D91E26CAB400A67927 /* NewViewRecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */; };
 		F375C7821E20FBC7008884B2 /* NewProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */; };
 		F375C7841E20FBEB008884B2 /* NewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7831E20FBEB008884B2 /* NewProfileVC.swift */; };
-		F375C7861E21B87B008884B2 /* TransNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7851E21B87B008884B2 /* TransNavigationViewController.swift */; };
+		F375C7861E21B87B008884B2 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7851E21B87B008884B2 /* NavigationViewController.swift */; };
 		F375C7C21E2290D8008884B2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7C11E2290D8008884B2 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,7 +113,7 @@
 		F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewViewRecipeVC.swift; path = ../NewViewRecipeVC.swift; sourceTree = "<group>"; };
 		F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileHeaderView.swift; sourceTree = "<group>"; };
 		F375C7831E20FBEB008884B2 /* NewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileVC.swift; sourceTree = "<group>"; };
-		F375C7851E21B87B008884B2 /* TransNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransNavigationViewController.swift; sourceTree = "<group>"; };
+		F375C7851E21B87B008884B2 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F375C7C11E2290D8008884B2 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,7 +164,7 @@
 		2BD609AB1D783EEF00EEA826 /* Navigation Bars */ = {
 			isa = PBXGroup;
 			children = (
-				F375C7851E21B87B008884B2 /* TransNavigationViewController.swift */,
+				F375C7851E21B87B008884B2 /* NavigationViewController.swift */,
 				64E734931D7F88D90084A59A /* EditProfileNavBarVC.swift */,
 				64B9C8C41D6F5FE90061D601 /* NavBarVC.swift */,
 				2BD00EAB1D72FFB700D34E65 /* NewRecipeNavBarVC.swift */,
@@ -375,7 +375,7 @@
 				2BD609AE1D79743200EEA826 /* NoPasteTextField.swift in Sources */,
 				642F54DB1D7CBDCC000ED2B4 /* ProfileHeaderView.swift in Sources */,
 				F375C7841E20FBEB008884B2 /* NewProfileVC.swift in Sources */,
-				F375C7861E21B87B008884B2 /* TransNavigationViewController.swift in Sources */,
+				F375C7861E21B87B008884B2 /* NavigationViewController.swift in Sources */,
 				64D569F61D84915F0093AE8A /* ViewRecipePublicVC.swift in Sources */,
 				F315E5D51E261F5400A67927 /* RatingControl.swift in Sources */,
 				64F9A0951D7D810F0097CF7F /* ProfileNavBarVC.swift in Sources */,

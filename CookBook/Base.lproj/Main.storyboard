@@ -412,17 +412,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jX0-RG-dJf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="050-Ng-olb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="m8t-q7-Wxa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="3iu-ih-Xcq"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VWm-oG-20I">
-                                <rect key="frame" x="0.0" y="71" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="5" width="375" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="477-Br-VXm" customClass="MyCellTableViewCell" customModule="CookBook" customModuleProvider="target">
@@ -538,15 +532,8 @@
                                     <outlet property="delegate" destination="Fw9-6e-J5T" id="z5j-e6-294"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MX-HK-357">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                                <color key="backgroundColor" red="0.78039215689999997" green="0.60784313729999995" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="G5K-IR-mNW"/>
-                                </constraints>
-                            </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a recipe!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTf-Vw-rL1">
-                                <rect key="frame" x="0.0" y="100" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="93" id="P5n-aI-ecc"/>
                                 </constraints>
@@ -554,51 +541,27 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-vq-4OV">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DRZ-1V-N2E"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem title="CookBook" id="tLM-f6-3Vl">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gCE-m1-OUd">
-                                            <connections>
-                                                <segue destination="VJO-Pc-2iE" kind="presentation" id="BCG-qf-I7I"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vJM-vq-4OV" firstAttribute="top" secondItem="GXA-y9-NW7" secondAttribute="bottom" id="266-Br-44B"/>
-                            <constraint firstItem="vJM-vq-4OV" firstAttribute="leading" secondItem="050-Ng-olb" secondAttribute="leading" id="9ai-TG-vY0"/>
-                            <constraint firstItem="6MX-HK-357" firstAttribute="top" secondItem="vJM-vq-4OV" secondAttribute="bottom" id="ANR-CE-4j1"/>
-                            <constraint firstAttribute="trailing" secondItem="vJM-vq-4OV" secondAttribute="trailing" id="CFF-Tp-6pK"/>
-                            <constraint firstItem="6MX-HK-357" firstAttribute="leading" secondItem="050-Ng-olb" secondAttribute="leading" id="EFF-9c-vGc"/>
-                            <constraint firstItem="m8t-q7-Wxa" firstAttribute="leading" secondItem="050-Ng-olb" secondAttribute="leading" id="GvN-EU-H9k"/>
-                            <constraint firstItem="kTf-Vw-rL1" firstAttribute="top" secondItem="m8t-q7-Wxa" secondAttribute="bottom" constant="30" id="SeT-cK-OWi"/>
-                            <constraint firstItem="m8t-q7-Wxa" firstAttribute="top" secondItem="050-Ng-olb" secondAttribute="top" id="Uqp-ld-omo"/>
+                            <constraint firstItem="VWm-oG-20I" firstAttribute="top" secondItem="GXA-y9-NW7" secondAttribute="bottom" constant="5" id="1z1-b5-ueh"/>
                             <constraint firstItem="kTf-Vw-rL1" firstAttribute="leading" secondItem="050-Ng-olb" secondAttribute="leading" id="VU2-4I-YxM"/>
+                            <constraint firstItem="kTf-Vw-rL1" firstAttribute="top" secondItem="GXA-y9-NW7" secondAttribute="bottom" constant="30" id="ZtE-Bx-eKM"/>
                             <constraint firstItem="jX0-RG-dJf" firstAttribute="top" secondItem="VWm-oG-20I" secondAttribute="bottom" id="aZ2-XR-8VJ"/>
-                            <constraint firstAttribute="trailing" secondItem="m8t-q7-Wxa" secondAttribute="trailing" id="d8v-iP-a0d"/>
                             <constraint firstItem="VWm-oG-20I" firstAttribute="leading" secondItem="050-Ng-olb" secondAttribute="leading" id="pGf-12-rLj"/>
-                            <constraint firstAttribute="trailing" secondItem="6MX-HK-357" secondAttribute="trailing" id="pgA-cq-Qio"/>
                             <constraint firstAttribute="trailing" secondItem="VWm-oG-20I" secondAttribute="trailing" id="tjZ-GW-oVt"/>
                             <constraint firstAttribute="trailing" secondItem="kTf-Vw-rL1" secondAttribute="trailing" id="ucN-JC-i4g"/>
-                            <constraint firstItem="VWm-oG-20I" firstAttribute="top" secondItem="m8t-q7-Wxa" secondAttribute="bottom" constant="1" id="vwh-bE-vfF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homeEmpty" selectedImage="homeFull" id="khe-dr-IwM"/>
                     <navigationItem key="navigationItem" title="CookBook" id="a4z-9l-l6Q">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="Y4g-qt-ebX"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4We-u0-SeJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4We-u0-SeJ">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="VJO-Pc-2iE" kind="presentation" id="shB-Km-8VQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="navigationBar" destination="vJM-vq-4OV" id="9eF-RX-ArQ"/>
                         <outlet property="noRecipes" destination="kTf-Vw-rL1" id="614-c3-mzT"/>
                         <outlet property="recipeTableView" destination="VWm-oG-20I" id="tT0-SH-QPw"/>
                         <segue destination="wgS-vv-jrj" kind="presentation" identifier="showPost" id="jh0-ve-vwR"/>
@@ -606,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hg4-uu-eej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="-988"/>
+            <point key="canvasLocation" x="1631" y="-1021"/>
         </scene>
         <!--New Recipe-->
         <scene sceneID="bgb-cL-UZJ">
@@ -617,7 +580,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CNc-fP-bIC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xHm-zB-QEg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t1y-AW-Kzf">
@@ -626,7 +589,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="7Wc-B4-Cth">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-eF-3vy" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1150"/>
@@ -990,32 +953,25 @@
                                     <constraint firstItem="YSj-eF-3vy" firstAttribute="top" secondItem="7Wc-B4-Cth" secondAttribute="top" id="yQ2-A5-h3z"/>
                                 </constraints>
                             </scrollView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-Ty-hch">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="wQp-gm-d6b"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7Wc-B4-Cth" secondAttribute="trailing" id="91Q-SP-kt0"/>
                             <constraint firstAttribute="bottom" secondItem="7Wc-B4-Cth" secondAttribute="bottom" id="Fb7-Lg-VZD"/>
                             <constraint firstItem="7Wc-B4-Cth" firstAttribute="top" secondItem="xo4-Dg-V3N" secondAttribute="bottom" id="H9a-qS-9KU"/>
-                            <constraint firstItem="MH0-Ty-hch" firstAttribute="leading" secondItem="xHm-zB-QEg" secondAttribute="leading" id="HDp-tV-MOF"/>
-                            <constraint firstItem="MH0-Ty-hch" firstAttribute="top" secondItem="xHm-zB-QEg" secondAttribute="top" id="Ibj-02-sFG"/>
                             <constraint firstItem="7Wc-B4-Cth" firstAttribute="leading" secondItem="xHm-zB-QEg" secondAttribute="leading" id="NRp-Td-hJB"/>
-                            <constraint firstAttribute="trailing" secondItem="MH0-Ty-hch" secondAttribute="trailing" id="Qld-4Z-4SC"/>
                             <constraint firstItem="YSj-eF-3vy" firstAttribute="width" secondItem="xHm-zB-QEg" secondAttribute="width" id="wZC-y7-33t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Recipe" id="J83-UU-cnX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dvm-ba-1VX">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancelButtonClicked:" destination="FSV-ua-PSw" id="Cty-KQ-T9H"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="dlC-Jb-GCB">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="saveButtonTapped:" destination="FSV-ua-PSw" id="zEf-XV-cJ4"/>
                             </connections>
@@ -1059,17 +1015,18 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3004" y="-988"/>
+            <point key="canvasLocation" x="3943.1999999999998" y="-988.15592203898063"/>
         </scene>
-        <!--Trans Navigation View Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="mLg-9q-BT1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VJO-Pc-2iE" customClass="TransNavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VJO-Pc-2iE" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GaU-kN-jsG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="GaU-kN-jsG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1078,7 +1035,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ReQ-27-ccH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="-988"/>
+            <point key="canvasLocation" x="2952.8000000000002" y="-988.15592203898063"/>
         </scene>
         <!--View Recipe Public-->
         <scene sceneID="n12-wF-Fd5">
@@ -1351,13 +1308,13 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="4615" y="-988"/>
+            <point key="canvasLocation" x="3004" y="-1863"/>
         </scene>
-        <!--Trans Navigation View Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="N53-yt-U7s">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4a-CT-ZAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wgS-vv-jrj" customClass="TransNavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wgS-vv-jrj" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="L6r-jZ-lRc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1370,7 +1327,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="3804" y="-988"/>
+            <point key="canvasLocation" x="1865" y="-1863"/>
         </scene>
         <!--Tab Bar-->
         <scene sceneID="i4H-N0-Wsw">
@@ -1386,7 +1343,7 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Fw9-6e-J5T" kind="relationship" relationship="viewControllers" id="mYo-0J-5DJ"/>
+                        <segue destination="sXV-e0-oCG" kind="relationship" relationship="viewControllers" id="mYo-0J-5DJ"/>
                         <segue destination="pKN-C7-5Xj" kind="relationship" relationship="viewControllers" id="ECX-QT-hZX"/>
                         <segue destination="c4O-he-nbz" kind="relationship" relationship="viewControllers" id="ozi-pt-pjx"/>
                     </connections>
@@ -1890,7 +1847,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E14-Wa-ffv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4975" y="535"/>
+            <point key="canvasLocation" x="4078" y="189"/>
         </scene>
         <!--FollowersVC-->
         <scene sceneID="VUg-sx-xPh">
@@ -2001,7 +1958,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugf-0y-Jm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2070" y="1297"/>
+            <point key="canvasLocation" x="2070" y="1333"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="gaS-Wd-Lta">
@@ -2323,10 +2280,10 @@
             </objects>
             <point key="canvasLocation" x="3804" y="1029"/>
         </scene>
-        <!--Trans Navigation View Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="WAm-94-avD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QgN-VE-scl" customClass="TransNavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QgN-VE-scl" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Pys-HM-RtQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2930,7 +2887,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5671" y="-1478"/>
+            <point key="canvasLocation" x="3804" y="-2061"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PuC-uD-pXS">
@@ -3001,12 +2958,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JoR-AV-CDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5670" y="-879"/>
+            <point key="canvasLocation" x="4743.1999999999998" y="-1459.52023988006"/>
         </scene>
         <!--Profile-->
         <scene sceneID="9Nj-Cn-o8F">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pKN-C7-5Xj" customClass="TransNavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pKN-C7-5Xj" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profileEmpty" selectedImage="profileFull" id="MZY-ZW-nRQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="9jF-Zz-Vyt">
@@ -3031,8 +2988,8 @@
         <!--Recipe-->
         <scene sceneID="Ren-aO-Wbc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c4O-he-nbz" customClass="TransNavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recipe" id="9Yj-tL-PaJ"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c4O-he-nbz" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recipe" image="savedEmpty" selectedImage="savedFull" id="9Yj-tL-PaJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="3uM-i4-3cb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -3051,6 +3008,26 @@
             </objects>
             <point key="canvasLocation" x="2071" y="-264"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="Vgr-o3-LgE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sXV-e0-oCG" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="homeEmpty" selectedImage="homeFull" id="khe-dr-IwM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="obJ-CX-CgT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fw9-6e-J5T" kind="relationship" relationship="rootViewController" id="1Eg-D7-Nac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXx-I1-qOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="-1021"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1pxGradient" width="1" height="1"/>
@@ -3060,7 +3037,6 @@
         <image name="Demo Profile Pic" width="500" height="375"/>
         <image name="GradientViewFull" width="1" height="1"/>
         <image name="GradientViewHalf" width="1" height="1"/>
-        <image name="NavBar" width="562" height="199"/>
         <image name="Profile" width="49" height="49"/>
         <image name="White Gradient - Food Overlay" width="375" height="212"/>
         <image name="WhiteGradientFade" width="1" height="450"/>
@@ -3075,6 +3051,8 @@
         <image name="profileEmpty" width="28" height="28"/>
         <image name="profileFull" width="28" height="28"/>
         <image name="recipe1" width="448" height="256"/>
+        <image name="savedEmpty" width="28" height="28"/>
+        <image name="savedFull" width="28" height="28"/>
         <image name="unliked" width="147" height="127"/>
         <image name="檔案_000" width="900" height="1600"/>
     </resources>

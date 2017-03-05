@@ -88,15 +88,6 @@ class RecipeFeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             noRecipes.isHidden = false
         }
         
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
-        let attrs = [
-            NSForegroundColorAttributeName : UIColor.white,
-            //   NSFontAttributeName : UIFont(name: "Georgia-Bold", size: 24)!
-        ]
-        
-        UINavigationBar.appearance().titleTextAttributes = attrs
 
     }
 

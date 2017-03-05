@@ -19,8 +19,8 @@ class TabBar: UITabBarController {
         tabBarItems[0].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
         tabBarItems[2].title = nil
         tabBarItems[2].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
-        tabBarItems[3].title = nil
-        tabBarItems[3].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
+      //  tabBarItems[3].title = nil
+      //  tabBarItems[3].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
         // Do any additional setup after loading the view.
     }
 

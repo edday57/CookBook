@@ -15,7 +15,7 @@ class NewViewRecipeVC: UIViewController {
     
     @IBOutlet weak var mainContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var mainContainer: UIView!
-    var darkMode:Bool = false
+    var darkMode:Bool = true
     var segment = String()
     
     //Top Section
@@ -38,6 +38,7 @@ class NewViewRecipeVC: UIViewController {
 
     @IBOutlet weak var stepsView: UIView!
     @IBOutlet weak var stepsViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var stepsTextView: UITextView!
 
     @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var ingredientsTextView: UITextView!
@@ -115,6 +116,7 @@ class NewViewRecipeVC: UIViewController {
                     self.ingredientsArray = object.value(forKey: "ingredientsArray") as! [String]
                     self.stepsArray = object.value(forKey: "instructionsArray") as! [String]
                     self.convertIngredients()
+                    self.convertSteps()
                 }
                 let userQuery = PFUser.query()
                 userQuery?.whereKey("username", equalTo: self.username)
@@ -158,6 +160,21 @@ class NewViewRecipeVC: UIViewController {
         ingredientsViewHeight.constant = 37 + 8 + ingredientsTextView.frame.height
         if segment == "ingredients" {
             ingredientsSegment()
+        }
+    }
+    
+    func convertSteps() {
+        var stepsList = ""
+        var i = 0
+        for item in stepsArray{
+            i += 1
+            stepsList.append("\(i). \(item) \n")
+        }
+        stepsTextView.text = stepsList
+        stepsTextView.sizeToFit()
+        stepsViewHeight.constant = 37 + 8 + stepsTextView.frame.height
+        if segment == "steps" {
+            stepsSegment()
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 
-var postuuid = [String]()
+//var postuuid = [String]()
 
 class ViewRecipePublicVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate{
     

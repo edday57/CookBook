@@ -289,7 +289,7 @@ class NewProfileVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         postuuid.append(uuidArray[indexPath.row])
         
-        let post = self.storyboard?.instantiateViewController(withIdentifier: "ViewRecipePublicVC") as! ViewRecipePublicVC
+        let post = self.storyboard?.instantiateViewController(withIdentifier: "NewViewRecipeVC") as! NewViewRecipeVC
        // self.present(post, animated: true, completion: nil)
         self.navigationController?.pushViewController(post, animated: true)
 

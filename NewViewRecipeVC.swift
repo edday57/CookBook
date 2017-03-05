@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+var postuuid = [String]()
+
 class NewViewRecipeVC: UIViewController {
     
     @IBOutlet weak var mainContainerHeight: NSLayoutConstraint!
@@ -34,9 +36,23 @@ class NewViewRecipeVC: UIViewController {
     @IBOutlet weak var stepsBtn: UIButton!
     @IBOutlet weak var ingredientsBtn: UIButton!
 
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    
+    var avaArray = [PFFile]()
+    var nameArray = [String]()
+    var dateArray = [Date]()
+    var titleArray = [String]()
+    var additionalInfoEnabledArray = [Int]()
+    var uuidArray = [String]()
+    var stepsArray = [String]()
+    var ingredientsArray = [String]()
+    var username = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set nav bar title
+        navigationItem.title = "CookBook"
         
         //self.mainContainerHeight.constant = 700
         
@@ -57,8 +73,112 @@ class NewViewRecipeVC: UIViewController {
         
         ratingControl.rating = 4
         // Do any additional setup after loading the view.
+        
+        
+        //Server Data Retrival for Post
+        let postQuery = PFQuery(className: "posts")
+        //Look for the post with the specified identifier
+        postQuery.whereKey("uuid", equalTo: postuuid.last!)
+        postQuery.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+            //If there are no errors then...
+            if error == nil {
+                
+                //Clean Up
+                self.avaArray.removeAll(keepingCapacity: false)
+                self.nameArray.removeAll(keepingCapacity: false)
+                self.dateArray.removeAll(keepingCapacity: false)
+                self.titleArray.removeAll(keepingCapacity: false)
+                self.additionalInfoEnabledArray.removeAll(keepingCapacity: false)
+                self.uuidArray.removeAll(keepingCapacity: false)
+                self.stepsArray.removeAll(keepingCapacity: false)
+                self.ingredientsArray.removeAll(keepingCapacity: false)
+                
+                //Retrive items
+                for object in objects! {
+                    self.recipeName.text = (object.value(forKey: "title") as! String)
+                    self.username = (object.value(forKey: "username") as! String)    //////////This needs to be changed to use actual name instead of username ////////
+                    self.timeLbl.text = "\((object.value(forKey: "time") as! Int)) min"
+                    let pictureFile = object.value(forKey: "picture") as! PFFile
+                    pictureFile.getDataInBackground(block: { (data:Data?, error:Error?) in
+                        if error == nil {
+                            self.userImage.image = UIImage(data: data!)
+                        }
+                    })
+                    self.dateArray.append(object.createdAt!)
+                    self.calculateDate(self.dateArray.last!) ////Turn the date into a readable format using the function defined below
+                    self.additionalInfoEnabledArray.append(object.value(forKey: "additionalInfoEnabled")as! Int)   ///Use this later to help with configuring instructions section size///////
+                    self.ingredientsArray = object.value(forKey: "ingredientsArray") as! [String]
+                    self.stepsArray = object.value(forKey: "instructionsArray") as! [String]
+                    self.convertIngredients()
+                }
+                let userQuery = PFUser.query()
+                userQuery?.whereKey("username", equalTo: self.username)
+                userQuery?.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                    if error == nil {
+                        for object in objects! {
+                            self.nameLbl.text = (object.value(forKey: "fullname") as! String).capitalized
+                            let avaFile = object.value(forKey: "ava") as! PFFile
+                            avaFile.getDataInBackground(block: { (data:Data?, error:Error?) in
+                                if error == nil {
+                                    self.avaImage.image = UIImage(data: data!)
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+        }
+    
     }
     
+    //Date Function
+    func calculateDate(_ date: Date) {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.short
+        formatter.timeStyle = DateFormatter.Style.none
+        
+        
+        dateLbl.text = "\(formatter.string(from: dateArray.last!))"
+    }
+    
+    //Convert Ingredients Array to Unordered List
+    func convertIngredients(){
+        var ingredientsList = ""
+        for item in ingredientsArray{
+            ingredientsList.append("- \(item) \n")
+        }
+        ingredientsTextView.text = ingredientsList
+    }
+    
+    
+    /*//When the user adds an instruction
+    var instructionsArray = [String]()
+    var instructionCount = 0
+    
+    @IBAction func addInstruction(_ sender: AnyObject) {
+        if let instruction = instructionField.text {
+            if instruction != "" {
+                
+                //If instruction text field has a value then...
+                instructionsArray.append(instruction)
+                
+                //If this is the first instruction then clear the text field
+                if instructionsArray.count == 1 {
+                    instructionsTextView.text = "1. \(instruction)."}
+                    
+                else {
+                    instructionCount += 1
+                    instructionsTextView.text.append("\n\(instructionCount + 1). \(instructionsArray[instructionCount]).")
+                    
+                }
+            }
+            //Clear the instruction text field
+            instructionField.text = nil
+            checkForSaveEnabled()
+        }
+    }
+    */
     //Segment Control
     /////////////////////////////////////////////////
 
@@ -96,7 +216,15 @@ class NewViewRecipeVC: UIViewController {
 
     /////////////////////////////////////////////////
     
+    @IBAction func menuBtnTapped(_ sender: Any) {
+    }
     
+    @IBAction func backBtnTapped(_ sender: Any) {
+        if !postuuid.isEmpty {
+            postuuid.removeLast()
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

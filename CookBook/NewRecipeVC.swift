@@ -237,9 +237,11 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
 
     
     // When the user pressed add ingredient button.
+    var ingredientsArray = [String]()
     @IBAction func addIngredient(_ sender: AnyObject) {
         if let ingredient = ingredientsField.text {
             if ingredient != "" {
+                ingredientsArray.append(ingredient)
                 
                 //If instruction text field has a value then...
                 
@@ -333,9 +335,9 @@ class NewRecipeVC: UIViewController, UIImagePickerControllerDelegate, UINavigati
                         object["uuid"] = "\(PFUser.current()!.username!) \(NSUUID().uuidString)"
                         object["title"] = nameTextField.text!.capitalized
                         object["time"] = Int(timeField.text!)
-                        object["ingredients"] = ingredientsTextView.text!
-                        object["instructions"] = instructionsTextView.text!
                         object["additionalInfo"] = additionalInfo.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                        object["instructionsArray"] = instructionsArray
+                        object["ingredientsArray"] = ingredientsArray
                         let imageData = UIImageJPEGRepresentation(userImage.image!, 0.5)
                         let imageFile = PFFile(name: "recipe_image.jpg", data: imageData!)
                         object["picture"] = imageFile

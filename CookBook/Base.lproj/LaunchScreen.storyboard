@@ -41,7 +41,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Beta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-ZI-ShL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-ZI-ShL">
                                 <rect key="frame" x="16" y="206" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PPF-uL-SXe"/>
@@ -56,6 +56,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Pnh-Ve-jLk" secondAttribute="trailing" id="3Vv-dH-UN4"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="I51-8G-Pad" secondAttribute="bottom" constant="20" id="4Uu-11-T39"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rbf-ZI-ShL" secondAttribute="trailing" id="EYT-i5-FIZ"/>
+                            <constraint firstItem="Rbf-ZI-ShL" firstAttribute="top" secondItem="Pnh-Ve-jLk" secondAttribute="bottom" constant="8" id="FCl-Xf-8wh"/>
                             <constraint firstItem="Rbf-ZI-ShL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Mnj-ui-PYa"/>
                             <constraint firstItem="Pnh-Ve-jLk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="134" id="Uud-y8-dcR"/>
                             <constraint firstItem="I51-8G-Pad" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hq2-fy-rSc"/>

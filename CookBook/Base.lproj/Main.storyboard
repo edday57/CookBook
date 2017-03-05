@@ -1040,17 +1040,6 @@
         <!--View Recipe Public-->
         <scene sceneID="n12-wF-Fd5">
             <objects>
-                <tapGestureRecognizer id="a8M-QC-0cf" userLabel="Username Tapped">
-                    <connections>
-                        <action selector="usernameTapped:" destination="JuA-aH-7DM" id="a8x-PR-OMM"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ax6-1i-GaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="dew-WJ-Qrw" userLabel="Like Button Tapped">
-                    <connections>
-                        <action selector="likeButtonTapped:" destination="JuA-aH-7DM" id="OXu-wD-uaf"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="ViewRecipePublicVC" id="JuA-aH-7DM" userLabel="View Recipe Public" customClass="ViewRecipePublicVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CQ0-gL-0hR"/>
@@ -1307,13 +1296,23 @@
                         <outlet property="uuidLabel" destination="q6H-do-tVO" id="7ss-bE-7aH"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="a8M-QC-0cf" userLabel="Username Tapped">
+                    <connections>
+                        <action selector="usernameTapped:" destination="JuA-aH-7DM" id="a8x-PR-OMM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ax6-1i-GaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dew-WJ-Qrw" userLabel="Like Button Tapped">
+                    <connections>
+                        <action selector="likeButtonTapped:" destination="JuA-aH-7DM" id="OXu-wD-uaf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3004" y="-1863"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="N53-yt-U7s">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D4a-CT-ZAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wgS-vv-jrj" customClass="NavigationViewController" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="L6r-jZ-lRc">
@@ -1326,6 +1325,7 @@
                         <segue destination="JuA-aH-7DM" kind="relationship" relationship="rootViewController" id="mo8-yI-CmP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4a-CT-ZAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1865" y="-1863"/>
         </scene>
@@ -2303,7 +2303,7 @@
         <!--Recipe Name-->
         <scene sceneID="Qsq-qN-K6t">
             <objects>
-                <viewController id="DIE-N5-Xzx" customClass="NewViewRecipeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewViewRecipeVC" id="DIE-N5-Xzx" customClass="NewViewRecipeVC" customModule="CookBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iA1-H0-Wbp"/>
                         <viewControllerLayoutGuide type="bottom" id="fEo-Xz-csx"/>
@@ -2323,7 +2323,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-ED-s0U" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChilliDemo" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-N2-lkx" userLabel="User Image">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PB9-N2-lkx" userLabel="User Image">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="299" id="wpI-Tz-oit"/>
@@ -2346,7 +2346,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8s-7q-ckb" userLabel="Info View">
                                                 <rect key="frame" x="0.0" y="299" width="375" height="73"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Demo Chef" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-AO-4HP">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-AO-4HP">
                                                         <rect key="frame" x="10" y="31" width="34" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="34" id="SQ1-3G-j7G"/>
@@ -2375,8 +2375,8 @@
                                                         <color key="textColor" red="0.67673419580000005" green="0.67673419580000005" blue="0.67673419580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Steinbeck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HCi-Rd-g0Y">
-                                                        <rect key="frame" x="78" y="38" width="162" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HCi-Rd-g0Y">
+                                                        <rect key="frame" x="78" y="38" width="147" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="TnH-Wc-7IZ"/>
                                                         </constraints>
@@ -2390,10 +2390,10 @@
                                                             <constraint firstAttribute="height" constant="14" id="p5c-ch-mmi"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24/01/17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzd-HM-l2B" userLabel="Date Label">
-                                                        <rect key="frame" x="300" y="39" width="60" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24/01/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzd-HM-l2B" userLabel="Date Label">
+                                                        <rect key="frame" x="285" y="39" width="75" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="60" id="F0b-ZB-y7U"/>
+                                                            <constraint firstAttribute="width" constant="75" id="F0b-ZB-y7U"/>
                                                             <constraint firstAttribute="height" constant="21" id="JfB-VX-NNm"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -2401,7 +2401,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uds-8Z-L0q">
-                                                        <rect key="frame" x="248" y="39" width="50" height="21"/>
+                                                        <rect key="frame" x="233" y="39" width="50" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="tys-Xb-Rtl"/>
                                                             <constraint firstAttribute="height" constant="21" id="vtC-lv-3Tm"/>
@@ -2643,7 +2643,20 @@
                             <constraint firstItem="fEo-Xz-csx" firstAttribute="top" secondItem="F9z-bE-O3G" secondAttribute="bottom" id="u7D-qa-gp1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipe Name" id="Icj-aq-UH5"/>
+                    <navigationItem key="navigationItem" title="Recipe Name" id="Icj-aq-UH5">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="elR-4G-PLz">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtnTapped:" destination="DIE-N5-Xzx" id="bnu-XV-uXE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="UGy-MO-Jc6">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuBtnTapped:" destination="DIE-N5-Xzx" id="NtT-du-l3A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -2651,12 +2664,14 @@
                         <outlet property="dateLbl" destination="Tzd-HM-l2B" id="X2Z-82-Xs4"/>
                         <outlet property="imageOverlay" destination="F1N-lk-kEs" id="L5l-dx-VwR"/>
                         <outlet property="ingredientsBtn" destination="fKA-FG-Po8" id="NMC-dz-d5L"/>
+                        <outlet property="ingredientsTextView" destination="xaR-e7-9Cm" id="5G5-RG-GBG"/>
                         <outlet property="mainContainer" destination="bgF-ED-s0U" id="6Sn-Hl-5sG"/>
                         <outlet property="mainContainerHeight" destination="Kve-vk-S4G" id="gDi-Cp-C0X"/>
                         <outlet property="nameLbl" destination="HCi-Rd-g0Y" id="f1Z-bC-yc7"/>
                         <outlet property="ratingControl" destination="yBb-vS-1Va" id="gby-7c-aYO"/>
                         <outlet property="recipeName" destination="UIc-x8-eaq" id="NfM-Wm-vmU"/>
                         <outlet property="reviewsBtn" destination="tvX-np-OmU" id="GTn-qf-VkO"/>
+                        <outlet property="reviewsLbl" destination="tBU-h0-HZO" id="x4s-S9-1fj"/>
                         <outlet property="stepsBtn" destination="1pz-ew-vR9" id="qh9-vM-VHm"/>
                         <outlet property="timeLbl" destination="viy-WI-YJg" id="9vH-oe-8Sh"/>
                         <outlet property="userImage" destination="PB9-N2-lkx" id="Qki-qb-1Nl"/>
@@ -3031,9 +3046,7 @@
     </scenes>
     <resources>
         <image name="1pxGradient" width="1" height="1"/>
-        <image name="ChilliDemo" width="1452" height="817"/>
         <image name="Cristen-Profile-circle" width="500" height="400"/>
-        <image name="Demo Chef" width="200" height="200"/>
         <image name="Demo Profile Pic" width="500" height="375"/>
         <image name="GradientViewFull" width="1" height="1"/>
         <image name="GradientViewHalf" width="1" height="1"/>

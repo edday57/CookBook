@@ -1459,10 +1459,10 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35x-iW-RU5">
-                                    <rect key="frame" x="163" y="237" width="50" height="32"/>
+                                    <rect key="frame" x="173" y="237" width="30" height="32"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                    <state key="normal" title="Button">
+                                    <state key="normal">
                                         <color key="titleColor" red="0.22939357090000001" green="0.22821719360000001" blue="0.23056994820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>

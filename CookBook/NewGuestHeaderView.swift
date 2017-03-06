@@ -30,6 +30,7 @@ class NewGuestHeaderView: UICollectionReusableView {
     @IBOutlet weak var button: UIButton!
     
     override func awakeFromNib() {
+        button.isUserInteractionEnabled = false
         avaImg.layer.cornerRadius = avaImg.bounds.width / 2
         avaImg.clipsToBounds = true
         
@@ -52,6 +53,7 @@ class NewGuestHeaderView: UICollectionReusableView {
     @IBAction func followButtonClicked(_ sender: AnyObject) {
         let title = button.title(for: UIControlState.normal)!
         print(title)
+        button.isUserInteractionEnabled = false
         if title == "Follow" {
             let object = PFObject(className: "follow")
             object["follower"] = PFUser.current()?.username
@@ -59,8 +61,10 @@ class NewGuestHeaderView: UICollectionReusableView {
             object.saveInBackground(block: { (success:Bool, error:Error?) in
                 if success {
                     self.button.setTitle("Following", for: UIControlState.normal)
+                    self.button.isUserInteractionEnabled = true
                 } else {
                     print(error!.localizedDescription)
+                    self.button.isUserInteractionEnabled = true
                 }
             })
         } else {
@@ -74,13 +78,16 @@ class NewGuestHeaderView: UICollectionReusableView {
                         object.deleteInBackground(block: { (success:Bool, error:Error?) in
                             if success {
                                 self.button.setTitle("Follow", for: UIControlState.normal)
+                                self.button.isUserInteractionEnabled = true
                             } else {
                                 print(error!.localizedDescription)
+                                self.button.isUserInteractionEnabled = true
                             }
                         })
                     }
                 } else {
                     print(error!.localizedDescription)
+                    self.button.isUserInteractionEnabled = true
                 }
             })
         }

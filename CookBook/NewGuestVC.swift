@@ -73,6 +73,7 @@ class NewGuestVC: UICollectionViewController {
         let query = PFQuery(className: "posts")
         query.whereKey("username", equalTo: guestname.last!)
         query.limit = page
+        query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 
@@ -204,9 +205,11 @@ class NewGuestVC: UICollectionViewController {
                 if count == 0 {
                     //They are not following them
                     header.button.setTitle("Follow", for: UIControlState.normal)
+                    header.button.isUserInteractionEnabled = true
                 } else {
                     //They are following them
                     header.button.setTitle("Following", for: UIControlState.normal)
+                    header.button.isUserInteractionEnabled = true
                     
                 }
             } else {

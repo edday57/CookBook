@@ -71,6 +71,7 @@ class NewProfileVC: UICollectionViewController {
         let query = PFQuery(className: "posts")
         query.whereKey("username", equalTo: PFUser.current()!.username!)
         query.limit = page
+        query.order(byDescending: "createdAt")
         query.findObjectsInBackground (block: { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 

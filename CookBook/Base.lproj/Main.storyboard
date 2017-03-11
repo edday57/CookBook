@@ -2338,7 +2338,7 @@
                                                                     <constraint firstAttribute="height" constant="1" id="gyP-HN-ypV"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-84-ncp">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-84-ncp">
                                                                 <rect key="frame" x="10" y="6" width="34" height="34"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="34" id="I4C-8O-ymU"/>
@@ -2368,12 +2368,9 @@
                                                             <constraint firstItem="ACG-LH-o6Z" firstAttribute="leading" secondItem="28d-yQ-GM9" secondAttribute="leading" id="tLw-Z5-IcJ"/>
                                                         </constraints>
                                                     </view>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-yw-JV0">
-                                                        <rect key="frame" x="0.0" y="47" width="375" height="200"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-yw-JV0">
+                                                        <rect key="frame" x="0.0" y="47" width="375" height="223"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="TmO-G0-NmF"/>
-                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="94" id="MyQ-yP-HYu" customClass="ReviewCell" customModule="CookBook" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="375" height="94"/>
@@ -2414,7 +2411,7 @@
                                                                             <color key="textColor" red="0.21502590673575128" green="0.21502590673575128" blue="0.21502590673575128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="luC-jZ-q9f" customClass="RatingControl" customModule="CookBook" customModuleProvider="target">
+                                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="luC-jZ-q9f" customClass="RatingControl" customModule="CookBook" customModuleProvider="target">
                                                                             <rect key="frame" x="211" y="13" width="82" height="14"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="14" id="fLu-9l-gqL"/>
@@ -2466,6 +2463,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="ctr-yw-JV0" secondAttribute="trailing" id="HgH-KG-pOA"/>
                                                     <constraint firstItem="28d-yQ-GM9" firstAttribute="leading" secondItem="B5R-qJ-cuK" secondAttribute="leading" id="Vpt-jy-y7a"/>
                                                     <constraint firstItem="ctr-yw-JV0" firstAttribute="top" secondItem="28d-yQ-GM9" secondAttribute="bottom" id="YjK-1Y-C1l"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ctr-yw-JV0" secondAttribute="bottom" id="eRg-Yp-uIw"/>
                                                     <constraint firstItem="ctr-yw-JV0" firstAttribute="leading" secondItem="B5R-qJ-cuK" secondAttribute="leading" id="eoc-1B-19A"/>
                                                     <constraint firstAttribute="trailing" secondItem="28d-yQ-GM9" secondAttribute="trailing" id="lLW-pX-cnJ"/>
                                                 </constraints>

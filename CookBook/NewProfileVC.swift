@@ -116,8 +116,8 @@ class NewProfileVC: UICollectionViewController {
                 if error == nil {
                     
                     //clean up
-                    self.uuidArray.removeAll(keepingCapacity: false)
-                    self.picArray.removeAll(keepingCapacity: false)
+                  //  self.uuidArray.removeAll(keepingCapacity: false)
+                   // self.picArray.removeAll(keepingCapacity: false)
                     for object in objects! {
                         self.uuidArray.append(object.value(forKey: "uuid") as! String)
                         self.picArray.append(object.value(forKey: "picture") as! PFFile)

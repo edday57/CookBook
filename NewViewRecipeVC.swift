@@ -166,12 +166,14 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                         total += object.value(forKey: "rating") as! Int
                     }
                     let rating: Int = total / count
-                    print(rating)
+                    //print(rating)
                     self.ratingControl.rating = rating
                 } else {
                     print(error!.localizedDescription)
                 }
             })
+            let isReviewedQuery = PFQuery(className: "ratings")
+            
         }
     loadReviews()
     }
@@ -397,7 +399,7 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let query = PFQuery(className: "ratings")
         query.whereKey("review", notEqualTo: "")
         query.whereKey("postid", equalTo: postuuid.last!)
-        query.limit = reviewsNumber
+        //query.limit = reviewsNumber
         query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
@@ -412,29 +414,83 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                     self.fromArray.append(object.value(forKey: "from") as! String)
                     self.reviewArray.append(object.value(forKey: "review")as! String)
                     self.ratingArray.append(object.value(forKey: "rating")as! Int)
-                    let userQuery = PFUser.query()
-                    
-                    userQuery!.whereKey("username", equalTo: self.fromArray.last!)
-                    userQuery!.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
-                        if error == nil {
-                            for object in objects! {
-                                print("here")
-                                self.reviewNameArray.append(object.value(forKey: "fullname")as! String)
-                                self.reviewAvaArray.append(object.value(forKey: "ava")as! PFFile)
-                                self.reviewsTableView.reloadData()
-                            }
-                            
-                            //self.reviewsTableView.reloadData()
-                        } else {
-                            print(error!.localizedDescription)
-                        }
-                    })
+
                 }
+                let userQuery = PFUser.query()
+                userQuery!.whereKey("username", containedIn: self.fromArray)
+                userQuery!.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                    if error == nil {
+                        for object in objects! {
+                            self.reviewNameArray.append(object.value(forKey: "fullname")as! String)
+                            self.reviewAvaArray.append(object.value(forKey: "ava")as! PFFile)
+                            self.reviewsTableView.reloadData()
+                        }
+                        
+                        //self.reviewsTableView.reloadData()
+                    } else {
+                        print(error!.localizedDescription)
+                    }
+                })
+
             } else {
                 print(error!.localizedDescription)
             }
         }
     }
+    
+   /* func loadMoreReviews() {
+        if reviewsNumber <=  self.reviewArray.count {
+            print("111")
+        
+            let query = PFQuery(className: "ratings")
+            query.whereKey("review", notEqualTo: "")
+            query.whereKey("postid", equalTo: postuuid.last!)
+            query.skip = reviewsNumber
+            reviewsNumber = reviewsNumber + 5
+            query.limit = reviewsNumber
+            query.order(byDescending: "createdAt")
+            query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                if error == nil {
+                    //find more reviews
+                    for object in objects! {
+                        print("hello")
+                        self.fromArray.append(object.value(forKey: "from") as! String)
+                        self.reviewArray.append(object.value(forKey: "review")as! String)
+                        self.ratingArray.append(object.value(forKey: "rating")as! Int)
+                        let userQuery = PFUser.query()
+                        
+                        userQuery!.whereKey("username", equalTo: self.fromArray.last!)
+                        userQuery!.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                            if error == nil {
+                                for object in objects! {
+                                    self.reviewNameArray.append(object.value(forKey: "fullname")as! String)
+                                    self.reviewAvaArray.append(object.value(forKey: "ava")as! PFFile)
+                                    self.reviewsTableView.reloadData()
+                                }
+                                
+                                //self.reviewsTableView.reloadData()
+                            } else {
+                                print(error!.localizedDescription)
+                            }
+                        })
+                    }
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+            
+        }
+        
+    }
+    var r = 0
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height {
+            r += 1
+            print(r)
+            self.loadMoreReviews()
+        }
+    }
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 94
     }

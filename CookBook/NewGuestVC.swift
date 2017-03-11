@@ -104,13 +104,14 @@ class NewGuestVC: UICollectionViewController {
     func loadMore() {
         //if there are unloaded posts
         if page <= picArray.count {
-            //increase page size by 10
-            page = page + 10
-            
+
             //load more posts
             let query = PFQuery(className: "posts")
             query.whereKey("username", equalTo: guestname.last!)
+            query.skip = page
+            page = page + 10
             query.limit = page
+            query.order(byDescending: "createdAt")
             query.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
                 if error == nil {
                     

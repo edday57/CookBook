@@ -11,7 +11,7 @@ import Parse
 
 var postuuid = [String]()
 
-class NewViewRecipeVC: UIViewController {
+class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var mainContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var mainContainer: UIView!
@@ -45,6 +45,11 @@ class NewViewRecipeVC: UIViewController {
     @IBOutlet weak var ingredientsTextView: UITextView!
     @IBOutlet weak var ingredientsViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var reviewsView: UIView!
+    @IBOutlet weak var reviewsViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var reviewsTableView: UITableView!
+    
+    
     var avaArray = [PFFile]()
     var nameArray = [String]()
     var dateArray = [Date]()
@@ -71,6 +76,9 @@ class NewViewRecipeVC: UIViewController {
             recipeName.textColor = UIColor.white
         }
         
+        //Set review height
+        reviewsViewHeight.constant = UIScreen.main.bounds.height - 164
+        
         //Avatar round config
         avaImage.layer.cornerRadius = avaImage.bounds.width / 2
         avaImage.clipsToBounds = true
@@ -80,7 +88,7 @@ class NewViewRecipeVC: UIViewController {
         //Set recipe as default segment
         ingredientsSegment()
         
-        ratingControl.rating = 4
+        ratingControl.rating = 0
         // Do any additional setup after loading the view.
         
         
@@ -137,8 +145,35 @@ class NewViewRecipeVC: UIViewController {
                     }
                 })
             }
+            let reviewsCountQuery = PFQuery(className: "ratings")
+            reviewsCountQuery.whereKey("postid", equalTo: postuuid.last!)
+            reviewsCountQuery.whereKey("review", notEqualTo: "")
+            reviewsCountQuery.countObjectsInBackground(block: { (count:Int32, error:Error?) in
+                if error == nil {
+                    self.reviewsLbl.text = "\(count)"
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
+            let ratingQuery = PFQuery(className: "ratings")
+            ratingQuery.whereKey("postid", equalTo: postuuid.last!)
+            ratingQuery.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                if error == nil {
+                    var count = 1
+                    var total = 5
+                    for object in objects! {
+                        count += 1
+                        total += object.value(forKey: "rating") as! Int
+                    }
+                    let rating: Int = total / count
+                    print(rating)
+                    self.ratingControl.rating = rating
+                } else {
+                    print(error!.localizedDescription)
+                }
+            })
         }
-    
+    loadReviews()
     }
     
     //Date Function
@@ -217,7 +252,7 @@ class NewViewRecipeVC: UIViewController {
             mainContainerHeight.constant = 433 + ingredientsViewHeight.constant
             ingredientsView.isHidden = false
             stepsView.isHidden = true
-            //reviewsView.isHidden = true
+            reviewsView.isHidden = true
         }
     }
     
@@ -239,7 +274,7 @@ class NewViewRecipeVC: UIViewController {
             mainContainerHeight.constant = 433 + stepsViewHeight.constant
             stepsView.isHidden = false
             ingredientsView.isHidden = true
-            //reviewsView.isHidden = true
+            reviewsView.isHidden = true
         }
     }
     
@@ -256,6 +291,12 @@ class NewViewRecipeVC: UIViewController {
             stepsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
             ingredientsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
             reviewsBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        }
+        if segment == "reviews" {
+            mainContainerHeight.constant = 425 + reviewsViewHeight.constant
+            stepsView.isHidden = true
+            ingredientsView.isHidden = true
+            reviewsView.isHidden = false
         }
     }
 
@@ -342,7 +383,81 @@ class NewViewRecipeVC: UIViewController {
         })
 
     }
+    
+    //Review table view setup
 
+    var reviewsNumber: Int = 5
+    var fromArray = [String]()
+    var ratingArray = [Int]()
+    var reviewArray = [String]()
+    var reviewNameArray = [String]()
+    var reviewAvaArray = [PFFile]()
+    var usernamee = "edday57"
+    func loadReviews() {
+        let query = PFQuery(className: "ratings")
+        query.whereKey("review", notEqualTo: "")
+        query.whereKey("postid", equalTo: postuuid.last!)
+        query.limit = reviewsNumber
+        query.order(byDescending: "createdAt")
+        query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+            if error == nil {
+                //Clean Up
+                self.fromArray.removeAll(keepingCapacity: false)
+                self.ratingArray.removeAll(keepingCapacity: false)
+                self.reviewArray.removeAll(keepingCapacity: false)
+                self.reviewAvaArray.removeAll(keepingCapacity: false)
+                self.reviewNameArray.removeAll(keepingCapacity: false)
+                //find reviews
+                for object in objects! {
+                    self.fromArray.append(object.value(forKey: "from") as! String)
+                    self.reviewArray.append(object.value(forKey: "review")as! String)
+                    self.ratingArray.append(object.value(forKey: "rating")as! Int)
+                    let userQuery = PFUser.query()
+                    
+                    userQuery!.whereKey("username", equalTo: self.fromArray.last!)
+                    userQuery!.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                        if error == nil {
+                            for object in objects! {
+                                print("here")
+                                self.reviewNameArray.append(object.value(forKey: "fullname")as! String)
+                                self.reviewAvaArray.append(object.value(forKey: "ava")as! PFFile)
+                                self.reviewsTableView.reloadData()
+                            }
+                            
+                            //self.reviewsTableView.reloadData()
+                        } else {
+                            print(error!.localizedDescription)
+                        }
+                    })
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 94
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewAvaArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
+        reviewAvaArray[indexPath.row].getDataInBackground { (data:Data?, error:Error?) in
+            if error == nil {
+                cell.reviewerImg.image = UIImage(data: data!)
+            }else {
+                print(error!.localizedDescription)
+            }
+        }
+        cell.reviewerName.text = (reviewNameArray[indexPath.row]).capitalized
+        cell.review.text = reviewArray[indexPath.row]
+        cell.ratingControl.rating = ratingArray[indexPath.row]
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -176,7 +176,6 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
         }
     loadReviews()
-    loadReviews2()
     }
     
     //Date Function
@@ -396,60 +395,11 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     var reviewsNumber: Int = 5
     
     //Arrays for review data to be stored in
-    var fromArray = [String]()
-    var ratingArray = [Int]()
-    var reviewArray = [String]()
-    var reviewNameArray = [String]()
-    var reviewAvaArray = [PFFile]()
+    var reviewArray: Array <Review?>= []
 
+    
     //fetch data from server
     func loadReviews() {
-        let query = PFQuery(className: "ratings")
-        query.whereKey("review", notEqualTo: "")
-        query.whereKey("postid", equalTo: postuuid.last!)
-        //query.limit = reviewsNumber
-        query.order(byDescending: "createdAt")
-        query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
-            if error == nil {
-                //Clean Up
-                self.fromArray.removeAll(keepingCapacity: false)
-                self.ratingArray.removeAll(keepingCapacity: false)
-                self.reviewArray.removeAll(keepingCapacity: false)
-                self.reviewAvaArray.removeAll(keepingCapacity: false)
-                self.reviewNameArray.removeAll(keepingCapacity: false)
-                //find reviews
-                for object in objects! {
-                    self.fromArray.append(object.value(forKey: "from") as! String)
-                    self.reviewArray.append(object.value(forKey: "review")as! String)
-                    self.ratingArray.append(object.value(forKey: "rating")as! Int)
-                    let userQuery = PFUser.query()
-                   // print(object.value(forKey: "from")as! String)
-                    //print(self.fromArray.last!)
-                    userQuery!.whereKey("username", equalTo: self.fromArray.last!)
-                    userQuery!.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
-                        if error == nil {
-                            for object in objects! {
-                                //print(object.value(forKey: "fullname")as! String)
-                                self.reviewNameArray.append(object.value(forKey: "fullname")as! String)
-                                self.reviewAvaArray.append(object.value(forKey: "ava")as! PFFile)
-                                self.reviewsTableView.reloadData()
-                            }
-                            
-                            //self.reviewsTableView.reloadData()
-                        } else {
-                            print(error!.localizedDescription)
-                        }
-                    })
-
-                }
-            } else {
-                print(error!.localizedDescription)
-            }
-        }
-    }
-
-    var testReviewArray: Array <Review?>= []
-    func loadReviews2() {
         let query = PFQuery(className: "ratings")
         query.whereKey("review", notEqualTo: "")
         query.whereKey("postid", equalTo: postuuid.last!)
@@ -457,9 +407,8 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 if objects!.count > 0{
-                    self.testReviewArray.removeAll(keepingCapacity: false)
-                    self.testReviewArray = [Review?](repeatElement(nil, count: objects!.count))
-                    print(self.testReviewArray.count)
+                    self.reviewArray.removeAll(keepingCapacity: false)
+                    self.reviewArray = [Review?](repeatElement(nil, count: objects!.count))
                     for i in 0...objects!.count - 1 {
                         //print(String(i))
                         let object: AnyObject = objects![i]
@@ -474,13 +423,8 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                                     let reviewFullname = object.value(forKey: "fullname")as! String
                                     let reviewAva = object.value(forKey: "ava")as! PFFile
                                     let review = Review(username: reviewUsername, ava: reviewAva, rating: reviewRating, review: reviewReview, fullname: reviewFullname)
-                                    print(String(i))
-                                    self.testReviewArray[i] = review
-                                    //print(self.testReviewArray[i]!.username)
+                                    self.reviewArray[i] = review
                                     self.reviewsTableView.reloadData()
-                                    if i == 0 {
-                                        print(self.testReviewArray[0]!.username!)
-                                    }
                                 }
                             } else {
                                 print(error!.localizedDescription)
@@ -506,35 +450,25 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testReviewArray.count
+        return reviewArray.count
     }
     
     //content for cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
-        if testReviewArray[indexPath.row] != nil {
-            testReviewArray[indexPath.row]!.ava!.getDataInBackground(block: { (data:Data?, error:Error?) in
+        if reviewArray[indexPath.row] != nil {
+            reviewArray[indexPath.row]!.ava!.getDataInBackground(block: { (data:Data?, error:Error?) in
                 if error == nil {
                     cell.reviewerImg.image = UIImage(data: data!)
                 }else {
                     print(error!.localizedDescription)
                 }
             })
-            cell.reviewerName.text = testReviewArray[indexPath.row]!.fullname!.capitalized
-            cell.ratingControl.rating = testReviewArray[indexPath.row]!.rating!
-            cell.review.text = testReviewArray[indexPath.row]!.review!
+            cell.reviewerName.text = reviewArray[indexPath.row]!.fullname!.capitalized
+            cell.ratingControl.rating = reviewArray[indexPath.row]!.rating!
+            cell.review.text = reviewArray[indexPath.row]!.review!
         }
-        /*reviewAvaArray[indexPath.row].getDataInBackground { (data:Data?, error:Error?) in
-            if error == nil {
-                cell.reviewerImg.image = UIImage(data: data!)
-            }else {
-                print(error!.localizedDescription)
-            }
-        }
-        cell.reviewerName.text = (reviewNameArray[indexPath.row]).capitalized
-        cell.review.text = reviewArray[indexPath.row]
-        cell.ratingControl.rating = ratingArray[indexPath.row]
- */
+
         return cell
     }
     

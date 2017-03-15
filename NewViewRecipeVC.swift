@@ -392,23 +392,27 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     /////Review table view setup/////
     /////////////////////////////////
 
-    var reviewsNumber: Int = 5
     
     //Arrays for review data to be stored in
     var reviewArray: Array <Review?>= []
 
-    
+    //Precaution to stop multiple queries at once
+    var loading = false
     //fetch data from server
     func loadReviews() {
+        self.loading = true
         let query = PFQuery(className: "ratings")
         query.whereKey("review", notEqualTo: "")
         query.whereKey("postid", equalTo: postuuid.last!)
         query.order(byDescending: "createdAt")
-        query.limit = 5
+        query.limit = 6
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
+                //If there are reviews to be downloaded...
                 if objects!.count > 0{
+                    //Clean Up
                     self.reviewArray.removeAll(keepingCapacity: false)
+                    //Fill review array with placeholders so reviews can be added to index instead of appending (as appends in wrong order sometimes...)
                     self.reviewArray = [Review?](repeatElement(nil, count: objects!.count))
                     var counter = 0
                     let counterLimit = objects!.count
@@ -433,9 +437,12 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                                             self.reviewArray[i] = review
                                             //Only reload data once all objects are downloaded
                                             counter += 1
+                                            //Once all data has been downloaded...
                                             if counter == counterLimit {
+                                                //Reload table view
                                                 self.reviewsTableView.reloadData()
-                                               // self.loadMore()
+                                                //Finished loading posts
+                                                self.loading = false
                                             }
                                         }else {
                                             print(error!.localizedDescription)
@@ -457,24 +464,25 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
         
     }
-    var skipNumer = 5
+    var skipNumer = 6
     
     func loadMore() {
+        
+        self.loading = true
         let query = PFQuery(className: "ratings")
         query.whereKey("review", notEqualTo: "")
         query.whereKey("postid", equalTo: postuuid.last!)
         query.order(byDescending: "createdAt")
         query.skip = skipNumer
-        query.limit = 5
-        skipNumer += 5
+        query.limit = 6
+        skipNumer += 6
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 if objects!.count > 0 {
-                    //Clean up
-                    //moreReviewsArray.removeAll(keepingCapacity: false)
                     var moreReviewsArray: Array <Review?> = []
                     //Fill the array with placeholders
                     moreReviewsArray = [Review?](repeatElement(nil, count: objects!.count))
+                    //Counts how many have been loaded, so data can refresh after all have been loaded
                     var counter = 0
                     let counterLimit = objects!.count
                     for i in 0...objects!.count - 1{
@@ -499,6 +507,8 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                                             if  counter == counterLimit {
                                                 self.reviewArray = self.reviewArray + moreReviewsArray
                                                 self.reviewsTableView.reloadData()
+                                                //Finished loading
+                                                self.loading = false
                                             }
                                         } else {
                                             print(error!.localizedDescription)
@@ -524,6 +534,13 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     //height for cells
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 94
+    }
+    
+    //When the last cell is displayed, if not already loading, then load more
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.reviewArray.count - 1 && loading == false {
+            self.loadMore()
+        }
     }
     
     //number of cells

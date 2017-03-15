@@ -404,11 +404,14 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         query.whereKey("review", notEqualTo: "")
         query.whereKey("postid", equalTo: postuuid.last!)
         query.order(byDescending: "createdAt")
+        query.limit = 5
         query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
             if error == nil {
                 if objects!.count > 0{
                     self.reviewArray.removeAll(keepingCapacity: false)
                     self.reviewArray = [Review?](repeatElement(nil, count: objects!.count))
+                    var counter = 0
+                    let counterLimit = objects!.count
                     for i in 0...objects!.count - 1 {
                         //print(String(i))
                         let object: AnyObject = objects![i]
@@ -421,16 +424,91 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                             if error == nil {
                                 for object in objects! {
                                     let reviewFullname = object.value(forKey: "fullname")as! String
-                                    let reviewAva = object.value(forKey: "ava")as! PFFile
-                                    let review = Review(username: reviewUsername, ava: reviewAva, rating: reviewRating, review: reviewReview, fullname: reviewFullname)
-                                    self.reviewArray[i] = review
-                                    self.reviewsTableView.reloadData()
+                                    var reviewAvaData = object.value(forKey: "ava")as! PFFile
+                                    var reviewAva: UIImage? = nil
+                                    reviewAvaData.getDataInBackground(block: { (data:Data?, error:Error?) in
+                                        if error == nil {
+                                            reviewAva = UIImage(data: data!)
+                                            let review = Review(username: reviewUsername, ava: reviewAva, rating: reviewRating, review: reviewReview, fullname: reviewFullname)
+                                            self.reviewArray[i] = review
+                                            //Only reload data once all objects are downloaded
+                                            counter += 1
+                                            if counter == counterLimit {
+                                                self.reviewsTableView.reloadData()
+                                               // self.loadMore()
+                                            }
+                                        }else {
+                                            print(error!.localizedDescription)
+                                        }
+                                    })
+
                                 }
                             } else {
                                 print(error!.localizedDescription)
                             }
                         })
                         
+                    }
+                    
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+    }
+    var skipNumer = 5
+    
+    func loadMore() {
+        let query = PFQuery(className: "ratings")
+        query.whereKey("review", notEqualTo: "")
+        query.whereKey("postid", equalTo: postuuid.last!)
+        query.order(byDescending: "createdAt")
+        query.skip = skipNumer
+        query.limit = 5
+        skipNumer += 5
+        query.findObjectsInBackground { (objects:[PFObject]?, error:Error?) in
+            if error == nil {
+                if objects!.count > 0 {
+                    //Clean up
+                    //moreReviewsArray.removeAll(keepingCapacity: false)
+                    var moreReviewsArray: Array <Review?> = []
+                    //Fill the array with placeholders
+                    moreReviewsArray = [Review?](repeatElement(nil, count: objects!.count))
+                    var counter = 0
+                    let counterLimit = objects!.count
+                    for i in 0...objects!.count - 1{
+                        let object: AnyObject = objects![i]
+                        let reviewUsername = object.value(forKey: "from")as! String
+                        let reviewReview = object.value(forKey: "review")as! String
+                        let reviewRating = object.value(forKey: "rating")as! Int
+                        let userQuery = PFUser.query()
+                        userQuery?.whereKey("username", equalTo: reviewUsername)
+                        userQuery?.findObjectsInBackground(block: { (objects:[PFObject]?, error:Error?) in
+                            if error == nil {
+                                for object in objects! {
+                                    let reviewFullname = object.value(forKey: "fullname")as! String
+                                    let reviewAvaData = object.value(forKey: "ava")as! PFFile
+                                    var reviewAva: UIImage? = nil
+                                    reviewAvaData.getDataInBackground(block: { (data:Data?, error:Error?) in
+                                        if error == nil {
+                                            reviewAva = UIImage(data: data!)
+                                            let review = Review(username: reviewUsername, ava: reviewAva, rating: reviewRating, review: reviewReview, fullname: reviewFullname)
+                                            moreReviewsArray[i] = review
+                                            counter += 1
+                                            if  counter == counterLimit {
+                                                self.reviewArray = self.reviewArray + moreReviewsArray
+                                                self.reviewsTableView.reloadData()
+                                            }
+                                        } else {
+                                            print(error!.localizedDescription)
+                                        }
+                                    })
+                                }
+                            }else{
+                                print(error!.localizedDescription)
+                            }
+                        })
                     }
                     
                 }
@@ -457,13 +535,7 @@ class NewViewRecipeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
         if reviewArray[indexPath.row] != nil {
-            reviewArray[indexPath.row]!.ava!.getDataInBackground(block: { (data:Data?, error:Error?) in
-                if error == nil {
-                    cell.reviewerImg.image = UIImage(data: data!)
-                }else {
-                    print(error!.localizedDescription)
-                }
-            })
+            cell.reviewerImg.image = reviewArray[indexPath.row]!.ava!
             cell.reviewerName.text = reviewArray[indexPath.row]!.fullname!.capitalized
             cell.ratingControl.rating = reviewArray[indexPath.row]!.rating!
             cell.review.text = reviewArray[indexPath.row]!.review!

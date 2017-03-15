@@ -8,19 +8,19 @@
 
 import Foundation
 import UIKit
-import Parse
+
 
 class Review {
     // MARK: Properties
     
     var username: String?
-    var ava: PFFile?
+    var ava: UIImage?
     var fullname: String?
     var review: String?
     var rating: Int?
 
     
-    init?(username: String?, ava: PFFile?, rating: Int?, review: String?, fullname: String?) {
+    init?(username: String?, ava: UIImage?, rating: Int?, review: String?, fullname: String?) {
         // Initialize stored properties.
         self.username = username
         self.ava = ava

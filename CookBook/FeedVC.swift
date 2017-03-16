@@ -141,5 +141,11 @@ class FeedVC: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        postuuid.append(feedRecipeArray[indexPath.row]!.uuid!)
+        let post = self.storyboard?.instantiateViewController(withIdentifier: "NewViewRecipeVC") as! NewViewRecipeVC
+        // self.present(post, animated: true, completion: nil)
+        self.navigationController?.pushViewController(post, animated: true)
+    }
 
 }

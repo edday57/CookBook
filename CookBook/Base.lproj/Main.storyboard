@@ -408,7 +408,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="156" id="OdE-Xw-bhr" customClass="FeedCell" customModule="CookBook" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="156" id="OdE-Xw-bhr" customClass="FeedCell" customModule="CookBook" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdE-Xw-bhr" id="ICT-R2-LFE">
@@ -1138,8 +1138,8 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="pKN-C7-5Xj" kind="relationship" relationship="viewControllers" id="ECX-QT-hZX"/>
                         <segue destination="kUb-Lx-De6" kind="relationship" relationship="viewControllers" id="HWO-nl-aIU"/>
+                        <segue destination="pKN-C7-5Xj" kind="relationship" relationship="viewControllers" id="ECX-QT-hZX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bkh-Bz-aoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2815,7 +2815,7 @@
         <scene sceneID="maE-zR-FTw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kUb-Lx-De6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="NkG-Ve-OWa"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="homeEmpty" selectedImage="homeFull" id="NkG-Ve-OWa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kjm-Or-7Qw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

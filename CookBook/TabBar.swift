@@ -13,8 +13,8 @@ class TabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tabBarItems = tabBar.items! as [UITabBarItem]
-       // tabBarItems[1].title = nil
-      //  tabBarItems[1].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
+        tabBarItems[1].title = nil
+        tabBarItems[1].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
         tabBarItems[0].title = nil
         tabBarItems[0].imageInsets = UIEdgeInsetsMake(6,0,-6,0)
         //tabBarItems[2].title = nil

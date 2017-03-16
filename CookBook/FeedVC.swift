@@ -35,6 +35,7 @@ class FeedVC: UITableViewController {
                     self.followingArray.append(object.value(forKey: "following")as! String)
                     
                 }
+                self.followingArray.append(PFUser.current()!.username!)
                 let postQuery = PFQuery(className: "posts")
                 postQuery.whereKey("username", containedIn: self.followingArray)
                 postQuery.order(byDescending: "createdAt")
@@ -119,7 +120,10 @@ class FeedVC: UITableViewController {
     
     //Cell height
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 156
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell")as! FeedCell
+        
+        let height = cell.feedImg.frame.height + 80 + 12
+        return height
     }
 
     //Number of cells
@@ -133,7 +137,7 @@ class FeedVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
         if feedRecipeArray[indexPath.row] != nil {
             cell.feedAva.image = feedRecipeArray[indexPath.row]!.ava!
-            cell.feedFullname.text = feedRecipeArray[indexPath.row]!.fullname!
+            cell.feedFullname.text = "By \((feedRecipeArray[indexPath.row]!.fullname!).capitalized)"
             cell.feedImg.image = feedRecipeArray[indexPath.row]!.img!
             cell.feedRating.rating = feedRecipeArray[indexPath.row]!.rating!
             cell.feedRecipeName.text = feedRecipeArray[indexPath.row]!.recipeName!

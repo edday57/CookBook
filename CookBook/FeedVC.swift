@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class FeedVC: UITableViewController {
+class FeedVC: UITableViewController, UIGestureRecognizerDelegate{
     
     var feedRecipeArray: Array <FeedRecipe?>= []
     var followingArray = [String]()
@@ -234,7 +234,13 @@ class FeedVC: UITableViewController {
     
     //Content for cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var nameTap = UITapGestureRecognizer(target: self, action: #selector(FeedVC.nameTapped(_:)))
+        nameTap.delegate = self
+        nameTap.numberOfTapsRequired = 1
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
+        cell.feedFullname.addGestureRecognizer(nameTap)
+        cell.isUserInteractionEnabled = true
+        cell.infoView.isUserInteractionEnabled = true
         if feedRecipeArray[indexPath.row] != nil {
             cell.feedAva.image = feedRecipeArray[indexPath.row]!.ava!
             cell.feedFullname.text = "By \((feedRecipeArray[indexPath.row]!.fullname!).capitalized)"
@@ -258,4 +264,22 @@ class FeedVC: UITableViewController {
         }
     }
 
+
+    @IBAction func nameTapped(_ sender: UIGestureRecognizer) {
+        let location = sender.location(in: self.view)
+        let row = tableView.indexPathForRow(at: location)
+        let username = self.feedRecipeArray[row!.row]!.username!
+        if username == PFUser.current()!.username! {
+            //If it is users own post then go home
+            let home = self.storyboard?.instantiateViewController(withIdentifier: "profileVC") as! NewProfileVC
+            self.navigationController?.pushViewController(home, animated: true)
+        } else {
+            //If user is someone elses post then go to their page
+            guestname.append(username)
+            let guest = self.storyboard?.instantiateViewController(withIdentifier: "guestVC") as! NewGuestVC
+            self.navigationController?.pushViewController(guest, animated: true)
+        }
+
+    }
+    
 }

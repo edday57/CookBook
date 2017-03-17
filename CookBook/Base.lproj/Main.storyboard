@@ -509,6 +509,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="GIQ-nx-TIB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWo-e6-dq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2681,6 +2684,6 @@
         <image name="檔案_000" width="900" height="1600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cZ3-Dm-sqh"/>
+        <segue reference="ZqO-ng-MUc"/>
     </inferredMetricsTieBreakers>
 </document>

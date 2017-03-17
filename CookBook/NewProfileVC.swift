@@ -47,7 +47,6 @@ class NewProfileVC: UICollectionViewController {
         PFUser.current()?.fetchInBackground(block: { (objects:PFObject?, error:Error?) in
             if error == nil {
                 self.collectionView?.reloadData()
-                
             }
         })
         
@@ -85,6 +84,8 @@ class NewProfileVC: UICollectionViewController {
                     self.picArray.append(object.value(forKey: "picture") as! PFFile)
                 }
                 self.collectionView?.reloadData()
+                print("hi")
+
             } else {
                 print(error!.localizedDescription)
             }
@@ -124,6 +125,7 @@ class NewProfileVC: UICollectionViewController {
                     }
                     print("Loaded \(self.page) recipes!")
                     self.collectionView?.reloadData()
+
                 } else {
                     print(error!.localizedDescription)
                 }

@@ -162,8 +162,6 @@
 				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
 				642F54D91D7CBD99000ED2B4 /* Login Controllers */,
 				F33EE58D1E7A05BD00F83801 /* FeedVC.swift */,
-				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
-				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
 				F375C7831E20FBEB008884B2 /* NewProfileVC.swift */,
@@ -281,6 +279,8 @@
 		F3F359EF1E6C8C480055F5DC /* Old / Unused  */ = {
 			isa = PBXGroup;
 			children = (
+				64B9C8BE1D6F56510061D601 /* RecipeHomeVC.swift */,
+				64BC16161D821B97000510D8 /* RecipeFeedVC.swift */,
 				2BD609B21D798C1700EEA826 /* ViewRecipePrivateVC.swift */,
 				64D569F51D84915F0093AE8A /* ViewRecipePublicVC.swift */,
 				648AC2411D9B3039007C4F22 /* ViewRecipePublicSeg2.swift */,

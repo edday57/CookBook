@@ -58,6 +58,7 @@
 		F33EE5901E7A061900F83801 /* FeedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EE58F1E7A061900F83801 /* FeedRecipe.swift */; };
 		F33EE5921E7AFBBE00F83801 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EE5911E7AFBBE00F83801 /* FeedCell.swift */; };
 		F33EE5941E7B31EB00F83801 /* FeedRatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EE5931E7B31EB00F83801 /* FeedRatingControl.swift */; };
+		F33EE5961E7D466500F83801 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EE5951E7D466500F83801 /* SearchVC.swift */; };
 		F34489B41E732A9C00B1D425 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34489B31E732A9C00B1D425 /* ReviewCell.swift */; };
 		F34489B61E78600900B1D425 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34489B51E78600900B1D425 /* Review.swift */; };
 		F375C7821E20FBC7008884B2 /* NewProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */; };
@@ -123,6 +124,7 @@
 		F33EE58F1E7A061900F83801 /* FeedRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRecipe.swift; sourceTree = "<group>"; };
 		F33EE5911E7AFBBE00F83801 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		F33EE5931E7B31EB00F83801 /* FeedRatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedRatingControl.swift; sourceTree = "<group>"; };
+		F33EE5951E7D466500F83801 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		F34489B31E732A9C00B1D425 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		F34489B51E78600900B1D425 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		F375C7811E20FBC7008884B2 /* NewProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				64B9C8AA1D6F00590061D601 /* Main.storyboard */,
 				642F54D91D7CBD99000ED2B4 /* Login Controllers */,
 				F33EE58D1E7A05BD00F83801 /* FeedVC.swift */,
+				F33EE5951E7D466500F83801 /* SearchVC.swift */,
 				2B6961401D71D9F9009C52CD /* NewRecipeVC.swift */,
 				F315E5D81E26CAB400A67927 /* NewViewRecipeVC.swift */,
 				F375C7831E20FBEB008884B2 /* NewProfileVC.swift */,
@@ -396,6 +399,7 @@
 				2B6961411D71D9F9009C52CD /* NewRecipeVC.swift in Sources */,
 				2BD00EAC1D72FFB700D34E65 /* NewRecipeNavBarVC.swift in Sources */,
 				64E734961D7F89400084A59A /* EditProfileVC.swift in Sources */,
+				F33EE5961E7D466500F83801 /* SearchVC.swift in Sources */,
 				F375C7C21E2290D8008884B2 /* TabBar.swift in Sources */,
 				647A29461D7DB00100A49A6B /* GuestVC.swift in Sources */,
 				64672EED1D7B829F000D0762 /* SignUpVC.swift in Sources */,
